@@ -1,54 +1,87 @@
-import subprocess
 import os
+import sys
+import subprocess
+import argparse
 
-Text2DRS = os.getcwd()
+output_file = ''
 
-#lth ='/home/gangling/Documents/ALM/lth_srl/'
-lth = '/Users/gling/Documents/ALM/lth_srl/'
+def process_lth(file):
 
-os.chdir(lth)
+    text2DRS = os.getcwd()
 
-model = 'models/penn_00_18_split_dict.model'
+    #lth ='/home/gangling/Documents/ALM/lth_srl/'
+    lth = '/Users/gling/Documents/ALM/lth_srl/'
 
-dict = 'v_n_a.txt'
+    os.chdir(lth)
 
-mem ='100M'
+    model = 'models/penn_00_18_split_dict.model'
 
-cp ='jars/lthsrl.jar:jars/utilities.jar:jars/trove.jar:jars/seqlabeler.jar'
+    dict = 'v_n_a.txt'
 
-targetFile = '<TestPool/SingleSupportingFact.txt>'
-outputTokens = 'TestOutput/SingleSupportingFact.tokens'
-inputTokens = '<' + outputTokens + '>'
-outputFile = Text2DRS + '/lthOutputs/SingleSupportingFact.txt'
+    mem ='100M'
+
+    cp ='jars/lthsrl.jar:jars/utilities.jar:jars/trove.jar:jars/seqlabeler.jar'
 
 
-cmd = 'java -Xmx{0} -cp {1} se.lth.cs.nlp.depsrl.Preprocessor -allLTH {2} {3} {4} {5}'.format(mem,cp,model,dict,targetFile,outputTokens)
+    target_file_name = file.split('/')[-1].split('.')[0]
+    target_file = '<' + file + '>'
+    output_tokens = text2DRS + '/lthOutputs/' + target_file_name +'.tokens'
+    input_tokens = '<' + output_tokens + '>'
+    global output_file
+    output_file = text2DRS + '/lthOutputs/' + 'lth_'+ target_file_name + '.txt'
 
-subprocess.call(cmd,shell=True)
 
-synmodel = 'models/train_at_pp_more2nd.model'
-LM = 'models/lm_080602_uknpreds.model'
-GM_CD = 'models/global_partcq_mc_cd_2o_ukp.model'
-GM_CL = 'models/part12345_cq_mc_2o_ukp.sv.model'
+    cmd = 'java -Xmx{0} -cp {1} se.lth.cs.nlp.depsrl.Preprocessor -allLTH {2} {3} {4} {5}'.format(mem,cp,model,dict,target_file,output_tokens)
 
-CP= 'jars/lthsrl.jar:jars/utilities.jar:jars/trove.jar'
+    subprocess.call(cmd,shell=True)
 
-MEM= '2600M'
+    synmodel = 'models/train_at_pp_more2nd.model'
+    LM = 'models/lm_080602_uknpreds.model'
+    GM_CD = 'models/global_partcq_mc_cd_2o_ukp.model'
+    GM_CL = 'models/part12345_cq_mc_2o_ukp.sv.model'
 
-NSYN = '4'
-NSEM = '4'
+    CP= 'jars/lthsrl.jar:jars/utilities.jar:jars/trove.jar'
 
-SYNW = '25'
-GMW = '3'
+    MEM= '2600M'
 
-FORCE_VARGS = 'false'
+    NSYN = '4'
+    NSEM = '4'
 
-cmd2 = 'java -Xmx{0} -cp {1} se.lth.cs.nlp.depsrl.Main -runFull ' \
-       '{2} {3} {4} {5} pb_frames nb_frames {6} {7} {8} {9} ' \
-       'false false ' \
-       '{10} {11} {12}'.format(MEM,CP,LM,GM_CD,GM_CL,synmodel,NSYN,NSEM,SYNW,GMW,FORCE_VARGS,inputTokens,outputFile)
+    SYNW = '25'
+    GMW = '3'
 
-subprocess.call(cmd2,shell=True)
+    FORCE_VARGS = 'false'
 
-os.chdir(Text2DRS)
+    cmd2 = 'java -Xmx{0} -cp {1} se.lth.cs.nlp.depsrl.Main -runFull ' \
+           '{2} {3} {4} {5} pb_frames nb_frames {6} {7} {8} {9} ' \
+           'false false ' \
+           '{10} {11} {12}'.format(MEM,CP,LM,GM_CD,GM_CL,synmodel,NSYN,NSEM,SYNW,GMW,FORCE_VARGS,input_tokens,output_file)
+
+    subprocess.call(cmd2,shell=True)
+
+    os.chdir(text2DRS)
+
+def main():
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("input", help='given full path of input file', type=str)
+    args = parser.parse_args()
+    process_lth(args.input)
+
+    try:
+        lth_output = open(output_file,'r')
+    except IOError as e:
+        print "I/O error({0}): {1}".format(e.errno, e.strerror)
+    except:
+        print "Unexpected error:", sys.exc_info()[0]
+        raise
+
+    print (lth_output)
+
+
+
+
+
+if __name__ == '__main__':
+    main()
 
