@@ -2,7 +2,7 @@ import os
 import sys
 import subprocess
 import argparse
-import verbnetSRL
+import verbNetSRL
 
 output_file = ''
 
@@ -77,7 +77,7 @@ def main():
         print "Unexpected error:", sys.exc_info()[0]
         raise
 
-    verbnetSRL.read_data(lth_output)
+    verbNetSRL.read_data(lth_output)
 
 
 
