@@ -11,13 +11,12 @@ def read_data(lth_output):
         else:
             data_lst.append(subline)
 
-    # print (data_lst)
     form_dict(data_lst)
 
 
 def form_dict(lst):
 
-    data_dictlist = [{}]
+    data_dictlist = []
 
     for item in lst:
         dict = {}
@@ -30,17 +29,15 @@ def form_dict(lst):
         dict['PHead'] = item[8]
         dict['PDeprel'] = item[9]
         dict['Pred'] = item[10]
-        dict['Args'] = item[11]
+        dict['Args'] = item[11].split('\n')[0]
 
         data_dictlist.append(dict)
 
     lookup_pb(data_dictlist)
 
 
-    # for item in data_dictlist:
-    #     # for key, value in item.items():
-    #     #     print (key,value)
-    #     print (item)
+    for item in data_dictlist:
+        print (item)
 
 
 def lookup_pb(dictlist):
@@ -70,5 +67,5 @@ def vn_pb_parser(pred, plemma):
                     dict[argmap.attrib.get('vn-class')] = lst
 
     for item in dict.items():
-        print item
+        print (item)
 
