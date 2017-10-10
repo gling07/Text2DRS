@@ -17,10 +17,11 @@ def read_data(lth_output):
 def form_dict(lst):
 
     data_dictlist = []
-
+    sub_dictlist = []
+    count = 0
     for item in lst:
         dict = {}
-        dict.fromkeys(['ID', 'Form', 'PLemma', 'PPOS', 'PHead', 'PDeprel', 'Pred', 'Args'], None)
+        dict.fromkeys(['ID', 'Form', 'PLemma', 'PPOS', 'PHead', 'PDeprel', 'Pred', 'Args','vn-pb'], None)
 
         dict['ID'] = item[0]
         dict['Form'] = item[1]
@@ -31,25 +32,43 @@ def form_dict(lst):
         dict['Pred'] = item[10]
         dict['Args'] = item[11].split('\n')[0]
 
-        data_dictlist.append(dict)
+        # print(item[0])
 
+        if(int(item[0]) > count):
+            sub_dictlist.append(dict)
+            # print(dict)
+            count += 1
+        else:
+            count = 0
+            data_dictlist.append(sub_dictlist)
+            # del sub_dictlist[:]
+            sub_dictlist = []
+            sub_dictlist.append(dict)
+
+        # data_dictlist.append(dict)
+
+    data_dictlist.append(sub_dictlist)
     lookup_pb(data_dictlist)
 
 
-    for item in data_dictlist:
-        print (item)
+    for lst in data_dictlist:
+        print (lst)
+        # for dic in lst:
+            # for item in dic.items():
+            #     print (item)
+
 
 
 def lookup_pb(dictlist):
 
-    for dict in dictlist:
-        if dict.get('Pred') != '_' and dict.get('Pred') != None:
-            pred = dict.get('Pred')
-            plemma = dict.get('PLemma')
-            vn_pb_parser(pred,plemma)
-            # print (pred,plemma)
-        else:
-            continue
+    for lst in dictlist:
+        for dict in lst:
+            if dict.get('Pred') != '_' and dict.get('Pred') != None:
+                pred = dict.get('Pred')
+                plemma = dict.get('PLemma')
+                parse_result = vn_pb_parser(pred,plemma)
+            else:
+                continue
 
 def vn_pb_parser(pred, plemma):
     dict = {}
@@ -66,6 +85,7 @@ def vn_pb_parser(pred, plemma):
                         lst.append(sub_dict)
                     dict[argmap.attrib.get('vn-class')] = lst
 
-    for item in dict.items():
-        print (item)
+    # for item in dict.items():
+    #     print (item)
+    return dict
 
