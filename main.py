@@ -11,7 +11,8 @@ def process_lth(file):
     text2DRS = os.getcwd()
 
     #lth ='/home/gangling/Documents/ALM/lth_srl/'
-    lth = '/Users/gling/Documents/ALM/lth_srl/'
+    # lth = '/Users/gling/Documents/ALM/lth_srl/'
+    lth = text2DRS + '/lth_srl/'
 
     os.chdir(lth)
 
