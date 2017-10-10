@@ -55,8 +55,20 @@ def lookup_pb(dictlist):
             continue
 
 def vn_pb_parser(pred, plemma):
+    dict = {}
     root = pb_tree.getroot()
-    for lemma in root.iter('predicate lemma'):
-        if lemma.attrib == plemma:
-            print (lemma)
+
+    for elem in root.findall('./predicate'):
+        if elem.attrib.get('lemma') == plemma:
+            for argmap in elem:
+                if argmap.attrib.get('pb-roleset') == pred:
+                    lst = []
+                    for role in argmap:
+                        sub_dict = {}
+                        sub_dict[role.attrib.get('pb-arg')] = role.attrib.get('vn-theta')
+                        lst.append(sub_dict)
+                    dict[argmap.attrib.get('vn-class')] = lst
+
+    for item in dict.items():
+        print item
 
