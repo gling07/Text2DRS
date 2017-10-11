@@ -19,7 +19,7 @@ def process_lth(file):
 
     model = 'models/penn_00_18_split_dict.model'
 
-    dict = 'v_n_a.txt'
+    dct = 'v_n_a.txt'
 
     mem ='100M'
 
@@ -35,7 +35,7 @@ def process_lth(file):
     output_file = text2DRS + '/lthOutputs/' + 'lth_'+ target_file_name + '.txt'
 
 
-    cmd = 'java -Xmx{0} -cp {1} se.lth.cs.nlp.depsrl.Preprocessor -allLTH {2} {3} {4} {5}'.format(mem,cp,model,dict,target_file,output_tokens)
+    cmd = 'java -Xmx{0} -cp {1} se.lth.cs.nlp.depsrl.Preprocessor -allLTH {2} {3} {4} {5}'.format(mem,cp,model,dct,target_file,output_tokens)
 
     subprocess.call(cmd,shell=True)
 
@@ -80,12 +80,12 @@ def main():
         print ("Unexpected error:", sys.exc_info()[0])
         raise
 
-    data_dictlist = verbNetSRL.read_data(lth_output)
+    data_dct_lst = verbNetSRL.read_data(lth_output)
 
     orig_stdout = sys.stdout
     f = open('text2drsOutputs/' + target_file_name + '.txt','w')
     sys.stdout = f
-    verbNetSRL.print_table(data_dictlist)
+    verbNetSRL.print_table(data_dct_lst)
     sys.stdout = orig_stdout
     f.close()
 

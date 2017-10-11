@@ -2,7 +2,7 @@ import xml.etree.ElementTree as ET
 
 
 pb_tree = ET.parse('semLink/vn-pb/vnpbMappings')
-data_dictlist = []
+m_dct_lst = []
 
 def read_data(lth_output):
     data_lst =[]
@@ -13,69 +13,80 @@ def read_data(lth_output):
         else:
             data_lst.append(subline)
 
-    form_dict(data_lst)
+    form_dct(data_lst)
 
-    return data_dictlist
+    return m_dct_lst
 
-def form_dict(lst):
+def form_dct(lst):
 
-    if len(data_dictlist) > 0:
-        del data_dictlist[:]
+    if len(m_dct_lst) > 0:
+        del m_dct_lst[:]
 
-    sub_dictlist = []
+    sub_dct_lst = []
     count = 0
     for item in lst:
-        dict = {}
-        dict.fromkeys(['ID', 'Form', 'PLemma', 'PPOS', 'PHead', 'PDeprel', 'Pred', 'Args','vn-pb'], None)
+        tmp = {}
+        tmp.fromkeys(['ID', 'Form', 'PLemma', 'PPOS', 'PHead', 'PDeprel', 'Pred', 'Args','vn-pb'], None)
 
-        dict['ID'] = item[0]
-        dict['Form'] = item[1]
-        dict['PLemma'] = item[2]
-        dict['PPOS'] = item[4]
-        dict['PHead'] = item[8]
-        dict['PDeprel'] = item[9]
-        dict['Pred'] = item[10]
-        dict['Args'] = item[11].split('\n')[0]
+        tmp['ID'] = item[0]
+        tmp['Form'] = item[1]
+        tmp['PLemma'] = item[2]
+        tmp['PPOS'] = item[4]
+        tmp['PHead'] = item[8]
+        tmp['PDeprel'] = item[9]
+        tmp['Pred'] = item[10]
+        tmp['Args'] = item[11].split('\n')[0]
 
-        if(int(item[0]) > count):
-            sub_dictlist.append(dict)
+        if int(item[0]) > count:
+            sub_dct_lst.append(tmp)
             count += 1
         else:
             count = 0
-            data_dictlist.append(sub_dictlist)
-            sub_dictlist = []
-            sub_dictlist.append(dict)
+            m_dct_lst.append(sub_dct_lst)
+            sub_dct_lst = []
+            sub_dct_lst.append(tmp)
 
 
-    data_dictlist.append(sub_dictlist)
-    lookup_pb(data_dictlist)
+    m_dct_lst.append(sub_dct_lst)
+    lookup_pb(m_dct_lst)
 
 
-def lookup_pb(dictlist):
+def lookup_pb(dct_lst):
 
-    for lst in dictlist:
+    for lst in dct_lst:
         parse_result = {}
         pred = ''
-        for dict in lst:
-            if dict.get('Pred') != '_' and dict.get('Pred') != None:
-                pred = dict.get('Pred')
-                plemma = dict.get('PLemma')
+        for sub_dct in lst:
+            if sub_dct.get('Pred') != '_' and sub_dct.get('Pred') != None:
+                pred = sub_dct.get('Pred')
+                plemma = sub_dct.get('PLemma')
                 parse_result = vn_pb_parser(pred,plemma)
             else:
                 continue
 
-        keylist = list(parse_result.keys())
+        key_lst = list(parse_result.keys())
 
-        for dict in lst:
-            if dict.get('Pred') == pred:
-                dict['vn-pb'] = ';'.join(str(k) for k in keylist)
+        for d in lst:
+            if d.get('Pred') == pred:
+                tmp2 = []
+                for k in key_lst:
+                    tmp2.append({'vn': k})
+                d['vn-pb'] = tmp2
+                # print(d.get('vn-pb'))
+            # elif dict.get('Args') != '_':
+            #     for key in keylist:
+            #         pr_lst = parse_result.get(key)
+            #         for d in pr_lst:
+            #             k_lst = d.keys()
+            #             for k in k_lst:
+            #                 if k == dict.get('Args')[1]:
+
             else:
-                dict['vn-pb'] = '-'
-
+                d['vn-pb'] = [{'_':'_'}]
 
 
 def vn_pb_parser(pred, plemma):
-    dict = {}
+    dct = {}
     root = pb_tree.getroot()
 
     for elem in root.findall('./predicate'):
@@ -84,20 +95,27 @@ def vn_pb_parser(pred, plemma):
                 if argmap.attrib.get('pb-roleset') == pred:
                     lst = []
                     for role in argmap:
-                        sub_dict = {}
-                        sub_dict[role.attrib.get('pb-arg')] = role.attrib.get('vn-theta')
-                        lst.append(sub_dict)
-                    dict[argmap.attrib.get('vn-class')] = lst
+                        sub_dct2 = {}
+                        sub_dct2[role.attrib.get('pb-arg')] = role.attrib.get('vn-theta')
+                        lst.append(sub_dct2)
+                    dct[argmap.attrib.get('vn-class')] = lst
 
-    return dict
+    return dct
 
-def print_table(master_list):
-    dict_keys = master_list[0][0].keys()
-    for key in dict_keys:
+def print_table(m_lst):
+    dct_keys = m_lst[0][0].keys()
+    for key in dct_keys:
         print("{:10s}\t".format(key), end="")
-    for lst in master_list:
+    for lst in m_lst:
         print('')
-        for sub_dict in lst:
+        for sub_dct3 in lst:
             print('')
-            for key in dict_keys:
-                print("{:10s}\t".format(sub_dict.get(key)), end="")
+            for key in dct_keys:
+                if key == 'vn-pb':
+                    for item in sub_dct3.get(key):
+                        if 'vn' in item.keys():
+                            print('{}; '.format(item.get('vn')), end="")
+                        else:
+                            print('{:5s}'.format(item.get('_')), end="")
+                else:
+                    print("{:10s}\t".format(sub_dct3.get(key)), end="")
