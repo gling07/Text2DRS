@@ -11,8 +11,6 @@ def process_lth(file):
 
     text2DRS = os.getcwd()
 
-    #lth ='/home/gangling/Documents/ALM/lth_srl/'
-    # lth = '/Users/gling/Documents/ALM/lth_srl/'
     lth = text2DRS + '/lth_srl/'
 
     os.chdir(lth)
@@ -37,7 +35,7 @@ def process_lth(file):
 
     cmd = 'java -Xmx{0} -cp {1} se.lth.cs.nlp.depsrl.Preprocessor -allLTH {2} {3} {4} {5}'.format(mem,cp,model,dct,target_file,output_tokens)
 
-    # subprocess.call(cmd,shell=True)
+    subprocess.call(cmd,shell=True)
 
     synmodel = 'models/train_at_pp_more2nd.model'
     LM = 'models/lm_080602_uknpreds.model'
@@ -61,7 +59,7 @@ def process_lth(file):
            'false false ' \
            '{10} {11} {12}'.format(MEM,CP,LM,GM_CD,GM_CL,synmodel,NSYN,NSEM,SYNW,GMW,FORCE_VARGS,input_tokens,output_file)
 
-    # subprocess.call(cmd2,shell=True)
+    subprocess.call(cmd2,shell=True)
 
     os.chdir(text2DRS)
 
