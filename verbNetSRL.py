@@ -96,7 +96,7 @@ def lookup_pb(dct_lst):
                             elif d.get('Args')[1] in num:
                                 continue
                             elif not pb_args_checker(x, lst):
-                                tmp3.append({key: '?'})
+                                tmp3.append({'_':'_' })
                 d['vn-pb'] = tmp3
             else:
                 d['vn-pb'] = [{'_':'_'}]
