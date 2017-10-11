@@ -66,23 +66,51 @@ def lookup_pb(dct_lst):
 
         key_lst = list(parse_result.keys())
 
+        pb_arg_num = []
+        for k in key_lst:
+            sub_lst = parse_result.get(k)
+            for s in sub_lst:
+                pb_arg_num.append(list(s.keys()))
+
+        num = [n for sublst in pb_arg_num for n in sublst]
+
+
         for d in lst:
             if d.get('Pred') == pred:
                 tmp2 = []
                 for k in key_lst:
                     tmp2.append({'vn': k})
                 d['vn-pb'] = tmp2
-                # print(d.get('vn-pb'))
-            # elif dict.get('Args') != '_':
-            #     for key in keylist:
-            #         pr_lst = parse_result.get(key)
-            #         for d in pr_lst:
-            #             k_lst = d.keys()
-            #             for k in k_lst:
-            #                 if k == dict.get('Args')[1]:
+            elif d.get('Args') != '_':
+                tmp3 = []
+                for key in key_lst:
+                    pr_lst = parse_result.get(key)
+                    for p in pr_lst:
+                        k_lst = p.keys()
 
+                        for x in k_lst:
+                            if x == d.get('Args')[1] and d.get('Args')[1] in num:
+                                tmp3.append({key: p.get(x)})
+                            elif d.get('Args')[1] in num:
+                                continue
+                            elif not pb_args_checker(x, lst):
+                                tmp3.append({key: '?'})
+                d['vn-pb'] = tmp3
             else:
                 d['vn-pb'] = [{'_':'_'}]
+
+def pb_args_checker(num, sentence_lst):
+
+    num_lst = []
+    for sub_dct in sentence_lst:
+        if sub_dct.get('Args') != '_':
+            num_lst.append(sub_dct.get('Args')[1])
+
+    if num in num_lst:
+        return True
+    else:
+        return False
+
 
 
 def vn_pb_parser(pred, plemma):
@@ -114,7 +142,10 @@ def print_table(m_lst):
                 if key == 'vn-pb':
                     for item in sub_dct3.get(key):
                         if 'vn' in item.keys():
-                            print('{}; '.format(item.get('vn')), end="")
+                            print('{};'.format(item.get('vn')), end="")
+                        elif '_' not in item.keys():
+                            for k,v in item.items():
+                                print('{}:{};'.format(k,v), end="")
                         else:
                             print('{:5s}'.format(item.get('_')), end="")
                 else:
