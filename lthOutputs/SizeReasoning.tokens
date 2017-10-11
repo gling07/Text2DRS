@@ -1,0 +1,25 @@
+1	The	_	_	DT	The	_	DT	0	_
+2	football	football	_	NN	football	football	NN	0	_
+3	fits	fit	_	VBZ	fits	fit	VBZ	0	_
+4	in	_	_	IN	in	_	IN	0	_
+5	the	_	_	DT	the	_	DT	0	_
+6	suitcase	suitcase	_	NN	suitcase	suitcase	NN	0	_
+7	.	_	_	.	.	_	.	0	_
+
+1	The	_	_	DT	The	_	DT	0	_
+2	suitcase	suitcase	_	NN	suitcase	suitcase	NN	0	_
+3	fits	fit	_	VBZ	fits	fit	VBZ	0	_
+4	in	_	_	IN	in	_	IN	0	_
+5	the	_	_	DT	the	_	DT	0	_
+6	cupboard	cupboard	_	NN	cupboard	cupboard	NN	0	_
+7	.	_	_	.	.	_	.	0	_
+
+1	The	_	_	DT	The	_	DT	0	_
+2	box	box	_	NN	box	box	NN	0	_
+3	is	be	_	VBZ	is	be	VBZ	0	_
+4	smaller	small	_	JJR	smaller	small	JJR	0	_
+5	than	_	_	IN	than	_	IN	0	_
+6	the	_	_	DT	the	_	DT	0	_
+7	football	football	_	NN	football	football	NN	0	_
+8	.	_	_	.	.	_	.	0	_
+

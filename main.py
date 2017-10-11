@@ -75,9 +75,9 @@ def main():
     try:
         lth_output = open(output_file,'r')
     except IOError as e:
-        print ('I/O error({0}): {1}'.format(e.errno, e.strerror))
+        print('I/O error({0}): {1}'.format(e.errno, e.strerror))
     except:
-        print ("Unexpected error:", sys.exc_info()[0])
+        print("Unexpected error:", sys.exc_info()[0])
         raise
 
     data_dct_lst = verbNetSRL.read_data(lth_output)

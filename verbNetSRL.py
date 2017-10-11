@@ -25,6 +25,8 @@ def form_dct(lst):
     sub_dct_lst = []
     count = 0
     for item in lst:
+        if(len(item) < 12):
+            item.insert(10,'_')
         tmp = {}
         tmp.fromkeys(['ID', 'Form', 'PLemma', 'PPOS', 'PHead', 'PDeprel', 'Pred', 'Args','vn-pb'], None)
 

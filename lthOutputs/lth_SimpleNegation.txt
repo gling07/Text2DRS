@@ -1,0 +1,16 @@
+1	Sandra	_	_	NNP	Sandra	_	NNP	2	SBJ	_	A0
+2	travelled	travel	_	VBD	travelled	travel	VBD	0	ROOT	travel.01	_
+3	to	_	_	TO	to	_	TO	2	ADV	_	A1
+4	the	_	_	DT	the	_	DT	5	NMOD	_	_
+5	office	office	_	NN	office	office	NN	3	PMOD	_	_
+6	.	_	_	.	.	_	.	2	P	_	_
+
+1	Fred	_	_	NNP	Fred	_	NNP	2	SBJ	_
+2	is	be	_	VBZ	is	be	VBZ	0	ROOT	_
+3	no	_	_	DT	no	_	DT	4	AMOD	_
+4	longer	_	_	RBR	longer	_	RBR	2	TMP	_
+5	in	_	_	IN	in	_	IN	2	LOC	_
+6	the	_	_	DT	the	_	DT	7	NMOD	_
+7	office	office	_	NN	office	office	NN	5	PMOD	_
+8	.	_	_	.	.	_	.	2	P	_
+

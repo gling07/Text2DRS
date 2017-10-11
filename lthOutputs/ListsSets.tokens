@@ -1,0 +1,26 @@
+1	Daniel	_	_	NNP	Daniel	_	NNP	0	_
+2	picks	pick	_	VBZ	picks	pick	VBZ	0	_
+3	up	_	_	RP	up	_	RP	0	_
+4	the	_	_	DT	the	_	DT	0	_
+5	football	football	_	NN	football	football	NN	0	_
+6	.	_	_	.	.	_	.	0	_
+
+1	Daniel	_	_	NNP	Daniel	_	NNP	0	_
+2	drops	drop	_	VBZ	drops	drop	VBZ	0	_
+3	the	_	_	DT	the	_	DT	0	_
+4	newspaper	newspaper	_	NN	newspaper	newspaper	NN	0	_
+5	.	_	_	.	.	_	.	0	_
+
+1	Daniel	_	_	NNP	Daniel	_	NNP	0	_
+2	picks	pick	_	VBZ	picks	pick	VBZ	0	_
+3	up	_	_	RP	up	_	RP	0	_
+4	the	_	_	DT	the	_	DT	0	_
+5	milk	milk	_	NN	milk	milk	NN	0	_
+6	.	_	_	.	.	_	.	0	_
+
+1	Jhon	_	_	NNP	Jhon	_	NNP	0	_
+2	took	take	_	VBD	took	take	VBD	0	_
+3	the	_	_	DT	the	_	DT	0	_
+4	apple	apple	_	NN	apple	apple	NN	0	_
+5	.	_	_	.	.	_	.	0	_
+

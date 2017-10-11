@@ -1,0 +1,13 @@
+1	Ann	_	_	NNP	Ann	_	NNP	0	_
+2	went	go	_	VBD	went	go	VBD	0	_
+3	to	_	_	TO	to	_	TO	0	_
+4	the	_	_	DT	the	_	DT	0	_
+5	room	room	_	NN	room	room	NN	0	_
+6	.	_	_	.	.	_	.	0	_
+
+1	Michael	_	_	NNP	Michael	_	NNP	0	_
+2	left	leave	_	VBD	left	leave	VBD	0	_
+3	the	_	_	DT	the	_	DT	0	_
+4	room	room	_	NN	room	room	NN	0	_
+5	.	_	_	.	.	_	.	0	_
+
