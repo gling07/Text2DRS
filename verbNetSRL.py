@@ -54,6 +54,8 @@ def form_dict(lst):
 def lookup_pb(dictlist):
 
     for lst in dictlist:
+        parse_result = {}
+        pred = ''
         for dict in lst:
             if dict.get('Pred') != '_' and dict.get('Pred') != None:
                 pred = dict.get('Pred')
@@ -61,6 +63,16 @@ def lookup_pb(dictlist):
                 parse_result = vn_pb_parser(pred,plemma)
             else:
                 continue
+
+        keylist = list(parse_result.keys())
+
+        for dict in lst:
+            if dict.get('Pred') == pred:
+                dict['vn-pb'] = ';'.join(str(k) for k in keylist)
+            else:
+                dict['vn-pb'] = '-'
+
+
 
 def vn_pb_parser(pred, plemma):
     dict = {}
