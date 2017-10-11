@@ -1,0 +1,22 @@
+ID        	Form      	PLemma    	PPOS      	PHead     	PDeprel   	Pred      	Args      	
+
+1         	Mary      	_         	NNP       	2         	SBJ       	_         	A1        	
+2         	went      	go        	VBD       	0         	ROOT      	go.01     	_         	
+3         	to        	_         	TO        	2         	DIR       	_         	A4        	
+4         	the       	_         	DT        	5         	NMOD      	_         	_         	
+5         	bathroom  	bathroom  	NN        	3         	PMOD      	_         	_         	
+6         	.         	_         	.         	2         	P         	_         	_         	
+
+1         	Jhon      	_         	NNP       	2         	SBJ       	_         	A1        	
+2         	moved     	move      	VBD       	0         	ROOT      	move.01   	_         	
+3         	to        	_         	TO        	2         	DIR       	_         	A2        	
+4         	the       	_         	DT        	5         	NMOD      	_         	_         	
+5         	hallway   	hallway   	NN        	3         	PMOD      	_         	_         	
+6         	.         	_         	.         	2         	P         	_         	_         	
+
+1         	Mary      	_         	NNP       	2         	SBJ       	_         	A0        	
+2         	travelled 	travel    	VBD       	0         	ROOT      	travel.01 	_         	
+3         	to        	_         	TO        	2         	ADV       	_         	A1        	
+4         	the       	_         	DT        	5         	NMOD      	_         	_         	
+5         	office    	office    	NN        	3         	PMOD      	_         	_         	
+6         	.         	_         	.         	2         	P         	_         	_         	

@@ -1,6 +1,8 @@
 import xml.etree.ElementTree as ET
 
+
 pb_tree = ET.parse('semLink/vn-pb/vnpbMappings')
+data_dictlist = []
 
 def read_data(lth_output):
     data_lst =[]
@@ -13,10 +15,13 @@ def read_data(lth_output):
 
     form_dict(data_lst)
 
+    return data_dictlist
 
 def form_dict(lst):
 
-    data_dictlist = []
+    if len(data_dictlist) > 0:
+        del data_dictlist[:]
+
     sub_dictlist = []
     count = 0
     for item in lst:
@@ -32,31 +37,18 @@ def form_dict(lst):
         dict['Pred'] = item[10]
         dict['Args'] = item[11].split('\n')[0]
 
-        # print(item[0])
-
         if(int(item[0]) > count):
             sub_dictlist.append(dict)
-            # print(dict)
             count += 1
         else:
             count = 0
             data_dictlist.append(sub_dictlist)
-            # del sub_dictlist[:]
             sub_dictlist = []
             sub_dictlist.append(dict)
 
-        # data_dictlist.append(dict)
 
     data_dictlist.append(sub_dictlist)
     lookup_pb(data_dictlist)
-
-
-    for lst in data_dictlist:
-        print (lst)
-        # for dic in lst:
-            # for item in dic.items():
-            #     print (item)
-
 
 
 def lookup_pb(dictlist):
@@ -85,7 +77,15 @@ def vn_pb_parser(pred, plemma):
                         lst.append(sub_dict)
                     dict[argmap.attrib.get('vn-class')] = lst
 
-    # for item in dict.items():
-    #     print (item)
     return dict
 
+def print_table(master_list):
+    dict_keys = master_list[0][0].keys()
+    for key in dict_keys:
+        print("{:10s}\t".format(key), end="")
+    for lst in master_list:
+        print('')
+        for sub_dict in lst:
+            print('')
+            for key in dict_keys:
+                print("{:10s}\t".format(sub_dict.get(key)), end="")

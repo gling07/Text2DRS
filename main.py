@@ -5,6 +5,7 @@ import argparse
 import verbNetSRL
 
 output_file = ''
+target_file_name = ''
 
 def process_lth(file):
 
@@ -25,6 +26,7 @@ def process_lth(file):
     cp ='jars/lthsrl.jar:jars/utilities.jar:jars/trove.jar:jars/seqlabeler.jar'
 
 
+    global target_file_name
     target_file_name = file.split('/')[-1].split('.')[0]
     target_file = '<' + file + '>'
     output_tokens = text2DRS + '/lthOutputs/' + target_file_name +'.tokens'
@@ -78,7 +80,14 @@ def main():
         print ("Unexpected error:", sys.exc_info()[0])
         raise
 
-    verbNetSRL.read_data(lth_output)
+    data_dictlist = verbNetSRL.read_data(lth_output)
+
+    orig_stdout = sys.stdout
+    f = open('text2drsOutputs/' + target_file_name + '.txt','w')
+    sys.stdout = f
+    verbNetSRL.print_table(data_dictlist)
+    sys.stdout = orig_stdout
+    f.close()
 
 
 
