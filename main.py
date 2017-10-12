@@ -39,7 +39,7 @@ def process_lth(file):
     cmd = 'java -Xmx{0} -cp {1} se.lth.cs.nlp.depsrl.Preprocessor -allLTH {2} {3} {4} {5}'.format(mem,cp,model,dct,target_file,output_tokens)
 
     # call and run lth's token processor
-    # subprocess.call(cmd,shell=True)
+    subprocess.call(cmd,shell=True)
 
     # below is setting up system variables of lth tool in fully function mode
     synmodel = 'models/train_at_pp_more2nd.model'
@@ -59,7 +59,7 @@ def process_lth(file):
            'false false ' \
            '{10} {11} {12}'.format(MEM,CP,LM,GM_CD,GM_CL,synmodel,NSYN,NSEM,SYNW,GMW,FORCE_VARGS,input_tokens,output_file)
 
-    # subprocess.call(cmd2,shell=True)
+    subprocess.call(cmd2,shell=True)
 
     # switch back to text2drs dictionary
     os.chdir(text2DRS)
