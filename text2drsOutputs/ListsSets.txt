@@ -1,10 +1,10 @@
 ID        	Form      	PLemma    	PPOS      	PHead     	PDeprel   	Pred      	Args      	vn-pb     	
 
-1         	Daniel    	_         	NNP       	2         	SBJ       	_         	A0        	
+1         	Daniel    	_         	NNP       	2         	SBJ       	_         	A0        	_    
 2         	picks     	pick      	VBZ       	0         	ROOT      	pick.04   	_         	
 3         	up        	_         	RP        	2         	PRT       	_         	_         	_    
 4         	the       	_         	DT        	5         	NMOD      	_         	_         	_    
-5         	football  	football  	NN        	2         	OBJ       	_         	A1        	
+5         	football  	football  	NN        	2         	OBJ       	_         	A1        	_    
 6         	.         	_         	.         	2         	P         	_         	_         	_    
 
 1         	Daniel    	_         	NNP       	2         	SBJ       	_         	A0        	10.10:Agent;
@@ -13,11 +13,11 @@ ID        	Form      	PLemma    	PPOS      	PHead     	PDeprel   	Pred      	Arg
 4         	newspaper 	newspaper 	NN        	2         	OBJ       	_         	A1        	10.10:Theme;
 5         	.         	_         	.         	2         	P         	_         	_         	_    
 
-1         	Daniel    	_         	NNP       	2         	SBJ       	_         	A0        	
+1         	Daniel    	_         	NNP       	2         	SBJ       	_         	A0        	_    
 2         	picks     	pick      	VBZ       	0         	ROOT      	pick.04   	_         	
 3         	up        	_         	RP        	2         	PRT       	_         	_         	_    
 4         	the       	_         	DT        	5         	NMOD      	_         	_         	_    
-5         	milk      	milk      	NN        	2         	OBJ       	_         	A1        	
+5         	milk      	milk      	NN        	2         	OBJ       	_         	A1        	_    
 6         	.         	_         	.         	2         	P         	_         	_         	_    
 
 1         	Jhon      	_         	NNP       	2         	SBJ       	_         	A0        	10.5:Agent;11.3:Instrument;

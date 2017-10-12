@@ -1,31 +1,43 @@
 import xml.etree.ElementTree as ET
 
-
+# parse vb-pb mapping file into a element tree
 pb_tree = ET.parse('semLink/vn-pb/vnpbMappings')
 m_dct_lst = []
 
+
+# process lth outputs into a list of dictionary
+# each sentence in the original input file is a dictionary
 def read_data(lth_output):
     data_lst =[]
     for line in lth_output:
-        subline = line.split('\t')
-        if(len(subline) < 2):
+        sub_line = line.split('\t')
+        # ingore empty line in the lth output
+        if len(sub_line) < 2:
             continue
         else:
-            data_lst.append(subline)
+            data_lst.append(sub_line)
 
     form_dct(data_lst)
 
     return m_dct_lst
 
+
+# A method to form each sentence's data into a dictionary
 def form_dct(lst):
 
+    # make sure master dictionary list is empty
+    # if not, clean it's memory data
     if len(m_dct_lst) > 0:
         del m_dct_lst[:]
 
     sub_dct_lst = []
     count = 0
+    # lst is a list of lists
     for item in lst:
-        if(len(item) < 12):
+        # check whether the length of current list
+        # in case, sometime lth output list length is 11
+        # add missing data in index 10 (Pred)
+        if len(item) < 12:
             item.insert(10,'_')
         tmp = {}
         tmp.fromkeys(['ID', 'Form', 'PLemma', 'PPOS', 'PHead', 'PDeprel', 'Pred', 'Args','vn-pb'], None)
@@ -39,6 +51,7 @@ def form_dct(lst):
         tmp['Pred'] = item[10]
         tmp['Args'] = item[11].split('\n')[0]
 
+        # process to separate each sentence's data
         if int(item[0]) > count:
             sub_dct_lst.append(tmp)
             count += 1
@@ -48,18 +61,19 @@ def form_dct(lst):
             sub_dct_lst = []
             sub_dct_lst.append(tmp)
 
-
     m_dct_lst.append(sub_dct_lst)
-    lookup_pb(m_dct_lst)
+
+    deep_process(m_dct_lst)
 
 
-def lookup_pb(dct_lst):
+# A method to process a list of dictionary and add vn-pb's values
+def deep_process(dct_lst):
 
     for lst in dct_lst:
         parse_result = {}
         pred = ''
         for sub_dct in lst:
-            if sub_dct.get('Pred') != '_' and sub_dct.get('Pred') != None:
+            if sub_dct.get('Pred') != '_' and sub_dct.get('Pred') is not None:
                 pred = sub_dct.get('Pred')
                 plemma = sub_dct.get('PLemma')
                 parse_result = vn_pb_parser(pred,plemma)
@@ -74,9 +88,9 @@ def lookup_pb(dct_lst):
             for s in sub_lst:
                 pb_arg_num.append(list(s.keys()))
 
-        num = [n for sublst in pb_arg_num for n in sublst]
+        num = [n for sub_lst in pb_arg_num for n in sub_lst]
 
-
+        # process to analysis vn-pb data and add to sentence's dictionary
         for d in lst:
             if d.get('Pred') == pred:
                 tmp2 = []
@@ -91,22 +105,27 @@ def lookup_pb(dct_lst):
                         k_lst = p.keys()
 
                         for x in k_lst:
-                            if x == d.get('Args')[1] and d.get('Args')[1] in num:
+                            if x == d.get('Args')[1:] and d.get('Args')[1:] in num:
                                 tmp3.append({key: p.get(x)})
-                            elif d.get('Args')[1] in num:
+                            elif d.get('Args')[1:] in num:
                                 continue
                             elif not pb_args_checker(x, lst):
                                 tmp3.append({'_':'_' })
+                if len(tmp3) == 0:
+                    tmp3.append({'_': '_'})
                 d['vn-pb'] = tmp3
             else:
                 d['vn-pb'] = [{'_':'_'}]
 
+
+# A method to check and tagging Args data
+# If the Args's number is in the pb-roleset number list, return True, else return False
 def pb_args_checker(num, sentence_lst):
 
     num_lst = []
     for sub_dct in sentence_lst:
         if sub_dct.get('Args') != '_':
-            num_lst.append(sub_dct.get('Args')[1])
+            num_lst.append(sub_dct.get('Args')[1:])
 
     if num in num_lst:
         return True
@@ -114,7 +133,9 @@ def pb_args_checker(num, sentence_lst):
         return False
 
 
-
+# A method to retrieve vn class data and args role data from vn-pb element tree
+# using pred and plemma to located pb parent node in the tree,
+# retrieve vn-class data and pb-roleset data from parent node to children node
 def vn_pb_parser(pred, plemma):
     dct = {}
     root = pb_tree.getroot()
@@ -132,6 +153,8 @@ def vn_pb_parser(pred, plemma):
 
     return dct
 
+
+# A method to pretty print the output of verbNetSRL
 def print_table(m_lst):
     dct_keys = m_lst[0][0].keys()
     for key in dct_keys:

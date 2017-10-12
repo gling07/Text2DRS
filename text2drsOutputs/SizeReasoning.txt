@@ -3,7 +3,7 @@ ID        	Form      	PLemma    	PPOS      	PHead     	PDeprel   	Pred      	Arg
 1         	The       	_         	DT        	2         	NMOD      	_         	_         	_    
 2         	football  	football  	NN        	3         	SBJ       	_         	A1        	26.9:Patient;9.3-1:Theme;54.3:Value;
 3         	fits      	fit       	VBZ       	0         	ROOT      	fit.01    	_         	26.9;9.3-1;54.3;
-4         	in        	_         	IN        	3         	LOC       	_         	AM-LOC    	26.9:?;9.3-1:?;54.3:?;
+4         	in        	_         	IN        	3         	LOC       	_         	AM-LOC    	_    _    _    
 5         	the       	_         	DT        	6         	NMOD      	_         	_         	_    
 6         	suitcase  	suitcase  	NN        	4         	PMOD      	_         	_         	_    
 7         	.         	_         	.         	3         	P         	_         	_         	_    
@@ -11,7 +11,7 @@ ID        	Form      	PLemma    	PPOS      	PHead     	PDeprel   	Pred      	Arg
 1         	The       	_         	DT        	2         	NMOD      	_         	_         	_    
 2         	suitcase  	suitcase  	NN        	3         	SBJ       	_         	A1        	26.9:Patient;9.3-1:Theme;54.3:Value;
 3         	fits      	fit       	VBZ       	0         	ROOT      	fit.01    	_         	26.9;9.3-1;54.3;
-4         	in        	_         	IN        	3         	LOC       	_         	AM-LOC    	26.9:?;9.3-1:?;54.3:?;
+4         	in        	_         	IN        	3         	LOC       	_         	AM-LOC    	_    _    _    
 5         	the       	_         	DT        	6         	NMOD      	_         	_         	_    
 6         	cupboard  	cupboard  	NN        	4         	PMOD      	_         	_         	_    
 7         	.         	_         	.         	3         	P         	_         	_         	_    

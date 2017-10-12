@@ -1,22 +1,22 @@
 ID        	Form      	PLemma    	PPOS      	PHead     	PDeprel   	Pred      	Args      	vn-pb     	
 
-1         	Jhon      	_         	NNP       	2         	SBJ       	_         	A0        	
+1         	Jhon      	_         	NNP       	2         	SBJ       	_         	A0        	_    
 2         	picked    	pick      	VBD       	0         	ROOT      	pick.04   	_         	
 3         	up        	_         	RP        	2         	PRT       	_         	_         	_    
 4         	the       	_         	DT        	5         	NMOD      	_         	_         	_    
-5         	apple     	apple     	NN        	2         	OBJ       	_         	A1        	
+5         	apple     	apple     	NN        	2         	OBJ       	_         	A1        	_    
 6         	.         	_         	.         	2         	P         	_         	_         	_    
 
 1         	Jhon      	_         	NNP       	2         	SBJ       	_         	A1        	47.7:Theme;51.1:Theme;
 2         	went      	go        	VBD       	0         	ROOT      	go.01     	_         	47.7;51.1;
-3         	to        	_         	TO        	2         	DIR       	_         	A4        	51.1:?;
+3         	to        	_         	TO        	2         	DIR       	_         	A4        	_    
 4         	the       	_         	DT        	5         	NMOD      	_         	_         	_    
 5         	office    	office    	NN        	3         	PMOD      	_         	_         	_    
 6         	.         	_         	.         	2         	P         	_         	_         	_    
 
 1         	Jhon      	_         	NNP       	2         	SBJ       	_         	A1        	47.7:Theme;51.1:Theme;
 2         	went      	go        	VBD       	0         	ROOT      	go.01     	_         	47.7;51.1;
-3         	to        	_         	TO        	2         	DIR       	_         	A4        	51.1:?;
+3         	to        	_         	TO        	2         	DIR       	_         	A4        	_    
 4         	the       	_         	DT        	5         	NMOD      	_         	_         	_    
 5         	kitchen   	kitchen   	NN        	3         	PMOD      	_         	_         	_    
 6         	.         	_         	.         	2         	P         	_         	_         	_    
