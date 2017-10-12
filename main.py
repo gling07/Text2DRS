@@ -5,9 +5,9 @@ import argparse
 import verbNetSRL
 
 # lth output file
-output_file = ''
+output_file = None
 # input file name
-target_file_name = ''
+target_file_name = None
 
 
 # The method to call and run lth tool with a input file
