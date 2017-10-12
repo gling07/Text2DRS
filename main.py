@@ -75,6 +75,7 @@ def main():
     # read lth output file and store in lth_output
     lth_output = None
     try:
+        global output_file
         lth_output = open(output_file,'r')
     except IOError as e:
         print('I/O error({0}): {1}'.format(e.errno, e.strerror))
@@ -87,6 +88,7 @@ def main():
 
     # write verbNetSRL's outputs to a file
     orig_stdout = sys.stdout
+    global target_file_name
     f = open('text2drsOutputs/' + target_file_name + '.txt','w')
     sys.stdout = f
     verbNetSRL.print_table(data_dct_lst)
