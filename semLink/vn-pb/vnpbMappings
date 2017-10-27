@@ -19050,6 +19050,12 @@
 			<role pb-arg="2" vn-theta="Source" />
 			<role pb-arg="3" vn-theta="Beneficiary" />
 		</argmap>
+		<argmap pb-roleset="pick.04" vn-class="13.5.1">
+			<role pb-arg="0" vn-theta="Agent" />
+			<role pb-arg="1" vn-theta="Theme" />
+			<role pb-arg="2" vn-theta="Source" />
+			<role pb-arg="3" vn-theta="Beneficiary" />
+		</argmap>
 		<argmap pb-roleset="pick.10" vn-class="39.2-1">
 			<role pb-arg="0" vn-theta="Agent" />
 			<role pb-arg="1" vn-theta="Patient" />
