@@ -1,9 +1,10 @@
 import xml.etree.ElementTree as ET
+# from nltk.corpus import propbank
 
 # parse vb-pb mapping file into a element tree
 pb_tree = ET.parse('semLink/vn-pb/vnpbMappings')
 m_dct_lst = []
-
+# pb_verbs = propbank.verbs()
 
 # process lth outputs into a list of dictionary
 # each sentence in the original input file is a dictionary
@@ -73,14 +74,17 @@ def deep_process(dct_lst):
         parse_result = {}
         pred = ''
         for sub_dct in lst:
-            if sub_dct.get('Pred') != '_' and sub_dct.get('Pred') is not None:
+            # pred = sub_dct.get('Pred')
+            plemma = sub_dct.get('PLemma')
+            if sub_dct.get('Pred') != '_' and sub_dct.get('Pred') is not None \
+                    and sub_dct.get('PDeprel') == 'ROOT':
                 pred = sub_dct.get('Pred')
-                plemma = sub_dct.get('PLemma')
                 parse_result = vn_pb_parser(pred,plemma)
             else:
                 continue
 
         key_lst = list(parse_result.keys())
+        # print(parse_result)
 
         pb_arg_num = []
         for k in key_lst:

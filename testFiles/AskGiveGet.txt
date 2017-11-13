@@ -1,0 +1,3 @@
+Mary asks Daniel for an apple.
+Daniel gives his apple to Mary.
+Mary gets an apple from Daniel.
