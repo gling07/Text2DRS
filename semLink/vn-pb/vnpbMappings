@@ -12536,6 +12536,8 @@
 		<argmap pb-roleset="go.01" vn-class="51.1">
 			<role pb-arg="0" vn-theta="Theme" />
 			<role pb-arg="1" vn-theta="Theme" />
+			<role pb-arg="3" vn-theta="Initial_Location" />
+			<role pb-arg="4" vn-theta="Destination" />
 		</argmap>
 		<argmap pb-roleset="go.02" vn-class="51.1">
 		</argmap>
