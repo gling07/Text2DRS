@@ -6,6 +6,8 @@ pb_tree = ET.parse('semLink/vn-pb/vnpbMappings')
 m_dct_lst = []
 # pb_verbs = propbank.verbs()
 
+strong_hold_verbClass = {}
+
 # process lth outputs into a list of dictionary
 # each sentence in the original input file is a dictionary
 def read_data(lth_output):
