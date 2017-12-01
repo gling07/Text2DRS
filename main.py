@@ -2,8 +2,8 @@ import os
 import sys
 import subprocess
 import argparse
-import verbNetSRL
-import coreNLP
+import verbnetsrl
+import corenlp
 
 # lth output file
 output_file = None
@@ -116,14 +116,14 @@ def main():
         raise
 
     # pass lth_output to verbNetSRL for further data process
-    data_dct_lst = verbNetSRL.read_data(lth_output)
+    data_dct_lst = verbnetsrl.read_data(lth_output)
 
     # write verbNetSRL's outputs to a file
     orig_stdout = sys.stdout
     global target_file_name
     f = open('text2drsOutputs/' + target_file_name + '.txt','w')
     sys.stdout = f
-    verbNetSRL.print_table(data_dct_lst)
+    verbnetsrl.print_table(data_dct_lst)
     sys.stdout = orig_stdout
     f.close()
 
