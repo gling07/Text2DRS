@@ -82,9 +82,11 @@ def start_corenlp():
     os.chdir(text2_drs_path)
 
 
+# process input file by running corenlp through command line
+# output file format can be choose from text, xml, json
 def process_corenlp(file):
     text2_drs_path = os.getcwd()
-    corenlp_path = text2_drs_path + '/stanford-corenlp-full'
+    corenlp_path = text2_drs_path + '/stanford-corenlp-full/'
     os.chdir(corenlp_path)
     output_path = text2_drs_path + '/corenlp_Outputs/'
     output_format = 'xml'
