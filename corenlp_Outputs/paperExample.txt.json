@@ -1,0 +1,478 @@
+{
+  "sentences": [
+    {
+      "index": 0,
+      "parse": "(ROOT\n  (S\n    (NP (NNP Ann))\n    (VP (VBD went)\n      (PP (TO to)\n        (NP (DT the) (NN room))))\n    (. .)))",
+      "basicDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "went"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 1,
+          "dependentGloss": "Ann"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "room",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "room",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 5,
+          "dependentGloss": "room"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "enhancedDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "went"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 1,
+          "dependentGloss": "Ann"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "room",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "room",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod:to",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 5,
+          "dependentGloss": "room"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "enhancedPlusPlusDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "went"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 1,
+          "dependentGloss": "Ann"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "room",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "room",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod:to",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 5,
+          "dependentGloss": "room"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Ann",
+          "originalText": "Ann",
+          "lemma": "Ann",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 3,
+          "pos": "NNP",
+          "ner": "PERSON",
+          "speaker": "PER0",
+          "before": "",
+          "after": " "
+        },
+        {
+          "index": 2,
+          "word": "went",
+          "originalText": "went",
+          "lemma": "go",
+          "characterOffsetBegin": 4,
+          "characterOffsetEnd": 8,
+          "pos": "VBD",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 3,
+          "word": "to",
+          "originalText": "to",
+          "lemma": "to",
+          "characterOffsetBegin": 9,
+          "characterOffsetEnd": 11,
+          "pos": "TO",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 4,
+          "word": "the",
+          "originalText": "the",
+          "lemma": "the",
+          "characterOffsetBegin": 12,
+          "characterOffsetEnd": 15,
+          "pos": "DT",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 5,
+          "word": "room",
+          "originalText": "room",
+          "lemma": "room",
+          "characterOffsetBegin": 16,
+          "characterOffsetEnd": 20,
+          "pos": "NN",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": ""
+        },
+        {
+          "index": 6,
+          "word": ".",
+          "originalText": ".",
+          "lemma": ".",
+          "characterOffsetBegin": 20,
+          "characterOffsetEnd": 21,
+          "pos": ".",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": "",
+          "after": "\n"
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "parse": "(ROOT\n  (S\n    (NP (NNP Michael))\n    (VP (VBD left)\n      (NP (DT the) (NN room)))\n    (. .)))",
+      "basicDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "left"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "left",
+          "dependent": 1,
+          "dependentGloss": "Michael"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "room",
+          "dependent": 3,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "left",
+          "dependent": 4,
+          "dependentGloss": "room"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "left",
+          "dependent": 5,
+          "dependentGloss": "."
+        }
+      ],
+      "enhancedDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "left"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "left",
+          "dependent": 1,
+          "dependentGloss": "Michael"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "room",
+          "dependent": 3,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "left",
+          "dependent": 4,
+          "dependentGloss": "room"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "left",
+          "dependent": 5,
+          "dependentGloss": "."
+        }
+      ],
+      "enhancedPlusPlusDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "left"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "left",
+          "dependent": 1,
+          "dependentGloss": "Michael"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "room",
+          "dependent": 3,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "left",
+          "dependent": 4,
+          "dependentGloss": "room"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "left",
+          "dependent": 5,
+          "dependentGloss": "."
+        }
+      ],
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Michael",
+          "originalText": "Michael",
+          "lemma": "Michael",
+          "characterOffsetBegin": 22,
+          "characterOffsetEnd": 29,
+          "pos": "NNP",
+          "ner": "PERSON",
+          "speaker": "PER0",
+          "before": "\n",
+          "after": " "
+        },
+        {
+          "index": 2,
+          "word": "left",
+          "originalText": "left",
+          "lemma": "leave",
+          "characterOffsetBegin": 30,
+          "characterOffsetEnd": 34,
+          "pos": "VBD",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 3,
+          "word": "the",
+          "originalText": "the",
+          "lemma": "the",
+          "characterOffsetBegin": 35,
+          "characterOffsetEnd": 38,
+          "pos": "DT",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 4,
+          "word": "room",
+          "originalText": "room",
+          "lemma": "room",
+          "characterOffsetBegin": 39,
+          "characterOffsetEnd": 43,
+          "pos": "NN",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": ""
+        },
+        {
+          "index": 5,
+          "word": ".",
+          "originalText": ".",
+          "lemma": ".",
+          "characterOffsetBegin": 43,
+          "characterOffsetEnd": 44,
+          "pos": ".",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": "",
+          "after": "\n"
+        }
+      ]
+    }
+  ],
+  "corefs": {
+    "1": [
+      {
+        "id": 1,
+        "text": "Ann",
+        "type": "PROPER",
+        "number": "SINGULAR",
+        "gender": "FEMALE",
+        "animacy": "ANIMATE",
+        "startIndex": 1,
+        "endIndex": 2,
+        "headIndex": 1,
+        "sentNum": 1,
+        "position": [
+          1,
+          1
+        ],
+        "isRepresentativeMention": true
+      }
+    ],
+    "2": [
+      {
+        "id": 2,
+        "text": "the room",
+        "type": "NOMINAL",
+        "number": "SINGULAR",
+        "gender": "NEUTRAL",
+        "animacy": "INANIMATE",
+        "startIndex": 4,
+        "endIndex": 6,
+        "headIndex": 5,
+        "sentNum": 1,
+        "position": [
+          1,
+          2
+        ],
+        "isRepresentativeMention": true
+      },
+      {
+        "id": 4,
+        "text": "the room",
+        "type": "NOMINAL",
+        "number": "SINGULAR",
+        "gender": "NEUTRAL",
+        "animacy": "INANIMATE",
+        "startIndex": 3,
+        "endIndex": 5,
+        "headIndex": 4,
+        "sentNum": 2,
+        "position": [
+          2,
+          2
+        ],
+        "isRepresentativeMention": false
+      }
+    ],
+    "3": [
+      {
+        "id": 3,
+        "text": "Michael",
+        "type": "PROPER",
+        "number": "SINGULAR",
+        "gender": "MALE",
+        "animacy": "ANIMATE",
+        "startIndex": 1,
+        "endIndex": 2,
+        "headIndex": 1,
+        "sentNum": 2,
+        "position": [
+          2,
+          1
+        ],
+        "isRepresentativeMention": true
+      }
+    ]
+  }
+}

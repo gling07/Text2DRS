@@ -3,6 +3,7 @@ import sys
 import subprocess
 import argparse
 import verbNetSRL
+import coreNLP
 
 # lth output file
 output_file = None
@@ -62,7 +63,7 @@ def process_lth(file):
            '{10} {11} {12}'.format(MEM,CP,LM,GM_CD,GM_CL,synmodel,NSYN,
                                    NSEM,SYNW,GMW,FORCE_VARGS,input_tokens,output_file)
 
-    subprocess.call(cmd2,shell=True)
+    # subprocess.call(cmd2,shell=True)
 
     # switch back to text2drs dictionary
     os.chdir(text2_drs_path)
@@ -77,15 +78,29 @@ def start_corenlp():
     timeout = 15000
     cmd3 = 'java -mx4g -cp "*"' \
            'edu.standford.nlp.pipeline.StanfordCoreNLPServer -port {0} -timeout {1}'.format(port_num, timeout)
-    subprocess.call(cmd3, shell=True)
+    # subprocess.call(cmd3, shell=True)
     os.chdir(text2_drs_path)
 
-def main():
 
+def process_corenlp(file):
+    text2_drs_path = os.getcwd()
+    corenlp_path = text2_drs_path + '/stanford-corenlp-full'
+    os.chdir(corenlp_path)
+    output_path = text2_drs_path + '/corenlp_Outputs/'
+    output_format = 'xml'
+    cmd4 = 'java -cp "*" -Xmx2g edu.stanford.nlp.pipeline.StanfordCoreNLP ' \
+           '-annotators tokenize,ssplit,pos,lemma,ner,parse,dcoref ' \
+           '-file {0} -outputDirectory {1} -outputFormat {2}'.format(file, output_path, output_format)
+    subprocess.call(cmd4, shell=True)
+    os.chdir(text2_drs_path)
+
+
+def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("input", help='given full path of input file', type=str)
     args = parser.parse_args()
-    process_lth(args.input)
+    input_file = args.input
+    process_lth(input_file)
 
     # read lth output file and store in lth_output
     lth_output = None
@@ -110,7 +125,7 @@ def main():
     sys.stdout = orig_stdout
     f.close()
 
-    start_corenlp()
+    process_corenlp(input_file)
 
 
 if __name__ == '__main__':

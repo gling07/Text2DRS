@@ -1,0 +1,2592 @@
+{
+  "sentences": [
+    {
+      "index": 0,
+      "parse": "(ROOT\n  (S\n    (NP (NNP John))\n    (VP (VBD travelled)\n      (PP (TO to)\n        (NP (DT the) (NN hallway))))\n    (. .)))",
+      "basicDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "travelled"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "travelled",
+          "dependent": 1,
+          "dependentGloss": "John"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "hallway",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "hallway",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod",
+          "governor": 2,
+          "governorGloss": "travelled",
+          "dependent": 5,
+          "dependentGloss": "hallway"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "travelled",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "enhancedDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "travelled"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "travelled",
+          "dependent": 1,
+          "dependentGloss": "John"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "hallway",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "hallway",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod:to",
+          "governor": 2,
+          "governorGloss": "travelled",
+          "dependent": 5,
+          "dependentGloss": "hallway"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "travelled",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "enhancedPlusPlusDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "travelled"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "travelled",
+          "dependent": 1,
+          "dependentGloss": "John"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "hallway",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "hallway",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod:to",
+          "governor": 2,
+          "governorGloss": "travelled",
+          "dependent": 5,
+          "dependentGloss": "hallway"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "travelled",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "tokens": [
+        {
+          "index": 1,
+          "word": "John",
+          "originalText": "John",
+          "lemma": "John",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 4,
+          "pos": "NNP",
+          "ner": "PERSON",
+          "speaker": "PER0",
+          "before": "",
+          "after": " "
+        },
+        {
+          "index": 2,
+          "word": "travelled",
+          "originalText": "travelled",
+          "lemma": "travel",
+          "characterOffsetBegin": 5,
+          "characterOffsetEnd": 14,
+          "pos": "VBD",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 3,
+          "word": "to",
+          "originalText": "to",
+          "lemma": "to",
+          "characterOffsetBegin": 15,
+          "characterOffsetEnd": 17,
+          "pos": "TO",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 4,
+          "word": "the",
+          "originalText": "the",
+          "lemma": "the",
+          "characterOffsetBegin": 18,
+          "characterOffsetEnd": 21,
+          "pos": "DT",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 5,
+          "word": "hallway",
+          "originalText": "hallway",
+          "lemma": "hallway",
+          "characterOffsetBegin": 22,
+          "characterOffsetEnd": 29,
+          "pos": "NN",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": ""
+        },
+        {
+          "index": 6,
+          "word": ".",
+          "originalText": ".",
+          "lemma": ".",
+          "characterOffsetBegin": 29,
+          "characterOffsetEnd": 30,
+          "pos": ".",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": "",
+          "after": "\n"
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "parse": "(ROOT\n  (S\n    (NP (NNP Mary))\n    (VP (VBD journeyed)\n      (PP (TO to)\n        (NP (DT the) (NN bathroom))))\n    (. .)))",
+      "basicDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "journeyed"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "journeyed",
+          "dependent": 1,
+          "dependentGloss": "Mary"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "bathroom",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "bathroom",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod",
+          "governor": 2,
+          "governorGloss": "journeyed",
+          "dependent": 5,
+          "dependentGloss": "bathroom"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "journeyed",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "enhancedDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "journeyed"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "journeyed",
+          "dependent": 1,
+          "dependentGloss": "Mary"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "bathroom",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "bathroom",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod:to",
+          "governor": 2,
+          "governorGloss": "journeyed",
+          "dependent": 5,
+          "dependentGloss": "bathroom"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "journeyed",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "enhancedPlusPlusDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "journeyed"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "journeyed",
+          "dependent": 1,
+          "dependentGloss": "Mary"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "bathroom",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "bathroom",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod:to",
+          "governor": 2,
+          "governorGloss": "journeyed",
+          "dependent": 5,
+          "dependentGloss": "bathroom"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "journeyed",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Mary",
+          "originalText": "Mary",
+          "lemma": "Mary",
+          "characterOffsetBegin": 31,
+          "characterOffsetEnd": 35,
+          "pos": "NNP",
+          "ner": "PERSON",
+          "speaker": "PER0",
+          "before": "\n",
+          "after": " "
+        },
+        {
+          "index": 2,
+          "word": "journeyed",
+          "originalText": "journeyed",
+          "lemma": "journey",
+          "characterOffsetBegin": 36,
+          "characterOffsetEnd": 45,
+          "pos": "VBD",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 3,
+          "word": "to",
+          "originalText": "to",
+          "lemma": "to",
+          "characterOffsetBegin": 46,
+          "characterOffsetEnd": 48,
+          "pos": "TO",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 4,
+          "word": "the",
+          "originalText": "the",
+          "lemma": "the",
+          "characterOffsetBegin": 49,
+          "characterOffsetEnd": 52,
+          "pos": "DT",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 5,
+          "word": "bathroom",
+          "originalText": "bathroom",
+          "lemma": "bathroom",
+          "characterOffsetBegin": 53,
+          "characterOffsetEnd": 61,
+          "pos": "NN",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": ""
+        },
+        {
+          "index": 6,
+          "word": ".",
+          "originalText": ".",
+          "lemma": ".",
+          "characterOffsetBegin": 61,
+          "characterOffsetEnd": 62,
+          "pos": ".",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": "",
+          "after": "\n"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "parse": "(ROOT\n  (S\n    (NP (NNP Daniel))\n    (VP (VBD went)\n      (ADVP (RB back))\n      (PP (TO to)\n        (NP (DT the) (NN bathroom))))\n    (. .)))",
+      "basicDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "went"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 1,
+          "dependentGloss": "Daniel"
+        },
+        {
+          "dep": "advmod",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 3,
+          "dependentGloss": "back"
+        },
+        {
+          "dep": "case",
+          "governor": 6,
+          "governorGloss": "bathroom",
+          "dependent": 4,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 6,
+          "governorGloss": "bathroom",
+          "dependent": 5,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 6,
+          "dependentGloss": "bathroom"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "enhancedDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "went"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 1,
+          "dependentGloss": "Daniel"
+        },
+        {
+          "dep": "advmod",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 3,
+          "dependentGloss": "back"
+        },
+        {
+          "dep": "case",
+          "governor": 6,
+          "governorGloss": "bathroom",
+          "dependent": 4,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 6,
+          "governorGloss": "bathroom",
+          "dependent": 5,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod:to",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 6,
+          "dependentGloss": "bathroom"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "enhancedPlusPlusDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "went"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 1,
+          "dependentGloss": "Daniel"
+        },
+        {
+          "dep": "advmod",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 3,
+          "dependentGloss": "back"
+        },
+        {
+          "dep": "case",
+          "governor": 6,
+          "governorGloss": "bathroom",
+          "dependent": 4,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 6,
+          "governorGloss": "bathroom",
+          "dependent": 5,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod:to",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 6,
+          "dependentGloss": "bathroom"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Daniel",
+          "originalText": "Daniel",
+          "lemma": "Daniel",
+          "characterOffsetBegin": 63,
+          "characterOffsetEnd": 69,
+          "pos": "NNP",
+          "ner": "PERSON",
+          "speaker": "PER0",
+          "before": "\n",
+          "after": " "
+        },
+        {
+          "index": 2,
+          "word": "went",
+          "originalText": "went",
+          "lemma": "go",
+          "characterOffsetBegin": 70,
+          "characterOffsetEnd": 74,
+          "pos": "VBD",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 3,
+          "word": "back",
+          "originalText": "back",
+          "lemma": "back",
+          "characterOffsetBegin": 75,
+          "characterOffsetEnd": 79,
+          "pos": "RB",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 4,
+          "word": "to",
+          "originalText": "to",
+          "lemma": "to",
+          "characterOffsetBegin": 80,
+          "characterOffsetEnd": 82,
+          "pos": "TO",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 5,
+          "word": "the",
+          "originalText": "the",
+          "lemma": "the",
+          "characterOffsetBegin": 83,
+          "characterOffsetEnd": 86,
+          "pos": "DT",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 6,
+          "word": "bathroom",
+          "originalText": "bathroom",
+          "lemma": "bathroom",
+          "characterOffsetBegin": 87,
+          "characterOffsetEnd": 95,
+          "pos": "NN",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": ""
+        },
+        {
+          "index": 7,
+          "word": ".",
+          "originalText": ".",
+          "lemma": ".",
+          "characterOffsetBegin": 95,
+          "characterOffsetEnd": 96,
+          "pos": ".",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": "",
+          "after": "\n"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "parse": "(ROOT\n  (S\n    (NP (NNP John))\n    (VP (VBD moved)\n      (PP (TO to)\n        (NP (DT the) (NN bedroom))))\n    (. .)))",
+      "basicDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "moved"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "moved",
+          "dependent": 1,
+          "dependentGloss": "John"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "bedroom",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "bedroom",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod",
+          "governor": 2,
+          "governorGloss": "moved",
+          "dependent": 5,
+          "dependentGloss": "bedroom"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "moved",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "enhancedDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "moved"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "moved",
+          "dependent": 1,
+          "dependentGloss": "John"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "bedroom",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "bedroom",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod:to",
+          "governor": 2,
+          "governorGloss": "moved",
+          "dependent": 5,
+          "dependentGloss": "bedroom"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "moved",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "enhancedPlusPlusDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "moved"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "moved",
+          "dependent": 1,
+          "dependentGloss": "John"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "bedroom",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "bedroom",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod:to",
+          "governor": 2,
+          "governorGloss": "moved",
+          "dependent": 5,
+          "dependentGloss": "bedroom"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "moved",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "tokens": [
+        {
+          "index": 1,
+          "word": "John",
+          "originalText": "John",
+          "lemma": "John",
+          "characterOffsetBegin": 97,
+          "characterOffsetEnd": 101,
+          "pos": "NNP",
+          "ner": "PERSON",
+          "speaker": "PER0",
+          "before": "\n",
+          "after": " "
+        },
+        {
+          "index": 2,
+          "word": "moved",
+          "originalText": "moved",
+          "lemma": "move",
+          "characterOffsetBegin": 102,
+          "characterOffsetEnd": 107,
+          "pos": "VBD",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 3,
+          "word": "to",
+          "originalText": "to",
+          "lemma": "to",
+          "characterOffsetBegin": 108,
+          "characterOffsetEnd": 110,
+          "pos": "TO",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 4,
+          "word": "the",
+          "originalText": "the",
+          "lemma": "the",
+          "characterOffsetBegin": 111,
+          "characterOffsetEnd": 114,
+          "pos": "DT",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 5,
+          "word": "bedroom",
+          "originalText": "bedroom",
+          "lemma": "bedroom",
+          "characterOffsetBegin": 115,
+          "characterOffsetEnd": 122,
+          "pos": "NN",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": ""
+        },
+        {
+          "index": 6,
+          "word": ".",
+          "originalText": ".",
+          "lemma": ".",
+          "characterOffsetBegin": 122,
+          "characterOffsetEnd": 123,
+          "pos": ".",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": "",
+          "after": "\n"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "parse": "(ROOT\n  (S\n    (NP (NNP John))\n    (VP (VBD went)\n      (PP (TO to)\n        (NP (DT the) (NN hallway))))\n    (. .)))",
+      "basicDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "went"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 1,
+          "dependentGloss": "John"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "hallway",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "hallway",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 5,
+          "dependentGloss": "hallway"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "enhancedDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "went"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 1,
+          "dependentGloss": "John"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "hallway",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "hallway",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod:to",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 5,
+          "dependentGloss": "hallway"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "enhancedPlusPlusDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "went"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 1,
+          "dependentGloss": "John"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "hallway",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "hallway",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod:to",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 5,
+          "dependentGloss": "hallway"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "tokens": [
+        {
+          "index": 1,
+          "word": "John",
+          "originalText": "John",
+          "lemma": "John",
+          "characterOffsetBegin": 124,
+          "characterOffsetEnd": 128,
+          "pos": "NNP",
+          "ner": "PERSON",
+          "speaker": "PER0",
+          "before": "\n",
+          "after": " "
+        },
+        {
+          "index": 2,
+          "word": "went",
+          "originalText": "went",
+          "lemma": "go",
+          "characterOffsetBegin": 129,
+          "characterOffsetEnd": 133,
+          "pos": "VBD",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 3,
+          "word": "to",
+          "originalText": "to",
+          "lemma": "to",
+          "characterOffsetBegin": 134,
+          "characterOffsetEnd": 136,
+          "pos": "TO",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 4,
+          "word": "the",
+          "originalText": "the",
+          "lemma": "the",
+          "characterOffsetBegin": 137,
+          "characterOffsetEnd": 140,
+          "pos": "DT",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 5,
+          "word": "hallway",
+          "originalText": "hallway",
+          "lemma": "hallway",
+          "characterOffsetBegin": 141,
+          "characterOffsetEnd": 148,
+          "pos": "NN",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": ""
+        },
+        {
+          "index": 6,
+          "word": ".",
+          "originalText": ".",
+          "lemma": ".",
+          "characterOffsetBegin": 148,
+          "characterOffsetEnd": 149,
+          "pos": ".",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": "",
+          "after": "\n"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "parse": "(ROOT\n  (S\n    (NP (NNP Sandra))\n    (VP (VBD journeyed)\n      (PP (TO to)\n        (NP (DT the) (NN kitchen))))\n    (. .)))",
+      "basicDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "journeyed"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "journeyed",
+          "dependent": 1,
+          "dependentGloss": "Sandra"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "kitchen",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "kitchen",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod",
+          "governor": 2,
+          "governorGloss": "journeyed",
+          "dependent": 5,
+          "dependentGloss": "kitchen"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "journeyed",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "enhancedDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "journeyed"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "journeyed",
+          "dependent": 1,
+          "dependentGloss": "Sandra"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "kitchen",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "kitchen",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod:to",
+          "governor": 2,
+          "governorGloss": "journeyed",
+          "dependent": 5,
+          "dependentGloss": "kitchen"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "journeyed",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "enhancedPlusPlusDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "journeyed"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "journeyed",
+          "dependent": 1,
+          "dependentGloss": "Sandra"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "kitchen",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "kitchen",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod:to",
+          "governor": 2,
+          "governorGloss": "journeyed",
+          "dependent": 5,
+          "dependentGloss": "kitchen"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "journeyed",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Sandra",
+          "originalText": "Sandra",
+          "lemma": "Sandra",
+          "characterOffsetBegin": 150,
+          "characterOffsetEnd": 156,
+          "pos": "NNP",
+          "ner": "PERSON",
+          "speaker": "PER0",
+          "before": "\n",
+          "after": " "
+        },
+        {
+          "index": 2,
+          "word": "journeyed",
+          "originalText": "journeyed",
+          "lemma": "journey",
+          "characterOffsetBegin": 157,
+          "characterOffsetEnd": 166,
+          "pos": "VBD",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 3,
+          "word": "to",
+          "originalText": "to",
+          "lemma": "to",
+          "characterOffsetBegin": 167,
+          "characterOffsetEnd": 169,
+          "pos": "TO",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 4,
+          "word": "the",
+          "originalText": "the",
+          "lemma": "the",
+          "characterOffsetBegin": 170,
+          "characterOffsetEnd": 173,
+          "pos": "DT",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 5,
+          "word": "kitchen",
+          "originalText": "kitchen",
+          "lemma": "kitchen",
+          "characterOffsetBegin": 174,
+          "characterOffsetEnd": 181,
+          "pos": "NN",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": ""
+        },
+        {
+          "index": 6,
+          "word": ".",
+          "originalText": ".",
+          "lemma": ".",
+          "characterOffsetBegin": 181,
+          "characterOffsetEnd": 182,
+          "pos": ".",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": "",
+          "after": "\n"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "parse": "(ROOT\n  (S\n    (NP (NNP Sandra))\n    (VP (VBD travelled)\n      (PP (TO to)\n        (NP (DT the) (NN hallway))))\n    (. .)))",
+      "basicDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "travelled"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "travelled",
+          "dependent": 1,
+          "dependentGloss": "Sandra"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "hallway",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "hallway",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod",
+          "governor": 2,
+          "governorGloss": "travelled",
+          "dependent": 5,
+          "dependentGloss": "hallway"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "travelled",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "enhancedDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "travelled"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "travelled",
+          "dependent": 1,
+          "dependentGloss": "Sandra"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "hallway",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "hallway",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod:to",
+          "governor": 2,
+          "governorGloss": "travelled",
+          "dependent": 5,
+          "dependentGloss": "hallway"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "travelled",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "enhancedPlusPlusDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "travelled"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "travelled",
+          "dependent": 1,
+          "dependentGloss": "Sandra"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "hallway",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "hallway",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod:to",
+          "governor": 2,
+          "governorGloss": "travelled",
+          "dependent": 5,
+          "dependentGloss": "hallway"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "travelled",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Sandra",
+          "originalText": "Sandra",
+          "lemma": "Sandra",
+          "characterOffsetBegin": 183,
+          "characterOffsetEnd": 189,
+          "pos": "NNP",
+          "ner": "PERSON",
+          "speaker": "PER0",
+          "before": "\n",
+          "after": " "
+        },
+        {
+          "index": 2,
+          "word": "travelled",
+          "originalText": "travelled",
+          "lemma": "travel",
+          "characterOffsetBegin": 190,
+          "characterOffsetEnd": 199,
+          "pos": "VBD",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 3,
+          "word": "to",
+          "originalText": "to",
+          "lemma": "to",
+          "characterOffsetBegin": 200,
+          "characterOffsetEnd": 202,
+          "pos": "TO",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 4,
+          "word": "the",
+          "originalText": "the",
+          "lemma": "the",
+          "characterOffsetBegin": 203,
+          "characterOffsetEnd": 206,
+          "pos": "DT",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 5,
+          "word": "hallway",
+          "originalText": "hallway",
+          "lemma": "hallway",
+          "characterOffsetBegin": 207,
+          "characterOffsetEnd": 214,
+          "pos": "NN",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": ""
+        },
+        {
+          "index": 6,
+          "word": ".",
+          "originalText": ".",
+          "lemma": ".",
+          "characterOffsetBegin": 214,
+          "characterOffsetEnd": 215,
+          "pos": ".",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": "",
+          "after": "\n"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "parse": "(ROOT\n  (S\n    (NP (NNP John))\n    (VP (VBD went)\n      (PP (TO to)\n        (NP (DT the) (NN garden))))\n    (. .)))",
+      "basicDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "went"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 1,
+          "dependentGloss": "John"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "garden",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "garden",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 5,
+          "dependentGloss": "garden"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "enhancedDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "went"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 1,
+          "dependentGloss": "John"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "garden",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "garden",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod:to",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 5,
+          "dependentGloss": "garden"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "enhancedPlusPlusDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "went"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 1,
+          "dependentGloss": "John"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "garden",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "garden",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod:to",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 5,
+          "dependentGloss": "garden"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "tokens": [
+        {
+          "index": 1,
+          "word": "John",
+          "originalText": "John",
+          "lemma": "John",
+          "characterOffsetBegin": 216,
+          "characterOffsetEnd": 220,
+          "pos": "NNP",
+          "ner": "PERSON",
+          "speaker": "PER0",
+          "before": "\n",
+          "after": " "
+        },
+        {
+          "index": 2,
+          "word": "went",
+          "originalText": "went",
+          "lemma": "go",
+          "characterOffsetBegin": 221,
+          "characterOffsetEnd": 225,
+          "pos": "VBD",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 3,
+          "word": "to",
+          "originalText": "to",
+          "lemma": "to",
+          "characterOffsetBegin": 226,
+          "characterOffsetEnd": 228,
+          "pos": "TO",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 4,
+          "word": "the",
+          "originalText": "the",
+          "lemma": "the",
+          "characterOffsetBegin": 229,
+          "characterOffsetEnd": 232,
+          "pos": "DT",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 5,
+          "word": "garden",
+          "originalText": "garden",
+          "lemma": "garden",
+          "characterOffsetBegin": 233,
+          "characterOffsetEnd": 239,
+          "pos": "NN",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": ""
+        },
+        {
+          "index": 6,
+          "word": ".",
+          "originalText": ".",
+          "lemma": ".",
+          "characterOffsetBegin": 239,
+          "characterOffsetEnd": 240,
+          "pos": ".",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": "",
+          "after": "\n"
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "parse": "(ROOT\n  (S\n    (NP (NNP Sandra))\n    (VP (VBD went)\n      (ADVP (RB back))\n      (PP (TO to)\n        (NP (DT the) (NN bathroom))))\n    (. .)))",
+      "basicDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "went"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 1,
+          "dependentGloss": "Sandra"
+        },
+        {
+          "dep": "advmod",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 3,
+          "dependentGloss": "back"
+        },
+        {
+          "dep": "case",
+          "governor": 6,
+          "governorGloss": "bathroom",
+          "dependent": 4,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 6,
+          "governorGloss": "bathroom",
+          "dependent": 5,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 6,
+          "dependentGloss": "bathroom"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "enhancedDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "went"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 1,
+          "dependentGloss": "Sandra"
+        },
+        {
+          "dep": "advmod",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 3,
+          "dependentGloss": "back"
+        },
+        {
+          "dep": "case",
+          "governor": 6,
+          "governorGloss": "bathroom",
+          "dependent": 4,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 6,
+          "governorGloss": "bathroom",
+          "dependent": 5,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod:to",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 6,
+          "dependentGloss": "bathroom"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "enhancedPlusPlusDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "went"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 1,
+          "dependentGloss": "Sandra"
+        },
+        {
+          "dep": "advmod",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 3,
+          "dependentGloss": "back"
+        },
+        {
+          "dep": "case",
+          "governor": 6,
+          "governorGloss": "bathroom",
+          "dependent": 4,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 6,
+          "governorGloss": "bathroom",
+          "dependent": 5,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod:to",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 6,
+          "dependentGloss": "bathroom"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "went",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Sandra",
+          "originalText": "Sandra",
+          "lemma": "Sandra",
+          "characterOffsetBegin": 241,
+          "characterOffsetEnd": 247,
+          "pos": "NNP",
+          "ner": "PERSON",
+          "speaker": "PER0",
+          "before": "\n",
+          "after": " "
+        },
+        {
+          "index": 2,
+          "word": "went",
+          "originalText": "went",
+          "lemma": "go",
+          "characterOffsetBegin": 248,
+          "characterOffsetEnd": 252,
+          "pos": "VBD",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 3,
+          "word": "back",
+          "originalText": "back",
+          "lemma": "back",
+          "characterOffsetBegin": 253,
+          "characterOffsetEnd": 257,
+          "pos": "RB",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 4,
+          "word": "to",
+          "originalText": "to",
+          "lemma": "to",
+          "characterOffsetBegin": 258,
+          "characterOffsetEnd": 260,
+          "pos": "TO",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 5,
+          "word": "the",
+          "originalText": "the",
+          "lemma": "the",
+          "characterOffsetBegin": 261,
+          "characterOffsetEnd": 264,
+          "pos": "DT",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 6,
+          "word": "bathroom",
+          "originalText": "bathroom",
+          "lemma": "bathroom",
+          "characterOffsetBegin": 265,
+          "characterOffsetEnd": 273,
+          "pos": "NN",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": ""
+        },
+        {
+          "index": 7,
+          "word": ".",
+          "originalText": ".",
+          "lemma": ".",
+          "characterOffsetBegin": 273,
+          "characterOffsetEnd": 274,
+          "pos": ".",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": "",
+          "after": "\n"
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "parse": "(ROOT\n  (S\n    (NP (NNP Sandra))\n    (VP (VBD moved)\n      (PP (TO to)\n        (NP (DT the) (NN kitchen))))\n    (. .)))",
+      "basicDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "moved"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "moved",
+          "dependent": 1,
+          "dependentGloss": "Sandra"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "kitchen",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "kitchen",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod",
+          "governor": 2,
+          "governorGloss": "moved",
+          "dependent": 5,
+          "dependentGloss": "kitchen"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "moved",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "enhancedDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "moved"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "moved",
+          "dependent": 1,
+          "dependentGloss": "Sandra"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "kitchen",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "kitchen",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod:to",
+          "governor": 2,
+          "governorGloss": "moved",
+          "dependent": 5,
+          "dependentGloss": "kitchen"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "moved",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "enhancedPlusPlusDependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "moved"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "moved",
+          "dependent": 1,
+          "dependentGloss": "Sandra"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "kitchen",
+          "dependent": 3,
+          "dependentGloss": "to"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "kitchen",
+          "dependent": 4,
+          "dependentGloss": "the"
+        },
+        {
+          "dep": "nmod:to",
+          "governor": 2,
+          "governorGloss": "moved",
+          "dependent": 5,
+          "dependentGloss": "kitchen"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "moved",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Sandra",
+          "originalText": "Sandra",
+          "lemma": "Sandra",
+          "characterOffsetBegin": 275,
+          "characterOffsetEnd": 281,
+          "pos": "NNP",
+          "ner": "PERSON",
+          "speaker": "PER0",
+          "before": "\n",
+          "after": " "
+        },
+        {
+          "index": 2,
+          "word": "moved",
+          "originalText": "moved",
+          "lemma": "move",
+          "characterOffsetBegin": 282,
+          "characterOffsetEnd": 287,
+          "pos": "VBD",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 3,
+          "word": "to",
+          "originalText": "to",
+          "lemma": "to",
+          "characterOffsetBegin": 288,
+          "characterOffsetEnd": 290,
+          "pos": "TO",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 4,
+          "word": "the",
+          "originalText": "the",
+          "lemma": "the",
+          "characterOffsetBegin": 291,
+          "characterOffsetEnd": 294,
+          "pos": "DT",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 5,
+          "word": "kitchen",
+          "originalText": "kitchen",
+          "lemma": "kitchen",
+          "characterOffsetBegin": 295,
+          "characterOffsetEnd": 302,
+          "pos": "NN",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": " ",
+          "after": ""
+        },
+        {
+          "index": 6,
+          "word": ".",
+          "originalText": ".",
+          "lemma": ".",
+          "characterOffsetBegin": 302,
+          "characterOffsetEnd": 303,
+          "pos": ".",
+          "ner": "O",
+          "speaker": "PER0",
+          "before": "",
+          "after": ""
+        }
+      ]
+    }
+  ],
+  "corefs": {
+    "16": [
+      {
+        "id": 16,
+        "text": "the garden",
+        "type": "NOMINAL",
+        "number": "SINGULAR",
+        "gender": "NEUTRAL",
+        "animacy": "INANIMATE",
+        "startIndex": 4,
+        "endIndex": 6,
+        "headIndex": 5,
+        "sentNum": 8,
+        "position": [
+          8,
+          2
+        ],
+        "isRepresentativeMention": true
+      }
+    ],
+    "1": [
+      {
+        "id": 1,
+        "text": "John",
+        "type": "PROPER",
+        "number": "SINGULAR",
+        "gender": "MALE",
+        "animacy": "ANIMATE",
+        "startIndex": 1,
+        "endIndex": 2,
+        "headIndex": 1,
+        "sentNum": 1,
+        "position": [
+          1,
+          1
+        ],
+        "isRepresentativeMention": true
+      },
+      {
+        "id": 7,
+        "text": "John",
+        "type": "PROPER",
+        "number": "SINGULAR",
+        "gender": "MALE",
+        "animacy": "ANIMATE",
+        "startIndex": 1,
+        "endIndex": 2,
+        "headIndex": 1,
+        "sentNum": 4,
+        "position": [
+          4,
+          1
+        ],
+        "isRepresentativeMention": false
+      },
+      {
+        "id": 9,
+        "text": "John",
+        "type": "PROPER",
+        "number": "SINGULAR",
+        "gender": "MALE",
+        "animacy": "ANIMATE",
+        "startIndex": 1,
+        "endIndex": 2,
+        "headIndex": 1,
+        "sentNum": 5,
+        "position": [
+          5,
+          1
+        ],
+        "isRepresentativeMention": false
+      },
+      {
+        "id": 15,
+        "text": "John",
+        "type": "PROPER",
+        "number": "SINGULAR",
+        "gender": "MALE",
+        "animacy": "ANIMATE",
+        "startIndex": 1,
+        "endIndex": 2,
+        "headIndex": 1,
+        "sentNum": 8,
+        "position": [
+          8,
+          1
+        ],
+        "isRepresentativeMention": false
+      }
+    ],
+    "2": [
+      {
+        "id": 2,
+        "text": "the hallway",
+        "type": "NOMINAL",
+        "number": "SINGULAR",
+        "gender": "UNKNOWN",
+        "animacy": "INANIMATE",
+        "startIndex": 4,
+        "endIndex": 6,
+        "headIndex": 5,
+        "sentNum": 1,
+        "position": [
+          1,
+          2
+        ],
+        "isRepresentativeMention": true
+      },
+      {
+        "id": 10,
+        "text": "the hallway",
+        "type": "NOMINAL",
+        "number": "SINGULAR",
+        "gender": "UNKNOWN",
+        "animacy": "INANIMATE",
+        "startIndex": 4,
+        "endIndex": 6,
+        "headIndex": 5,
+        "sentNum": 5,
+        "position": [
+          5,
+          2
+        ],
+        "isRepresentativeMention": false
+      },
+      {
+        "id": 14,
+        "text": "the hallway",
+        "type": "NOMINAL",
+        "number": "SINGULAR",
+        "gender": "UNKNOWN",
+        "animacy": "INANIMATE",
+        "startIndex": 4,
+        "endIndex": 6,
+        "headIndex": 5,
+        "sentNum": 7,
+        "position": [
+          7,
+          2
+        ],
+        "isRepresentativeMention": false
+      }
+    ],
+    "3": [
+      {
+        "id": 3,
+        "text": "Mary",
+        "type": "PROPER",
+        "number": "SINGULAR",
+        "gender": "FEMALE",
+        "animacy": "ANIMATE",
+        "startIndex": 1,
+        "endIndex": 2,
+        "headIndex": 1,
+        "sentNum": 2,
+        "position": [
+          2,
+          1
+        ],
+        "isRepresentativeMention": true
+      }
+    ],
+    "4": [
+      {
+        "id": 4,
+        "text": "the bathroom",
+        "type": "NOMINAL",
+        "number": "SINGULAR",
+        "gender": "UNKNOWN",
+        "animacy": "INANIMATE",
+        "startIndex": 4,
+        "endIndex": 6,
+        "headIndex": 5,
+        "sentNum": 2,
+        "position": [
+          2,
+          2
+        ],
+        "isRepresentativeMention": true
+      },
+      {
+        "id": 6,
+        "text": "the bathroom",
+        "type": "NOMINAL",
+        "number": "SINGULAR",
+        "gender": "UNKNOWN",
+        "animacy": "INANIMATE",
+        "startIndex": 5,
+        "endIndex": 7,
+        "headIndex": 6,
+        "sentNum": 3,
+        "position": [
+          3,
+          2
+        ],
+        "isRepresentativeMention": false
+      },
+      {
+        "id": 18,
+        "text": "the bathroom",
+        "type": "NOMINAL",
+        "number": "SINGULAR",
+        "gender": "UNKNOWN",
+        "animacy": "INANIMATE",
+        "startIndex": 5,
+        "endIndex": 7,
+        "headIndex": 6,
+        "sentNum": 9,
+        "position": [
+          9,
+          2
+        ],
+        "isRepresentativeMention": false
+      }
+    ],
+    "5": [
+      {
+        "id": 5,
+        "text": "Daniel",
+        "type": "PROPER",
+        "number": "SINGULAR",
+        "gender": "MALE",
+        "animacy": "ANIMATE",
+        "startIndex": 1,
+        "endIndex": 2,
+        "headIndex": 1,
+        "sentNum": 3,
+        "position": [
+          3,
+          1
+        ],
+        "isRepresentativeMention": true
+      }
+    ],
+    "8": [
+      {
+        "id": 8,
+        "text": "the bedroom",
+        "type": "NOMINAL",
+        "number": "SINGULAR",
+        "gender": "UNKNOWN",
+        "animacy": "INANIMATE",
+        "startIndex": 4,
+        "endIndex": 6,
+        "headIndex": 5,
+        "sentNum": 4,
+        "position": [
+          4,
+          2
+        ],
+        "isRepresentativeMention": true
+      }
+    ],
+    "11": [
+      {
+        "id": 11,
+        "text": "Sandra",
+        "type": "PROPER",
+        "number": "SINGULAR",
+        "gender": "FEMALE",
+        "animacy": "ANIMATE",
+        "startIndex": 1,
+        "endIndex": 2,
+        "headIndex": 1,
+        "sentNum": 6,
+        "position": [
+          6,
+          1
+        ],
+        "isRepresentativeMention": true
+      },
+      {
+        "id": 13,
+        "text": "Sandra",
+        "type": "PROPER",
+        "number": "SINGULAR",
+        "gender": "FEMALE",
+        "animacy": "ANIMATE",
+        "startIndex": 1,
+        "endIndex": 2,
+        "headIndex": 1,
+        "sentNum": 7,
+        "position": [
+          7,
+          1
+        ],
+        "isRepresentativeMention": false
+      },
+      {
+        "id": 17,
+        "text": "Sandra",
+        "type": "PROPER",
+        "number": "SINGULAR",
+        "gender": "FEMALE",
+        "animacy": "ANIMATE",
+        "startIndex": 1,
+        "endIndex": 2,
+        "headIndex": 1,
+        "sentNum": 9,
+        "position": [
+          9,
+          1
+        ],
+        "isRepresentativeMention": false
+      },
+      {
+        "id": 19,
+        "text": "Sandra",
+        "type": "PROPER",
+        "number": "SINGULAR",
+        "gender": "FEMALE",
+        "animacy": "ANIMATE",
+        "startIndex": 1,
+        "endIndex": 2,
+        "headIndex": 1,
+        "sentNum": 10,
+        "position": [
+          10,
+          1
+        ],
+        "isRepresentativeMention": false
+      }
+    ],
+    "12": [
+      {
+        "id": 12,
+        "text": "the kitchen",
+        "type": "NOMINAL",
+        "number": "SINGULAR",
+        "gender": "UNKNOWN",
+        "animacy": "INANIMATE",
+        "startIndex": 4,
+        "endIndex": 6,
+        "headIndex": 5,
+        "sentNum": 6,
+        "position": [
+          6,
+          2
+        ],
+        "isRepresentativeMention": true
+      },
+      {
+        "id": 20,
+        "text": "the kitchen",
+        "type": "NOMINAL",
+        "number": "SINGULAR",
+        "gender": "UNKNOWN",
+        "animacy": "INANIMATE",
+        "startIndex": 4,
+        "endIndex": 6,
+        "headIndex": 5,
+        "sentNum": 10,
+        "position": [
+          10,
+          2
+        ],
+        "isRepresentativeMention": false
+      }
+    ]
+  }
+}
