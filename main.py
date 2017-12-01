@@ -14,12 +14,12 @@ target_file_name = None
 def process_lth(file):
 
     # store text2drs tool's path
-    text2DRS = os.getcwd()
+    text2_drs_path = os.getcwd()
 
-    lth = text2DRS + '/lth_srl/'
+    lth_path = text2_drs_path + '/lth_srl/'
 
     # switch current dictionary to lth folder
-    os.chdir(lth)
+    os.chdir(lth_path)
 
     # below is pre-process input file and generate token outputs in lth
     model = 'models/penn_00_18_split_dict.model'
@@ -31,12 +31,14 @@ def process_lth(file):
     global target_file_name
     target_file_name = file.split('/')[-1].split('.')[0]
     target_file = '<' + file + '>'
-    output_tokens = text2DRS + '/lthOutputs/' + target_file_name +'.tokens'
+    output_tokens = text2_drs_path + '/lthOutputs/' + target_file_name +'.tokens'
     input_tokens = '<' + output_tokens + '>'
     global output_file
-    output_file = text2DRS + '/lthOutputs/' + 'lth_'+ target_file_name + '.txt'
+    output_file = text2_drs_path + '/lthOutputs/' + 'lth_'+ target_file_name + '.txt'
 
-    cmd = 'java -Xmx{0} -cp {1} se.lth.cs.nlp.depsrl.Preprocessor -allLTH {2} {3} {4} {5}'.format(mem,cp,model,dct,target_file,output_tokens)
+    cmd = 'java -Xmx{0} -cp {1} se.lth.cs.nlp.depsrl.Preprocessor -allLTH {2} {3} {4} {5}'.format(mem,cp,model,dct,
+                                                                                                  target_file,
+                                                                                                  output_tokens)
 
     # call and run lth's token processor
     subprocess.call(cmd,shell=True)
@@ -57,13 +59,26 @@ def process_lth(file):
     cmd2 = 'java -Xmx{0} -cp {1} se.lth.cs.nlp.depsrl.Main -runFull ' \
            '{2} {3} {4} {5} pb_frames nb_frames {6} {7} {8} {9} ' \
            'false false ' \
-           '{10} {11} {12}'.format(MEM,CP,LM,GM_CD,GM_CL,synmodel,NSYN,NSEM,SYNW,GMW,FORCE_VARGS,input_tokens,output_file)
+           '{10} {11} {12}'.format(MEM,CP,LM,GM_CD,GM_CL,synmodel,NSYN,
+                                   NSEM,SYNW,GMW,FORCE_VARGS,input_tokens,output_file)
 
     subprocess.call(cmd2,shell=True)
 
     # switch back to text2drs dictionary
-    os.chdir(text2DRS)
+    os.chdir(text2_drs_path)
 
+
+def start_corenlp():
+
+    text2_drs_path = os.getcwd()
+    corenlp_path = text2_drs_path + '/stanford-corenlp-full/'
+    os.chdir(corenlp_path)
+    port_num = 9000
+    timeout = 15000
+    cmd3 = 'java -mx4g -cp "*"' \
+           'edu.standford.nlp.pipeline.StanfordCoreNLPServer -port {0} -timeout {1}'.format(port_num, timeout)
+    subprocess.call(cmd3, shell=True)
+    os.chdir(text2_drs_path)
 
 def main():
 
@@ -94,6 +109,8 @@ def main():
     verbNetSRL.print_table(data_dct_lst)
     sys.stdout = orig_stdout
     f.close()
+
+    start_corenlp()
 
 
 if __name__ == '__main__':

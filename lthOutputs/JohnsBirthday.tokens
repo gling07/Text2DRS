@@ -1,0 +1,33 @@
+1	Daniel	_	_	NNP	Daniel	_	NNP	0	_
+2	tells	tell	_	VBZ	tells	tell	VBZ	0	_
+3	Mary	_	_	NNP	Mary	_	NNP	0	_
+4	about	_	_	IN	about	_	IN	0	_
+5	John	_	_	NNP	John	_	NNP	0	_
+6	's	_	_	POS	's	_	POS	0	_
+7	birthday	birthday	_	NN	birthday	birthday	NN	0	_
+8	.	_	_	.	.	_	.	0	_
+
+1	Mary	_	_	NNP	Mary	_	NNP	0	_
+2	knows	know	_	VBZ	knows	know	VBZ	0	_
+3	John	_	_	NNP	John	_	NNP	0	_
+4	's	_	_	POS	's	_	POS	0	_
+5	birthday	birthday	_	NN	birthday	birthday	NN	0	_
+6	.	_	_	.	.	_	.	0	_
+
+1	Mary	_	_	NNP	Mary	_	NNP	0	_
+2	thinks	think	_	VBZ	thinks	think	VBZ	0	_
+3	about	_	_	IN	about	_	IN	0	_
+4	a	_	_	DT	a	_	DT	0	_
+5	gift	gift	_	NN	gift	gift	NN	0	_
+6	idea	idea	_	NN	idea	idea	NN	0	_
+7	.	_	_	.	.	_	.	0	_
+
+1	Mary	_	_	NNP	Mary	_	NNP	0	_
+2	makes	make	_	VBZ	makes	make	VBZ	0	_
+3	a	_	_	DT	a	_	DT	0	_
+4	birthday	birthday	_	NN	birthday	birthday	NN	0	_
+5	cake	cake	_	NN	cake	cake	NN	0	_
+6	for	_	_	IN	for	_	IN	0	_
+7	John	_	_	NNP	John	_	NNP	0	_
+8	.	_	_	.	.	_	.	0	_
+
