@@ -3,6 +3,7 @@ import sys
 import subprocess
 import argparse
 import verbnetsrl
+import drs
 import corenlp
 
 # lth output file
@@ -42,7 +43,7 @@ def process_lth(file):
                                                                                                   output_tokens)
 
     # call and run lth's token processor
-    subprocess.call(cmd,shell=True)
+    # subprocess.call(cmd,shell=True)
 
     # below is setting up system variables of lth tool in fully function mode
     synmodel = 'models/train_at_pp_more2nd.model'
@@ -118,6 +119,8 @@ def main():
     # pass lth_output to verbNetSRL for further data process
     data_dct_lst = verbnetsrl.read_data(lth_output)
 
+    drs.main_process(data_dct_lst)
+
     # write verbNetSRL's outputs to a file
     orig_stdout = sys.stdout
     global target_file_name
@@ -127,7 +130,8 @@ def main():
     sys.stdout = orig_stdout
     f.close()
 
-    process_corenlp(input_file)
+    # process_corenlp(input_file)
+
 
 
 if __name__ == '__main__':
