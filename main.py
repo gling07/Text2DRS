@@ -4,7 +4,7 @@ import subprocess
 import argparse
 import verbnetsrl
 import drs
-import corenlp
+from xml.dom.minidom import parseString
 
 # lth output file
 output_file = None
@@ -43,7 +43,7 @@ def process_lth(file):
                                                                                                   output_tokens)
 
     # call and run lth's token processor
-    # subprocess.call(cmd,shell=True)
+    subprocess.call(cmd,shell=True)
 
     # below is setting up system variables of lth tool in fully function mode
     synmodel = 'models/train_at_pp_more2nd.model'
@@ -64,7 +64,7 @@ def process_lth(file):
            '{10} {11} {12}'.format(MEM,CP,LM,GM_CD,GM_CL,synmodel,NSYN,
                                    NSEM,SYNW,GMW,FORCE_VARGS,input_tokens,output_file)
 
-    # subprocess.call(cmd2,shell=True)
+    subprocess.call(cmd2,shell=True)
 
     # switch back to text2drs dictionary
     os.chdir(text2_drs_path)
@@ -79,7 +79,7 @@ def start_corenlp():
     timeout = 15000
     cmd3 = 'java -mx4g -cp "*"' \
            'edu.standford.nlp.pipeline.StanfordCoreNLPServer -port {0} -timeout {1}'.format(port_num, timeout)
-    # subprocess.call(cmd3, shell=True)
+    subprocess.call(cmd3, shell=True)
     os.chdir(text2_drs_path)
 
 
@@ -130,10 +130,14 @@ def main():
     sys.stdout = orig_stdout
     f.close()
 
+    xml = verbnetsrl.to_xml()
+    dom = parseString(xml)
+    print(dom.toprettyxml())
+
     # process_corenlp(input_file)
 
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
 

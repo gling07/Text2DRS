@@ -8,8 +8,20 @@ def main_process(data_dct_lst):
     events_map = retrieve_event(data_dct_lst)
     eventtype = retrieve_eventtype(data_dct_lst)
 
-    for k, e in eventtype.items():
+    for e in entities:
+        print(e)
+
+    for k,e in entities_map.items():
+        print(k,e)
+
+    for p in property:
+        print(p)
+
+    for k, e in events_map.items():
         print(k, e)
+
+    for k, et in eventtype.items():
+        print(k, et)
 
 
 def retrieve_entity(data_dct_lst):

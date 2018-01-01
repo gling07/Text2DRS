@@ -1,4 +1,5 @@
 import xml.etree.ElementTree as ET
+from dicttoxml import dicttoxml
 # from nltk.corpus import propbank
 
 # parse vb-pb mapping file into a element tree
@@ -181,3 +182,9 @@ def print_table(m_lst):
                             print('{:5s}'.format(item.get('_')), end="")
                 else:
                     print("{:10s}\t".format(sub_dct3.get(key)), end="")
+
+
+def to_xml():
+
+    xml = dicttoxml(m_dct_lst)
+    return xml
