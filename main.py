@@ -69,20 +69,6 @@ def process_lth(file):
     # switch back to text2drs dictionary
     os.chdir(text2_drs_path)
 
-
-def start_corenlp():
-
-    text2_drs_path = os.getcwd()
-    corenlp_path = text2_drs_path + '/stanford-corenlp-full/'
-    os.chdir(corenlp_path)
-    port_num = 9000
-    timeout = 15000
-    cmd3 = 'java -mx4g -cp "*"' \
-           'edu.standford.nlp.pipeline.StanfordCoreNLPServer -port {0} -timeout {1}'.format(port_num, timeout)
-    subprocess.call(cmd3, shell=True)
-    os.chdir(text2_drs_path)
-
-
 # process input file by running corenlp through command line
 # output file format can be choose from text, xml, json
 def process_corenlp(file):
@@ -90,12 +76,12 @@ def process_corenlp(file):
     corenlp_path = text2_drs_path + '/stanford-corenlp-full/'
     os.chdir(corenlp_path)
     output_path = text2_drs_path + '/corenlp_Outputs/'
-    output_format = 'json'
-    cmd4 = 'java -Xmx5g -cp stanford-corenlp-3.8.0.jar:stanford-corenlp-models-3.8.0.jar:* '\
+    output_format = 'text'
+    cmd3 = 'java -Xmx5g -cp stanford-corenlp-3.8.0.jar:stanford-corenlp-models-3.8.0.jar:* '\
            'edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators '\
            'tokenize,ssplit,pos,lemma,ner,parse,mention,coref -coref.algorithm neural '\
            '-file {0} -outputDirectory {1} -outputFormat {2}'.format(file, output_path, output_format)
-    subprocess.call(cmd4, shell=True)
+    subprocess.call(cmd3, shell=True)
     os.chdir(text2_drs_path)
 
 

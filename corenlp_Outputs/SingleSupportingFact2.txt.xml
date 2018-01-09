@@ -1955,59 +1955,6 @@
     <coreference>
       <coreference>
         <mention representative="true">
-          <sentence>1</sentence>
-          <start>1</start>
-          <end>2</end>
-          <head>1</head>
-          <text>John</text>
-        </mention>
-        <mention>
-          <sentence>4</sentence>
-          <start>1</start>
-          <end>2</end>
-          <head>1</head>
-          <text>John</text>
-        </mention>
-        <mention>
-          <sentence>5</sentence>
-          <start>1</start>
-          <end>2</end>
-          <head>1</head>
-          <text>John</text>
-        </mention>
-        <mention>
-          <sentence>8</sentence>
-          <start>1</start>
-          <end>2</end>
-          <head>1</head>
-          <text>John</text>
-        </mention>
-      </coreference>
-      <coreference>
-        <mention representative="true">
-          <sentence>1</sentence>
-          <start>4</start>
-          <end>6</end>
-          <head>5</head>
-          <text>the hallway</text>
-        </mention>
-        <mention>
-          <sentence>5</sentence>
-          <start>4</start>
-          <end>6</end>
-          <head>5</head>
-          <text>the hallway</text>
-        </mention>
-        <mention>
-          <sentence>7</sentence>
-          <start>4</start>
-          <end>6</end>
-          <head>5</head>
-          <text>the hallway</text>
-        </mention>
-      </coreference>
-      <coreference>
-        <mention representative="true">
           <sentence>2</sentence>
           <start>4</start>
           <end>6</end>
@@ -2073,6 +2020,59 @@
           <end>6</end>
           <head>5</head>
           <text>the kitchen</text>
+        </mention>
+      </coreference>
+      <coreference>
+        <mention representative="true">
+          <sentence>1</sentence>
+          <start>4</start>
+          <end>6</end>
+          <head>5</head>
+          <text>the hallway</text>
+        </mention>
+        <mention>
+          <sentence>5</sentence>
+          <start>4</start>
+          <end>6</end>
+          <head>5</head>
+          <text>the hallway</text>
+        </mention>
+        <mention>
+          <sentence>7</sentence>
+          <start>4</start>
+          <end>6</end>
+          <head>5</head>
+          <text>the hallway</text>
+        </mention>
+      </coreference>
+      <coreference>
+        <mention representative="true">
+          <sentence>1</sentence>
+          <start>1</start>
+          <end>2</end>
+          <head>1</head>
+          <text>John</text>
+        </mention>
+        <mention>
+          <sentence>4</sentence>
+          <start>1</start>
+          <end>2</end>
+          <head>1</head>
+          <text>John</text>
+        </mention>
+        <mention>
+          <sentence>5</sentence>
+          <start>1</start>
+          <end>2</end>
+          <head>1</head>
+          <text>John</text>
+        </mention>
+        <mention>
+          <sentence>8</sentence>
+          <start>1</start>
+          <end>2</end>
+          <head>1</head>
+          <text>John</text>
         </mention>
       </coreference>
     </coreference>

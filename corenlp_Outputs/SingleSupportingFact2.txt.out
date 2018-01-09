@@ -235,13 +235,6 @@ nmod:to(moved-2, kitchen-5)
 punct(moved-2, .-6)
 
 Coreference set:
-	(4,1,[1,2]) -> (1,1,[1,2]), that is: "John" -> "John"
-	(5,1,[1,2]) -> (1,1,[1,2]), that is: "John" -> "John"
-	(8,1,[1,2]) -> (1,1,[1,2]), that is: "John" -> "John"
-Coreference set:
-	(5,5,[4,6]) -> (1,5,[4,6]), that is: "the hallway" -> "the hallway"
-	(7,5,[4,6]) -> (1,5,[4,6]), that is: "the hallway" -> "the hallway"
-Coreference set:
 	(3,6,[5,7]) -> (2,5,[4,6]), that is: "the bathroom" -> "the bathroom"
 	(9,6,[5,7]) -> (2,5,[4,6]), that is: "the bathroom" -> "the bathroom"
 Coreference set:
@@ -250,3 +243,10 @@ Coreference set:
 	(10,1,[1,2]) -> (6,1,[1,2]), that is: "Sandra" -> "Sandra"
 Coreference set:
 	(10,5,[4,6]) -> (6,5,[4,6]), that is: "the kitchen" -> "the kitchen"
+Coreference set:
+	(5,5,[4,6]) -> (1,5,[4,6]), that is: "the hallway" -> "the hallway"
+	(7,5,[4,6]) -> (1,5,[4,6]), that is: "the hallway" -> "the hallway"
+Coreference set:
+	(4,1,[1,2]) -> (1,1,[1,2]), that is: "John" -> "John"
+	(5,1,[1,2]) -> (1,1,[1,2]), that is: "John" -> "John"
+	(8,1,[1,2]) -> (1,1,[1,2]), that is: "John" -> "John"
