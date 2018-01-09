@@ -137,7 +137,6 @@ def main():
     # process_corenlp(input_file)
 
 
-
 if __name__ == "__main__":
     main()
 

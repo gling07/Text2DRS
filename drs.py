@@ -6,7 +6,7 @@ def main_process(data_dct_lst):
     entities_map = mapping_entity(entities)
     property = retrieve_property(entities_map)
     events_map = retrieve_event(data_dct_lst)
-    eventtype = retrieve_eventtype(data_dct_lst)
+    event_type = retrieve_event_type(data_dct_lst)
 
     for e in entities:
         print(e)
@@ -20,7 +20,7 @@ def main_process(data_dct_lst):
     for k, e in events_map.items():
         print(k, e)
 
-    for k, et in eventtype.items():
+    for k, et in event_type.items():
         print(k, et)
 
 
@@ -68,13 +68,13 @@ def retrieve_event(data_dct_lst):
     return events_dictionary
 
 
-def retrieve_eventtype(data_dct_lst):
-    eventtype_dictionary = {}
+def retrieve_event_type(data_dct_lst):
+    event_type_dictionary = {}
     count = 1;
     for sentences in data_dct_lst:
         for sen in sentences:
             if sen.get('PPOS') == 'VBD':
-                eventtype_dictionary['e' + str(count)] = sen.get('vn-pb')
+                event_type_dictionary['e' + str(count)] = sen.get('vn-pb')
                 count += 1
 
-    return eventtype_dictionary
+    return event_type_dictionary
