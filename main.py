@@ -90,9 +90,10 @@ def process_corenlp(file):
     corenlp_path = text2_drs_path + '/stanford-corenlp-full/'
     os.chdir(corenlp_path)
     output_path = text2_drs_path + '/corenlp_Outputs/'
-    output_format = 'xml'
-    cmd4 = 'java -cp "*" -Xmx2g edu.stanford.nlp.pipeline.StanfordCoreNLP ' \
-           '-annotators tokenize,ssplit,pos,lemma,ner,parse,dcoref ' \
+    output_format = 'json'
+    cmd4 = 'java -Xmx5g -cp stanford-corenlp-3.8.0.jar:stanford-corenlp-models-3.8.0.jar:* '\
+           'edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators '\
+           'tokenize,ssplit,pos,lemma,ner,parse,mention,coref -coref.algorithm neural '\
            '-file {0} -outputDirectory {1} -outputFormat {2}'.format(file, output_path, output_format)
     subprocess.call(cmd4, shell=True)
     os.chdir(text2_drs_path)
@@ -132,9 +133,9 @@ def main():
 
     xml = verbnetsrl.to_xml()
     dom = parseString(xml)
-    print(dom.toprettyxml())
+    # print(dom.toprettyxml())
 
-    # process_corenlp(input_file)
+    process_corenlp(input_file)
 
 
 if __name__ == "__main__":

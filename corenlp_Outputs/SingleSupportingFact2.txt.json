@@ -2230,170 +2230,9 @@
     }
   ],
   "corefs": {
-    "16": [
-      {
-        "id": 16,
-        "text": "the garden",
-        "type": "NOMINAL",
-        "number": "SINGULAR",
-        "gender": "NEUTRAL",
-        "animacy": "INANIMATE",
-        "startIndex": 4,
-        "endIndex": 6,
-        "headIndex": 5,
-        "sentNum": 8,
-        "position": [
-          8,
-          2
-        ],
-        "isRepresentativeMention": true
-      }
-    ],
-    "1": [
-      {
-        "id": 1,
-        "text": "John",
-        "type": "PROPER",
-        "number": "SINGULAR",
-        "gender": "MALE",
-        "animacy": "ANIMATE",
-        "startIndex": 1,
-        "endIndex": 2,
-        "headIndex": 1,
-        "sentNum": 1,
-        "position": [
-          1,
-          1
-        ],
-        "isRepresentativeMention": true
-      },
-      {
-        "id": 7,
-        "text": "John",
-        "type": "PROPER",
-        "number": "SINGULAR",
-        "gender": "MALE",
-        "animacy": "ANIMATE",
-        "startIndex": 1,
-        "endIndex": 2,
-        "headIndex": 1,
-        "sentNum": 4,
-        "position": [
-          4,
-          1
-        ],
-        "isRepresentativeMention": false
-      },
-      {
-        "id": 9,
-        "text": "John",
-        "type": "PROPER",
-        "number": "SINGULAR",
-        "gender": "MALE",
-        "animacy": "ANIMATE",
-        "startIndex": 1,
-        "endIndex": 2,
-        "headIndex": 1,
-        "sentNum": 5,
-        "position": [
-          5,
-          1
-        ],
-        "isRepresentativeMention": false
-      },
-      {
-        "id": 15,
-        "text": "John",
-        "type": "PROPER",
-        "number": "SINGULAR",
-        "gender": "MALE",
-        "animacy": "ANIMATE",
-        "startIndex": 1,
-        "endIndex": 2,
-        "headIndex": 1,
-        "sentNum": 8,
-        "position": [
-          8,
-          1
-        ],
-        "isRepresentativeMention": false
-      }
-    ],
-    "2": [
-      {
-        "id": 2,
-        "text": "the hallway",
-        "type": "NOMINAL",
-        "number": "SINGULAR",
-        "gender": "UNKNOWN",
-        "animacy": "INANIMATE",
-        "startIndex": 4,
-        "endIndex": 6,
-        "headIndex": 5,
-        "sentNum": 1,
-        "position": [
-          1,
-          2
-        ],
-        "isRepresentativeMention": true
-      },
-      {
-        "id": 10,
-        "text": "the hallway",
-        "type": "NOMINAL",
-        "number": "SINGULAR",
-        "gender": "UNKNOWN",
-        "animacy": "INANIMATE",
-        "startIndex": 4,
-        "endIndex": 6,
-        "headIndex": 5,
-        "sentNum": 5,
-        "position": [
-          5,
-          2
-        ],
-        "isRepresentativeMention": false
-      },
-      {
-        "id": 14,
-        "text": "the hallway",
-        "type": "NOMINAL",
-        "number": "SINGULAR",
-        "gender": "UNKNOWN",
-        "animacy": "INANIMATE",
-        "startIndex": 4,
-        "endIndex": 6,
-        "headIndex": 5,
-        "sentNum": 7,
-        "position": [
-          7,
-          2
-        ],
-        "isRepresentativeMention": false
-      }
-    ],
-    "3": [
+    "17": [
       {
         "id": 3,
-        "text": "Mary",
-        "type": "PROPER",
-        "number": "SINGULAR",
-        "gender": "FEMALE",
-        "animacy": "ANIMATE",
-        "startIndex": 1,
-        "endIndex": 2,
-        "headIndex": 1,
-        "sentNum": 2,
-        "position": [
-          2,
-          1
-        ],
-        "isRepresentativeMention": true
-      }
-    ],
-    "4": [
-      {
-        "id": 4,
         "text": "the bathroom",
         "type": "NOMINAL",
         "number": "SINGULAR",
@@ -2409,116 +2248,78 @@
         ],
         "isRepresentativeMention": true
       },
-      {
-        "id": 6,
-        "text": "the bathroom",
-        "type": "NOMINAL",
-        "number": "SINGULAR",
-        "gender": "UNKNOWN",
-        "animacy": "INANIMATE",
-        "startIndex": 5,
-        "endIndex": 7,
-        "headIndex": 6,
-        "sentNum": 3,
-        "position": [
-          3,
-          2
-        ],
-        "isRepresentativeMention": false
-      },
-      {
-        "id": 18,
-        "text": "the bathroom",
-        "type": "NOMINAL",
-        "number": "SINGULAR",
-        "gender": "UNKNOWN",
-        "animacy": "INANIMATE",
-        "startIndex": 5,
-        "endIndex": 7,
-        "headIndex": 6,
-        "sentNum": 9,
-        "position": [
-          9,
-          2
-        ],
-        "isRepresentativeMention": false
-      }
-    ],
-    "5": [
       {
         "id": 5,
-        "text": "Daniel",
-        "type": "PROPER",
-        "number": "SINGULAR",
-        "gender": "MALE",
-        "animacy": "ANIMATE",
-        "startIndex": 1,
-        "endIndex": 2,
-        "headIndex": 1,
-        "sentNum": 3,
-        "position": [
-          3,
-          1
-        ],
-        "isRepresentativeMention": true
-      }
-    ],
-    "8": [
-      {
-        "id": 8,
-        "text": "the bedroom",
+        "text": "the bathroom",
         "type": "NOMINAL",
         "number": "SINGULAR",
         "gender": "UNKNOWN",
         "animacy": "INANIMATE",
-        "startIndex": 4,
-        "endIndex": 6,
-        "headIndex": 5,
-        "sentNum": 4,
+        "startIndex": 5,
+        "endIndex": 7,
+        "headIndex": 6,
+        "sentNum": 3,
         "position": [
-          4,
+          3,
           2
-        ],
-        "isRepresentativeMention": true
-      }
-    ],
-    "11": [
-      {
-        "id": 11,
-        "text": "Sandra",
-        "type": "PROPER",
-        "number": "SINGULAR",
-        "gender": "FEMALE",
-        "animacy": "ANIMATE",
-        "startIndex": 1,
-        "endIndex": 2,
-        "headIndex": 1,
-        "sentNum": 6,
-        "position": [
-          6,
-          1
-        ],
-        "isRepresentativeMention": true
-      },
-      {
-        "id": 13,
-        "text": "Sandra",
-        "type": "PROPER",
-        "number": "SINGULAR",
-        "gender": "FEMALE",
-        "animacy": "ANIMATE",
-        "startIndex": 1,
-        "endIndex": 2,
-        "headIndex": 1,
-        "sentNum": 7,
-        "position": [
-          7,
-          1
         ],
         "isRepresentativeMention": false
       },
       {
         "id": 17,
+        "text": "the bathroom",
+        "type": "NOMINAL",
+        "number": "SINGULAR",
+        "gender": "UNKNOWN",
+        "animacy": "INANIMATE",
+        "startIndex": 5,
+        "endIndex": 7,
+        "headIndex": 6,
+        "sentNum": 9,
+        "position": [
+          9,
+          2
+        ],
+        "isRepresentativeMention": false
+      }
+    ],
+    "18": [
+      {
+        "id": 10,
+        "text": "Sandra",
+        "type": "PROPER",
+        "number": "SINGULAR",
+        "gender": "FEMALE",
+        "animacy": "ANIMATE",
+        "startIndex": 1,
+        "endIndex": 2,
+        "headIndex": 1,
+        "sentNum": 6,
+        "position": [
+          6,
+          1
+        ],
+        "isRepresentativeMention": true
+      },
+      {
+        "id": 12,
+        "text": "Sandra",
+        "type": "PROPER",
+        "number": "SINGULAR",
+        "gender": "FEMALE",
+        "animacy": "ANIMATE",
+        "startIndex": 1,
+        "endIndex": 2,
+        "headIndex": 1,
+        "sentNum": 7,
+        "position": [
+          7,
+          1
+        ],
+        "isRepresentativeMention": false
+      },
+      {
+        "id": 16,
         "text": "Sandra",
         "type": "PROPER",
         "number": "SINGULAR",
@@ -2535,7 +2336,7 @@
         "isRepresentativeMention": false
       },
       {
-        "id": 19,
+        "id": 18,
         "text": "Sandra",
         "type": "PROPER",
         "number": "SINGULAR",
@@ -2552,9 +2353,9 @@
         "isRepresentativeMention": false
       }
     ],
-    "12": [
+    "19": [
       {
-        "id": 12,
+        "id": 11,
         "text": "the kitchen",
         "type": "NOMINAL",
         "number": "SINGULAR",
@@ -2571,7 +2372,7 @@
         "isRepresentativeMention": true
       },
       {
-        "id": 20,
+        "id": 19,
         "text": "the kitchen",
         "type": "NOMINAL",
         "number": "SINGULAR",
@@ -2584,6 +2385,129 @@
         "position": [
           10,
           2
+        ],
+        "isRepresentativeMention": false
+      }
+    ],
+    "13": [
+      {
+        "id": 1,
+        "text": "the hallway",
+        "type": "NOMINAL",
+        "number": "SINGULAR",
+        "gender": "UNKNOWN",
+        "animacy": "INANIMATE",
+        "startIndex": 4,
+        "endIndex": 6,
+        "headIndex": 5,
+        "sentNum": 1,
+        "position": [
+          1,
+          2
+        ],
+        "isRepresentativeMention": true
+      },
+      {
+        "id": 9,
+        "text": "the hallway",
+        "type": "NOMINAL",
+        "number": "SINGULAR",
+        "gender": "UNKNOWN",
+        "animacy": "INANIMATE",
+        "startIndex": 4,
+        "endIndex": 6,
+        "headIndex": 5,
+        "sentNum": 5,
+        "position": [
+          5,
+          2
+        ],
+        "isRepresentativeMention": false
+      },
+      {
+        "id": 13,
+        "text": "the hallway",
+        "type": "NOMINAL",
+        "number": "SINGULAR",
+        "gender": "UNKNOWN",
+        "animacy": "INANIMATE",
+        "startIndex": 4,
+        "endIndex": 6,
+        "headIndex": 5,
+        "sentNum": 7,
+        "position": [
+          7,
+          2
+        ],
+        "isRepresentativeMention": false
+      }
+    ],
+    "14": [
+      {
+        "id": 0,
+        "text": "John",
+        "type": "PROPER",
+        "number": "SINGULAR",
+        "gender": "MALE",
+        "animacy": "ANIMATE",
+        "startIndex": 1,
+        "endIndex": 2,
+        "headIndex": 1,
+        "sentNum": 1,
+        "position": [
+          1,
+          1
+        ],
+        "isRepresentativeMention": true
+      },
+      {
+        "id": 6,
+        "text": "John",
+        "type": "PROPER",
+        "number": "SINGULAR",
+        "gender": "MALE",
+        "animacy": "ANIMATE",
+        "startIndex": 1,
+        "endIndex": 2,
+        "headIndex": 1,
+        "sentNum": 4,
+        "position": [
+          4,
+          1
+        ],
+        "isRepresentativeMention": false
+      },
+      {
+        "id": 8,
+        "text": "John",
+        "type": "PROPER",
+        "number": "SINGULAR",
+        "gender": "MALE",
+        "animacy": "ANIMATE",
+        "startIndex": 1,
+        "endIndex": 2,
+        "headIndex": 1,
+        "sentNum": 5,
+        "position": [
+          5,
+          1
+        ],
+        "isRepresentativeMention": false
+      },
+      {
+        "id": 14,
+        "text": "John",
+        "type": "PROPER",
+        "number": "SINGULAR",
+        "gender": "MALE",
+        "animacy": "ANIMATE",
+        "startIndex": 1,
+        "endIndex": 2,
+        "headIndex": 1,
+        "sentNum": 8,
+        "position": [
+          8,
+          1
         ],
         "isRepresentativeMention": false
       }

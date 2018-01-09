@@ -7,6 +7,7 @@ def main_process(data_dct_lst):
     property = retrieve_property(entities_map)
     events_map = retrieve_event(data_dct_lst)
     event_type = retrieve_event_type(data_dct_lst)
+    event_time = retrieve_event_time(events_map)
 
     for e in entities:
         print(e)
@@ -22,6 +23,9 @@ def main_process(data_dct_lst):
 
     for k, et in event_type.items():
         print(k, et)
+
+    for k, t in event_time.items():
+        print(k, t)
 
 
 def retrieve_entity(data_dct_lst):
@@ -78,3 +82,18 @@ def retrieve_event_type(data_dct_lst):
                 count += 1
 
     return event_type_dictionary
+
+
+def retrieve_event_time(events_map):
+    event_time_dictionary = {}
+    count = 0
+    for event, value in events_map.items():
+        event_time_dictionary[event] = count
+        count += 1
+
+    return event_time_dictionary
+
+
+def retrieve_event_argument(data_dct_lst):
+    event_argument_dictionary = {}
+
