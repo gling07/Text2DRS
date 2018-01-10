@@ -5,6 +5,7 @@ import argparse
 import verbnetsrl
 import drs
 import xml.etree.ElementTree as ET
+import corenlp
 from xml.dom import minidom
 from xml.dom.minidom import parseString
 
@@ -122,9 +123,9 @@ def main():
     sys.stdout = orig_stdout
     f.close()
 
-    xml = verbnetsrl.to_xml()
-    dom = parseString(xml)
-    # print(dom.toprettyxml())
+    # xml = verbnetsrl.to_xml()
+    # dom = parseString(xml)
+    # # print(dom.toprettyxml())
 
     corenlp_output_path = process_corenlp(input_file)
     corenlp_output = None
@@ -136,12 +137,7 @@ def main():
         print('Unexpected error:', sys.exc_info()[0])
         raise
 
-    root = corenlp_output.getroot()
-    for elem in root.findall('./document/coreference/coreference/'):
-        entity = elem.find('text').text
-        print(entity)
-
-
+    corenlp.read_xml(corenlp_output)
 
 if __name__ == "__main__":
     main()
