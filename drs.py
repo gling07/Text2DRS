@@ -9,23 +9,23 @@ def main_process(data_dct_lst):
     event_type = retrieve_event_type(data_dct_lst)
     event_time = retrieve_event_time(events_map)
 
-    for e in entities:
-        print(e)
-
-    for k,e in entities_map.items():
-        print(k,e)
-
-    for p in property:
-        print(p)
-
-    for k, e in events_map.items():
-        print(k, e)
-
-    for k, et in event_type.items():
-        print(k, et)
-
-    for k, t in event_time.items():
-        print(k, t)
+    # for e in entities:
+    #     print(e)
+    #
+    # for k,e in entities_map.items():
+    #     print(k,e)
+    #
+    # for p in property:
+    #     print(p)
+    #
+    # for k, e in events_map.items():
+    #     print(k, e)
+    #
+    # for k, et in event_type.items():
+    #     print(k, et)
+    #
+    # for k, t in event_time.items():
+    #     print(k, t)
 
 
 def retrieve_entity(data_dct_lst):
