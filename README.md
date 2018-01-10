@@ -17,7 +17,7 @@ These narratives will be used to evaluate the quality of my system.
 
 * Download or clone Text2DRS repository
 * Download LTH (http://nlp.cs.lth.se/software/semantic-parsing-propbank-nombank-frames/)
-* Download Standford core-NLP (https://stanfordnlp.github.io/CoreNLP/cmdline.html)
+* Download Standford core-NLP 3.8.0 (https://stanfordnlp.github.io/CoreNLP/cmdline.html)
 
 ### Additional Links ###
 
