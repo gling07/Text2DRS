@@ -112,8 +112,6 @@ def main():
     # pass lth_output to verbNetSRL for further data process
     data_dct_lst = verbnetsrl.read_data(lth_output)
 
-    drs.main_process(data_dct_lst)
-
     # write verbNetSRL's outputs to a file
     orig_stdout = sys.stdout
     global target_file_name
@@ -137,7 +135,9 @@ def main():
         print('Unexpected error:', sys.exc_info()[0])
         raise
 
-    corenlp.read_xml(corenlp_output)
+    coref_dictionary = corenlp.prcoess_xml(corenlp_output)
+
+    drs.main_process(data_dct_lst, coref_dictionary)
 
 
 if __name__ == "__main__":

@@ -1,13 +1,18 @@
 import xml.etree.ElementTree as ET
 
 
-def main_process(data_dct_lst):
+def main_process(data_dct_lst, coref_dictionary):
     entities = retrieve_entity(data_dct_lst)
     entities_map = mapping_entity(entities)
     property = retrieve_property(entities_map)
     events_map = retrieve_event(data_dct_lst)
     event_type = retrieve_event_type(data_dct_lst)
     event_time = retrieve_event_time(events_map)
+
+    print('in drs:')
+    for elem in coref_dictionary.items():
+        print(elem)
+
 
     # for e in entities:
     #     print(e)
@@ -96,4 +101,5 @@ def retrieve_event_time(events_map):
 
 def retrieve_event_argument(data_dct_lst):
     event_argument_dictionary = {}
+
 
