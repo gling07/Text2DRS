@@ -1,0 +1,10 @@
+Fred picked up the football there.
+Fred gave the football to Jeff.
+Bill went back to the bathroom.
+Jeff grabbed the milk there.
+Jeff gave the football to Fred.
+Fred handed the football to Jeff.
+Jeff handed the football to Fred.
+Fred gave the football to Jeff.
+Jeff gave the football to Fred.
+Jeff put down the milk.
