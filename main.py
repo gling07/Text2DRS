@@ -46,7 +46,7 @@ def process_lth(file):
                                                                                                   output_tokens)
 
     # call and run lth's token processor
-    # subprocess.call(cmd,shell=True)
+    subprocess.call(cmd,shell=True)
 
     # below is setting up system variables of lth tool in fully function mode
     synmodel = 'models/train_at_pp_more2nd.model'
@@ -67,7 +67,7 @@ def process_lth(file):
            '{10} {11} {12}'.format(MEM,CP,LM,GM_CD,GM_CL,synmodel,NSYN,
                                    NSEM,SYNW,GMW,FORCE_VARGS,input_tokens,output_file)
 
-    # subprocess.call(cmd2,shell=True)
+    subprocess.call(cmd2,shell=True)
 
     # switch back to text2drs dictionary
     os.chdir(text2_drs_path)
@@ -79,13 +79,13 @@ def process_corenlp(file):
     corenlp_path = text2_drs_path + '/stanford-corenlp-full/'
     os.chdir(corenlp_path)
     output_path = text2_drs_path + '/corenlp_Outputs/'
-    output_format = 'text'
+    output_format = 'xml'
     cmd3 = 'java -Xmx5g -cp stanford-corenlp-3.8.0.jar:stanford-corenlp-models-3.8.0.jar:* '\
            'edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators '\
            'tokenize,ssplit,pos,lemma,ner,parse,mention,coref -coref.algorithm neural '\
            '-file {0} -outputDirectory {1} -outputFormat {2}'.format(file, output_path, output_format)
 
-    # subprocess.call(cmd3, shell=True)
+    subprocess.call(cmd3, shell=True)
     file_name = file.split("/")[-1]
     corenlp_output_path = output_path + file_name + ".xml"
     os.chdir(text2_drs_path)
