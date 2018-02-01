@@ -20,8 +20,8 @@ def main_process(data_dct_lst, coref_dictionary):
     # for k,e in entities_map.items():
     #     print(k,e)
     #
-    # for p in property:
-    #     print(p)
+    for p in property:
+        print(p)
     #
     # for k, e in events_map.items():
     #     print(k, e)
@@ -40,7 +40,9 @@ def retrieve_entity(data_dct_lst):
         for sen in sentences:
             if sen.get('PPOS') == 'NNP' or sen.get('PPOS') == 'NN':
                 temp.append(sen.get('Form'))
-        entities.append(temp)
+        for entity in temp:
+            if entity not in entities:
+                entities.append(entity)
 
     return entities
 
@@ -49,9 +51,8 @@ def mapping_entity(entities):
     entities_dictionary = {}
     count = 1;
     for entity in entities:
-        for e in entity:
-            entities_dictionary['r'+ str(count)] = e
-            count += 1
+        entities_dictionary['r'+ str(count)] = entity
+        count += 1
 
     return entities_dictionary
 

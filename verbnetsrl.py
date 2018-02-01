@@ -7,7 +7,10 @@ pb_tree = ET.parse('semLink/vn-pb/vnpbMappings')
 m_dct_lst = []
 # pb_verbs = propbank.verbs()
 
-strong_hold_verbClass = {'go.01': '51.1'}
+def bias_pbTovb_mapping():
+    bias_verbClass = {'go.01': '51.1',
+                      'move.01': '51.3.1'}
+    return bias_verbClass
 
 # process lth outputs into a list of dictionary
 # each sentence in the original input file is a dictionary
@@ -82,7 +85,7 @@ def deep_process(dct_lst):
             if sub_dct.get('Pred') != '_' and sub_dct.get('Pred') is not None \
                     and sub_dct.get('PDeprel') == 'ROOT':
                 pred = sub_dct.get('Pred')
-                parse_result = vn_pb_parser(pred,plemma)
+                parse_result = vn_pb_parser(pred, plemma)
             else:
                 continue
 
@@ -144,6 +147,8 @@ def pb_args_checker(num, sentence_lst):
 # using pred and plemma to located pb parent node in the tree,
 # retrieve vn-class data and pb-roleset data from parent node to children node
 def vn_pb_parser(pred, plemma):
+    bias_verbClass_mapping = bias_pbTovb_mapping()
+    bias_key_lst = list(bias_verbClass_mapping.keys())
     dct = {}
     root = pb_tree.getroot()
 
@@ -158,6 +163,11 @@ def vn_pb_parser(pred, plemma):
                         lst.append(sub_dct2)
                     dct[argmap.attrib.get('vn-class')] = lst
 
+    if pred in bias_key_lst:
+        vbClass = bias_verbClass_mapping.get(pred)
+        remove = [k for k in dct if k != vbClass]
+        for k in remove:
+            del dct[k]
     return dct
 
 

@@ -79,11 +79,12 @@ def process_corenlp(file):
     corenlp_path = text2_drs_path + '/stanford-corenlp-full/'
     os.chdir(corenlp_path)
     output_path = text2_drs_path + '/corenlp_Outputs/'
-    output_format = 'xml'
+    output_format = 'text'
     cmd3 = 'java -Xmx5g -cp stanford-corenlp-3.8.0.jar:stanford-corenlp-models-3.8.0.jar:* '\
            'edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators '\
            'tokenize,ssplit,pos,lemma,ner,parse,mention,coref -coref.algorithm neural '\
            '-file {0} -outputDirectory {1} -outputFormat {2}'.format(file, output_path, output_format)
+
     # subprocess.call(cmd3, shell=True)
     file_name = file.split("/")[-1]
     corenlp_output_path = output_path + file_name + ".xml"
