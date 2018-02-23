@@ -26,8 +26,8 @@ def main_process(data_dct_lst, coref_dictionary):
     # for k, e in events_map.items():
     #     print(k, e)
     #
-    # for k, et in event_type.items():
-    #     print(k, et)
+    for k, et in event_type.items():
+        print(k, et)
     #
     # for k, t in event_time.items():
     #     print(k, t)

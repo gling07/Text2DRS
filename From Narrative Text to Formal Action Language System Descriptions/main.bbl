@@ -1,0 +1,55 @@
+\begin{thebibliography}{7}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bos(2008)]{bos08}
+Johan Bos.
+\newblock Wide-coverage semantic analysis with boxer.
+\newblock In \emph{Proceedings of the 2008 Conference on Semantics in Text
+  Processing}, STEP '08, pages 277--286, Stroudsburg, PA, USA, 2008.
+  Association for Computational Linguistics.
+\newblock URL \url{http://dl.acm.org/citation.cfm?id=1626481.1626503}.
+
+\bibitem[Johansson and Nugues(2007)]{lthurl}
+Richard Johansson and Pierre Nugues.
+\newblock \emph{Language {T}echnology at {L}{T}{H}}, 2007.
+\newblock \url{http://nlp.cs.lth.se/} [Accessed: 2017].
+
+\bibitem[Kamp and Reyle(1993)]{kampreyle93}
+Hans Kamp and Uwe Reyle.
+\newblock \emph{From discourse to logic}, volume 1,2.
+\newblock Kluwer, 1993.
+
+\bibitem[Kipper-Schuler(2005)]{KipperPhd05}
+Karin Kipper-Schuler.
+\newblock \emph{VerbNet: A Broad-Coverage, Comprehensive Verb Lexicon}.
+\newblock PhD thesis, University of Pennsylvania, 2005.
+
+\bibitem[Manning et~al.(2014)Manning, Surdeanu, Bauer, Finkel, Bethard, and
+  McClosky]{manning-EtAl:2014:P14-5}
+Christopher~D. Manning, Mihai Surdeanu, John Bauer, Jenny Finkel, Steven~J.
+  Bethard, and David McClosky.
+\newblock The {Stanford} {CoreNLP} natural language processing toolkit.
+\newblock In \emph{Association for Computational Linguistics (ACL) System
+  Demonstrations}, pages 55--60, 2014.
+\newblock URL \url{http://www.aclweb.org/anthology/P/P14/P14-5010}.
+
+\bibitem[Palmer(2006)]{verbneturl}
+Martha Palmer.
+\newblock \emph{VerbNet}, 2006.
+\newblock \url{https://verbs.colorado.edu/~mpalmer/projects/verbnet.html}
+  [Accessed: 2017].
+
+\bibitem[Palmer et~al.(2005)Palmer, Gildea, and Kingsbury]{propbank}
+Martha Palmer, Daniel Gildea, and Paul Kingsbury.
+\newblock The proposition bank: An annotated corpus of semantic roles.
+\newblock \emph{Computational Linguistics}, 31\penalty0 (1):\penalty0 71--106,
+  March 2005.
+\newblock ISSN 0891-2017.
+\newblock \doi{10.1162/0891201053630264}.
+\newblock URL \url{http://dx.doi.org/10.1162/0891201053630264}.
+
+\end{thebibliography}

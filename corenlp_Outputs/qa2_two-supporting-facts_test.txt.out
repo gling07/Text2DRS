@@ -1,0 +1,297 @@
+Sentence #1 (6 tokens):
+Mary got the milk there.
+[Text=Mary CharacterOffsetBegin=0 CharacterOffsetEnd=4 PartOfSpeech=NNP Lemma=Mary NamedEntityTag=PERSON]
+[Text=got CharacterOffsetBegin=5 CharacterOffsetEnd=8 PartOfSpeech=VBD Lemma=get NamedEntityTag=O]
+[Text=the CharacterOffsetBegin=9 CharacterOffsetEnd=12 PartOfSpeech=DT Lemma=the NamedEntityTag=O]
+[Text=milk CharacterOffsetBegin=13 CharacterOffsetEnd=17 PartOfSpeech=NN Lemma=milk NamedEntityTag=O]
+[Text=there CharacterOffsetBegin=18 CharacterOffsetEnd=23 PartOfSpeech=RB Lemma=there NamedEntityTag=O]
+[Text=. CharacterOffsetBegin=23 CharacterOffsetEnd=24 PartOfSpeech=. Lemma=. NamedEntityTag=O]
+(ROOT
+  (S
+    (NP (NNP Mary))
+    (VP (VBD got)
+      (NP (DT the) (NN milk))
+      (ADVP (RB there)))
+    (. .)))
+
+root(ROOT-0, got-2)
+nsubj(got-2, Mary-1)
+det(milk-4, the-3)
+dobj(got-2, milk-4)
+advmod(got-2, there-5)
+punct(got-2, .-6)
+
+Sentence #2 (6 tokens):
+John moved to the bedroom.
+[Text=John CharacterOffsetBegin=25 CharacterOffsetEnd=29 PartOfSpeech=NNP Lemma=John NamedEntityTag=PERSON]
+[Text=moved CharacterOffsetBegin=30 CharacterOffsetEnd=35 PartOfSpeech=VBD Lemma=move NamedEntityTag=O]
+[Text=to CharacterOffsetBegin=36 CharacterOffsetEnd=38 PartOfSpeech=TO Lemma=to NamedEntityTag=O]
+[Text=the CharacterOffsetBegin=39 CharacterOffsetEnd=42 PartOfSpeech=DT Lemma=the NamedEntityTag=O]
+[Text=bedroom CharacterOffsetBegin=43 CharacterOffsetEnd=50 PartOfSpeech=NN Lemma=bedroom NamedEntityTag=O]
+[Text=. CharacterOffsetBegin=50 CharacterOffsetEnd=51 PartOfSpeech=. Lemma=. NamedEntityTag=O]
+(ROOT
+  (S
+    (NP (NNP John))
+    (VP (VBD moved)
+      (PP (TO to)
+        (NP (DT the) (NN bedroom))))
+    (. .)))
+
+root(ROOT-0, moved-2)
+nsubj(moved-2, John-1)
+case(bedroom-5, to-3)
+det(bedroom-5, the-4)
+nmod:to(moved-2, bedroom-5)
+punct(moved-2, .-6)
+
+Sentence #3 (7 tokens):
+Sandra went back to the kitchen.
+[Text=Sandra CharacterOffsetBegin=52 CharacterOffsetEnd=58 PartOfSpeech=NNP Lemma=Sandra NamedEntityTag=PERSON]
+[Text=went CharacterOffsetBegin=59 CharacterOffsetEnd=63 PartOfSpeech=VBD Lemma=go NamedEntityTag=O]
+[Text=back CharacterOffsetBegin=64 CharacterOffsetEnd=68 PartOfSpeech=RB Lemma=back NamedEntityTag=O]
+[Text=to CharacterOffsetBegin=69 CharacterOffsetEnd=71 PartOfSpeech=TO Lemma=to NamedEntityTag=O]
+[Text=the CharacterOffsetBegin=72 CharacterOffsetEnd=75 PartOfSpeech=DT Lemma=the NamedEntityTag=O]
+[Text=kitchen CharacterOffsetBegin=76 CharacterOffsetEnd=83 PartOfSpeech=NN Lemma=kitchen NamedEntityTag=O]
+[Text=. CharacterOffsetBegin=83 CharacterOffsetEnd=84 PartOfSpeech=. Lemma=. NamedEntityTag=O]
+(ROOT
+  (S
+    (NP (NNP Sandra))
+    (VP (VBD went)
+      (ADVP (RB back))
+      (PP (TO to)
+        (NP (DT the) (NN kitchen))))
+    (. .)))
+
+root(ROOT-0, went-2)
+nsubj(went-2, Sandra-1)
+advmod(went-2, back-3)
+case(kitchen-6, to-4)
+det(kitchen-6, the-5)
+nmod:to(went-2, kitchen-6)
+punct(went-2, .-7)
+
+Sentence #4 (6 tokens):
+Mary travelled to the hallway.
+[Text=Mary CharacterOffsetBegin=85 CharacterOffsetEnd=89 PartOfSpeech=NNP Lemma=Mary NamedEntityTag=PERSON]
+[Text=travelled CharacterOffsetBegin=90 CharacterOffsetEnd=99 PartOfSpeech=VBD Lemma=travel NamedEntityTag=O]
+[Text=to CharacterOffsetBegin=100 CharacterOffsetEnd=102 PartOfSpeech=TO Lemma=to NamedEntityTag=O]
+[Text=the CharacterOffsetBegin=103 CharacterOffsetEnd=106 PartOfSpeech=DT Lemma=the NamedEntityTag=O]
+[Text=hallway CharacterOffsetBegin=107 CharacterOffsetEnd=114 PartOfSpeech=NN Lemma=hallway NamedEntityTag=O]
+[Text=. CharacterOffsetBegin=114 CharacterOffsetEnd=115 PartOfSpeech=. Lemma=. NamedEntityTag=O]
+(ROOT
+  (S
+    (NP (NNP Mary))
+    (VP (VBD travelled)
+      (PP (TO to)
+        (NP (DT the) (NN hallway))))
+    (. .)))
+
+root(ROOT-0, travelled-2)
+nsubj(travelled-2, Mary-1)
+case(hallway-5, to-3)
+det(hallway-5, the-4)
+nmod:to(travelled-2, hallway-5)
+punct(travelled-2, .-6)
+
+Sentence #5 (6 tokens):
+John got the football there.
+[Text=John CharacterOffsetBegin=116 CharacterOffsetEnd=120 PartOfSpeech=NNP Lemma=John NamedEntityTag=PERSON]
+[Text=got CharacterOffsetBegin=121 CharacterOffsetEnd=124 PartOfSpeech=VBD Lemma=get NamedEntityTag=O]
+[Text=the CharacterOffsetBegin=125 CharacterOffsetEnd=128 PartOfSpeech=DT Lemma=the NamedEntityTag=O]
+[Text=football CharacterOffsetBegin=129 CharacterOffsetEnd=137 PartOfSpeech=NN Lemma=football NamedEntityTag=O]
+[Text=there CharacterOffsetBegin=138 CharacterOffsetEnd=143 PartOfSpeech=RB Lemma=there NamedEntityTag=O]
+[Text=. CharacterOffsetBegin=143 CharacterOffsetEnd=144 PartOfSpeech=. Lemma=. NamedEntityTag=O]
+(ROOT
+  (S
+    (NP (NNP John))
+    (VP (VBD got)
+      (NP (DT the) (NN football))
+      (ADVP (RB there)))
+    (. .)))
+
+root(ROOT-0, got-2)
+nsubj(got-2, John-1)
+det(football-4, the-3)
+dobj(got-2, football-4)
+advmod(got-2, there-5)
+punct(got-2, .-6)
+
+Sentence #6 (6 tokens):
+John went to the hallway.
+[Text=John CharacterOffsetBegin=145 CharacterOffsetEnd=149 PartOfSpeech=NNP Lemma=John NamedEntityTag=PERSON]
+[Text=went CharacterOffsetBegin=150 CharacterOffsetEnd=154 PartOfSpeech=VBD Lemma=go NamedEntityTag=O]
+[Text=to CharacterOffsetBegin=155 CharacterOffsetEnd=157 PartOfSpeech=TO Lemma=to NamedEntityTag=O]
+[Text=the CharacterOffsetBegin=158 CharacterOffsetEnd=161 PartOfSpeech=DT Lemma=the NamedEntityTag=O]
+[Text=hallway CharacterOffsetBegin=162 CharacterOffsetEnd=169 PartOfSpeech=NN Lemma=hallway NamedEntityTag=O]
+[Text=. CharacterOffsetBegin=169 CharacterOffsetEnd=170 PartOfSpeech=. Lemma=. NamedEntityTag=O]
+(ROOT
+  (S
+    (NP (NNP John))
+    (VP (VBD went)
+      (PP (TO to)
+        (NP (DT the) (NN hallway))))
+    (. .)))
+
+root(ROOT-0, went-2)
+nsubj(went-2, John-1)
+case(hallway-5, to-3)
+det(hallway-5, the-4)
+nmod:to(went-2, hallway-5)
+punct(went-2, .-6)
+
+Sentence #7 (6 tokens):
+John put down the football.
+[Text=John CharacterOffsetBegin=171 CharacterOffsetEnd=175 PartOfSpeech=NNP Lemma=John NamedEntityTag=PERSON]
+[Text=put CharacterOffsetBegin=176 CharacterOffsetEnd=179 PartOfSpeech=VBD Lemma=put NamedEntityTag=O]
+[Text=down CharacterOffsetBegin=180 CharacterOffsetEnd=184 PartOfSpeech=RP Lemma=down NamedEntityTag=O]
+[Text=the CharacterOffsetBegin=185 CharacterOffsetEnd=188 PartOfSpeech=DT Lemma=the NamedEntityTag=O]
+[Text=football CharacterOffsetBegin=189 CharacterOffsetEnd=197 PartOfSpeech=NN Lemma=football NamedEntityTag=O]
+[Text=. CharacterOffsetBegin=197 CharacterOffsetEnd=198 PartOfSpeech=. Lemma=. NamedEntityTag=O]
+(ROOT
+  (S
+    (NP (NNP John))
+    (VP (VBD put)
+      (PRT (RP down))
+      (NP (DT the) (NN football)))
+    (. .)))
+
+root(ROOT-0, put-2)
+nsubj(put-2, John-1)
+compound:prt(put-2, down-3)
+det(football-5, the-4)
+dobj(put-2, football-5)
+punct(put-2, .-6)
+
+Sentence #8 (6 tokens):
+Mary went to the garden.
+[Text=Mary CharacterOffsetBegin=199 CharacterOffsetEnd=203 PartOfSpeech=NNP Lemma=Mary NamedEntityTag=PERSON]
+[Text=went CharacterOffsetBegin=204 CharacterOffsetEnd=208 PartOfSpeech=VBD Lemma=go NamedEntityTag=O]
+[Text=to CharacterOffsetBegin=209 CharacterOffsetEnd=211 PartOfSpeech=TO Lemma=to NamedEntityTag=O]
+[Text=the CharacterOffsetBegin=212 CharacterOffsetEnd=215 PartOfSpeech=DT Lemma=the NamedEntityTag=O]
+[Text=garden CharacterOffsetBegin=216 CharacterOffsetEnd=222 PartOfSpeech=NN Lemma=garden NamedEntityTag=O]
+[Text=. CharacterOffsetBegin=222 CharacterOffsetEnd=223 PartOfSpeech=. Lemma=. NamedEntityTag=O]
+(ROOT
+  (S
+    (NP (NNP Mary))
+    (VP (VBD went)
+      (PP (TO to)
+        (NP (DT the) (NN garden))))
+    (. .)))
+
+root(ROOT-0, went-2)
+nsubj(went-2, Mary-1)
+case(garden-5, to-3)
+det(garden-5, the-4)
+nmod:to(went-2, garden-5)
+punct(went-2, .-6)
+
+Sentence #9 (6 tokens):
+John went to the kitchen.
+[Text=John CharacterOffsetBegin=224 CharacterOffsetEnd=228 PartOfSpeech=NNP Lemma=John NamedEntityTag=PERSON]
+[Text=went CharacterOffsetBegin=229 CharacterOffsetEnd=233 PartOfSpeech=VBD Lemma=go NamedEntityTag=O]
+[Text=to CharacterOffsetBegin=234 CharacterOffsetEnd=236 PartOfSpeech=TO Lemma=to NamedEntityTag=O]
+[Text=the CharacterOffsetBegin=237 CharacterOffsetEnd=240 PartOfSpeech=DT Lemma=the NamedEntityTag=O]
+[Text=kitchen CharacterOffsetBegin=241 CharacterOffsetEnd=248 PartOfSpeech=NN Lemma=kitchen NamedEntityTag=O]
+[Text=. CharacterOffsetBegin=248 CharacterOffsetEnd=249 PartOfSpeech=. Lemma=. NamedEntityTag=O]
+(ROOT
+  (S
+    (NP (NNP John))
+    (VP (VBD went)
+      (PP (TO to)
+        (NP (DT the) (NN kitchen))))
+    (. .)))
+
+root(ROOT-0, went-2)
+nsubj(went-2, John-1)
+case(kitchen-5, to-3)
+det(kitchen-5, the-4)
+nmod:to(went-2, kitchen-5)
+punct(went-2, .-6)
+
+Sentence #10 (6 tokens):
+Sandra travelled to the hallway.
+[Text=Sandra CharacterOffsetBegin=250 CharacterOffsetEnd=256 PartOfSpeech=NNP Lemma=Sandra NamedEntityTag=PERSON]
+[Text=travelled CharacterOffsetBegin=257 CharacterOffsetEnd=266 PartOfSpeech=VBD Lemma=travel NamedEntityTag=O]
+[Text=to CharacterOffsetBegin=267 CharacterOffsetEnd=269 PartOfSpeech=TO Lemma=to NamedEntityTag=O]
+[Text=the CharacterOffsetBegin=270 CharacterOffsetEnd=273 PartOfSpeech=DT Lemma=the NamedEntityTag=O]
+[Text=hallway CharacterOffsetBegin=274 CharacterOffsetEnd=281 PartOfSpeech=NN Lemma=hallway NamedEntityTag=O]
+[Text=. CharacterOffsetBegin=281 CharacterOffsetEnd=282 PartOfSpeech=. Lemma=. NamedEntityTag=O]
+(ROOT
+  (S
+    (NP (NNP Sandra))
+    (VP (VBD travelled)
+      (PP (TO to)
+        (NP (DT the) (NN hallway))))
+    (. .)))
+
+root(ROOT-0, travelled-2)
+nsubj(travelled-2, Sandra-1)
+case(hallway-5, to-3)
+det(hallway-5, the-4)
+nmod:to(travelled-2, hallway-5)
+punct(travelled-2, .-6)
+
+Sentence #11 (6 tokens):
+Daniel went to the hallway.
+[Text=Daniel CharacterOffsetBegin=283 CharacterOffsetEnd=289 PartOfSpeech=NNP Lemma=Daniel NamedEntityTag=PERSON]
+[Text=went CharacterOffsetBegin=290 CharacterOffsetEnd=294 PartOfSpeech=VBD Lemma=go NamedEntityTag=O]
+[Text=to CharacterOffsetBegin=295 CharacterOffsetEnd=297 PartOfSpeech=TO Lemma=to NamedEntityTag=O]
+[Text=the CharacterOffsetBegin=298 CharacterOffsetEnd=301 PartOfSpeech=DT Lemma=the NamedEntityTag=O]
+[Text=hallway CharacterOffsetBegin=302 CharacterOffsetEnd=309 PartOfSpeech=NN Lemma=hallway NamedEntityTag=O]
+[Text=. CharacterOffsetBegin=309 CharacterOffsetEnd=310 PartOfSpeech=. Lemma=. NamedEntityTag=O]
+(ROOT
+  (S
+    (NP (NNP Daniel))
+    (VP (VBD went)
+      (PP (TO to)
+        (NP (DT the) (NN hallway))))
+    (. .)))
+
+root(ROOT-0, went-2)
+nsubj(went-2, Daniel-1)
+case(hallway-5, to-3)
+det(hallway-5, the-4)
+nmod:to(went-2, hallway-5)
+punct(went-2, .-6)
+
+Sentence #12 (5 tokens):
+Mary discarded the milk.
+[Text=Mary CharacterOffsetBegin=311 CharacterOffsetEnd=315 PartOfSpeech=NNP Lemma=Mary NamedEntityTag=PERSON]
+[Text=discarded CharacterOffsetBegin=316 CharacterOffsetEnd=325 PartOfSpeech=VBD Lemma=discard NamedEntityTag=O]
+[Text=the CharacterOffsetBegin=326 CharacterOffsetEnd=329 PartOfSpeech=DT Lemma=the NamedEntityTag=O]
+[Text=milk CharacterOffsetBegin=330 CharacterOffsetEnd=334 PartOfSpeech=NN Lemma=milk NamedEntityTag=O]
+[Text=. CharacterOffsetBegin=334 CharacterOffsetEnd=335 PartOfSpeech=. Lemma=. NamedEntityTag=O]
+(ROOT
+  (S
+    (NP (NNP Mary))
+    (VP (VBD discarded)
+      (NP (DT the) (NN milk)))
+    (. .)))
+
+root(ROOT-0, discarded-2)
+nsubj(discarded-2, Mary-1)
+det(milk-4, the-3)
+dobj(discarded-2, milk-4)
+punct(discarded-2, .-5)
+
+Coreference set:
+	(5,1,[1,2]) -> (2,1,[1,2]), that is: "John" -> "John"
+	(6,1,[1,2]) -> (2,1,[1,2]), that is: "John" -> "John"
+	(7,1,[1,2]) -> (2,1,[1,2]), that is: "John" -> "John"
+	(9,1,[1,2]) -> (2,1,[1,2]), that is: "John" -> "John"
+Coreference set:
+	(9,5,[4,6]) -> (3,6,[5,7]), that is: "the kitchen" -> "the kitchen"
+Coreference set:
+	(10,1,[1,2]) -> (3,1,[1,2]), that is: "Sandra" -> "Sandra"
+Coreference set:
+	(6,5,[4,6]) -> (4,5,[4,6]), that is: "the hallway" -> "the hallway"
+	(10,5,[4,6]) -> (4,5,[4,6]), that is: "the hallway" -> "the hallway"
+	(11,5,[4,6]) -> (4,5,[4,6]), that is: "the hallway" -> "the hallway"
+Coreference set:
+	(4,1,[1,2]) -> (1,1,[1,2]), that is: "Mary" -> "Mary"
+	(8,1,[1,2]) -> (1,1,[1,2]), that is: "Mary" -> "Mary"
+	(12,1,[1,2]) -> (1,1,[1,2]), that is: "Mary" -> "Mary"
+Coreference set:
+	(12,4,[3,5]) -> (1,4,[3,5]), that is: "the milk" -> "the milk"
+Coreference set:
+	(7,5,[4,6]) -> (5,4,[3,5]), that is: "the football" -> "the football"

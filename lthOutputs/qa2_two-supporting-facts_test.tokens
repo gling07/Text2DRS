@@ -1,0 +1,84 @@
+1	Mary	_	_	NNP	Mary	_	NNP	0	_
+2	got	get	_	VBD	got	get	VBD	0	_
+3	the	_	_	DT	the	_	DT	0	_
+4	milk	milk	_	NN	milk	milk	NN	0	_
+5	there	_	_	RB	there	_	RB	0	_
+6	.	_	_	.	.	_	.	0	_
+
+1	John	_	_	NNP	John	_	NNP	0	_
+2	moved	move	_	VBD	moved	move	VBD	0	_
+3	to	_	_	TO	to	_	TO	0	_
+4	the	_	_	DT	the	_	DT	0	_
+5	bedroom	bedroom	_	NN	bedroom	bedroom	NN	0	_
+6	.	_	_	.	.	_	.	0	_
+
+1	Sandra	_	_	NNP	Sandra	_	NNP	0	_
+2	went	go	_	VBD	went	go	VBD	0	_
+3	back	_	_	RB	back	_	RB	0	_
+4	to	_	_	TO	to	_	TO	0	_
+5	the	_	_	DT	the	_	DT	0	_
+6	kitchen	kitchen	_	NN	kitchen	kitchen	NN	0	_
+7	.	_	_	.	.	_	.	0	_
+
+1	Mary	_	_	NNP	Mary	_	NNP	0	_
+2	travelled	travel	_	VBD	travelled	travel	VBD	0	_
+3	to	_	_	TO	to	_	TO	0	_
+4	the	_	_	DT	the	_	DT	0	_
+5	hallway	hallway	_	NN	hallway	hallway	NN	0	_
+6	.	_	_	.	.	_	.	0	_
+
+1	John	_	_	NNP	John	_	NNP	0	_
+2	got	get	_	VBD	got	get	VBD	0	_
+3	the	_	_	DT	the	_	DT	0	_
+4	football	football	_	NN	football	football	NN	0	_
+5	there	_	_	RB	there	_	RB	0	_
+6	.	_	_	.	.	_	.	0	_
+
+1	John	_	_	NNP	John	_	NNP	0	_
+2	went	go	_	VBD	went	go	VBD	0	_
+3	to	_	_	TO	to	_	TO	0	_
+4	the	_	_	DT	the	_	DT	0	_
+5	hallway	hallway	_	NN	hallway	hallway	NN	0	_
+6	.	_	_	.	.	_	.	0	_
+
+1	John	_	_	NNP	John	_	NNP	0	_
+2	put	put	_	VBD	put	put	VBD	0	_
+3	down	_	_	RP	down	_	RP	0	_
+4	the	_	_	DT	the	_	DT	0	_
+5	football	football	_	NN	football	football	NN	0	_
+6	.	_	_	.	.	_	.	0	_
+
+1	Mary	_	_	NNP	Mary	_	NNP	0	_
+2	went	go	_	VBD	went	go	VBD	0	_
+3	to	_	_	TO	to	_	TO	0	_
+4	the	_	_	DT	the	_	DT	0	_
+5	garden	garden	_	NN	garden	garden	NN	0	_
+6	.	_	_	.	.	_	.	0	_
+
+1	John	_	_	NNP	John	_	NNP	0	_
+2	went	go	_	VBD	went	go	VBD	0	_
+3	to	_	_	TO	to	_	TO	0	_
+4	the	_	_	DT	the	_	DT	0	_
+5	kitchen	kitchen	_	NN	kitchen	kitchen	NN	0	_
+6	.	_	_	.	.	_	.	0	_
+
+1	Sandra	_	_	NNP	Sandra	_	NNP	0	_
+2	travelled	travel	_	VBD	travelled	travel	VBD	0	_
+3	to	_	_	TO	to	_	TO	0	_
+4	the	_	_	DT	the	_	DT	0	_
+5	hallway	hallway	_	NN	hallway	hallway	NN	0	_
+6	.	_	_	.	.	_	.	0	_
+
+1	Daniel	_	_	NNP	Daniel	_	NNP	0	_
+2	went	go	_	VBD	went	go	VBD	0	_
+3	to	_	_	TO	to	_	TO	0	_
+4	the	_	_	DT	the	_	DT	0	_
+5	hallway	hallway	_	NN	hallway	hallway	NN	0	_
+6	.	_	_	.	.	_	.	0	_
+
+1	Mary	_	_	NNP	Mary	_	NNP	0	_
+2	discarded	discard	_	VBD	discarded	discard	VBD	0	_
+3	the	_	_	DT	the	_	DT	0	_
+4	milk	milk	_	NN	milk	milk	NN	0	_
+5	.	_	_	.	.	_	.	0	_
+
