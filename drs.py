@@ -1,5 +1,6 @@
 import xml.etree.ElementTree as ET
 
+drs_dict = dict()
 
 def main_process(data_dct_lst, coref_dictionary):
     entities = retrieve_entity(data_dct_lst)
@@ -8,29 +9,19 @@ def main_process(data_dct_lst, coref_dictionary):
     events_map = retrieve_event(data_dct_lst)
     event_type = retrieve_event_type(data_dct_lst)
     event_time = retrieve_event_time(events_map)
+    event_argument = retrieve_event_argument(data_dct_lst, property, event_type)
 
-    print('in drs:')
-    for elem in coref_dictionary.items():
-        print(elem)
+    # drs_dict = dict()
+    drs_dict['entity'] = [k for k in entities_map.keys()]
+    drs_dict['property'] = property
+    drs_dict['event'] = [k for k in events_map.keys()]
+    drs_dict['eventType'] = event_type
+    drs_dict['eventTime'] = event_time
+    drs_dict['eventArgument'] = event_argument
 
-
-    # for e in entities:
-    #     print(e)
-    #
-    # for k,e in entities_map.items():
-    #     print(k,e)
-    #
-    for p in property:
-        print(p)
-    #
-    # for k, e in events_map.items():
-    #     print(k, e)
-    #
-    for k, et in event_type.items():
-        print(k, et)
-    #
-    # for k, t in event_time.items():
-    #     print(k, t)
+    # print('drs dict:')
+    # for k, v in drs_dict.items():
+    #     print(k, v)
 
 
 def retrieve_entity(data_dct_lst):
@@ -78,29 +69,79 @@ def retrieve_event(data_dct_lst):
     return events_dictionary
 
 
+# include picking first vn-class if multiple returns
 def retrieve_event_type(data_dct_lst):
-    event_type_dictionary = {}
+    event_type_dictionary = dict()
     count = 1;
-    for sentences in data_dct_lst:
-        for sen in sentences:
-            if sen.get('PPOS') == 'VBD':
-                event_type_dictionary['e' + str(count)] = sen.get('vn-pb')
+    for sentence in data_dct_lst:
+        for item in sentence:
+            if item.get('PPOS') == 'VBD':
+                event_type_dictionary['e' + str(count)] = item.get('vn-pb')[0]['vn']
                 count += 1
 
-    return event_type_dictionary
+    event_type_list = [(k, v) for k, v in event_type_dictionary.items()]
+    return event_type_list
 
 
 def retrieve_event_time(events_map):
-    event_time_dictionary = {}
+    event_time_dictionary = dict()
     count = 0
     for event, value in events_map.items():
         event_time_dictionary[event] = count
         count += 1
 
-    return event_time_dictionary
+    event_time_list = [(k, v) for k, v in event_time_dictionary.items()]
+    return event_time_list
 
 
-def retrieve_event_argument(data_dct_lst):
-    event_argument_dictionary = {}
+def retrieve_event_argument(data_dct_lst, property, eventType):
+    event_argument_list = list()
+    sentence_property = list()
+    sentence_rolesets = list()
+    for et, sentence in zip(eventType, data_dct_lst):
+        vn = et[1]
+        for item in sentence:
+            tmp = list()
+            if item.get('PPOS') == 'NNP' or item.get('PPOS') == 'NN':
+                sentence_property.append(item.get('Form'))
+            tmp += item.get('vn-pb')
+            for i in tmp:
+                k_list = [k for k in i.keys()]
+                for k in k_list:
+                    if k == vn:
+                        sentence_rolesets.append(i[k])
+
+    index = 0
+    count = 0
+    for p, r in zip(sentence_property, sentence_rolesets):
+        entity = ''
+        for i in property:
+            if i[1] == p:
+                entity = i[0]
+        event_argument_list.append((eventType[index][0], r, entity))
+        count += 1
+        if count == 2:
+            index += 1
+            count = 0
+
+    return event_argument_list
 
 
+def print_drs():
+    print('DRS Table')
+    print(', '.join(drs_dict['entity']), end=', ')
+    print(', '.join(drs_dict['event']))
+    print('=='*30)
+    count = 0
+    keys = [k for k in drs_dict.keys()]
+    for k in keys:
+        l = drs_dict[k]
+        for i in l:
+            print(k, end=' ')
+            print(i, end=' ')
+            count += 1
+            if count == 3:
+                print('')
+                count = 0
+
+        print('\n')

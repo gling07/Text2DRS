@@ -1,73 +1,37 @@
-ID        	Form      	PLemma    	PPOS      	PHead     	PDeprel   	Pred      	Args      	vn-pb     	
+DRS Table
+r1, r2, r3, r4, r5, r6, r7, r8, r9, e1, e2, e3, e4, e5, e6, e7, e8, e9, e10
+============================================================
+entity r1 entity r2 entity r3 
+entity r4 entity r5 entity r6 
+entity r7 entity r8 entity r9 
 
-1         	John      	_         	NNP       	2         	SBJ       	_         	A0        	51.3.2-1:Theme;
-2         	travelled 	travel    	VBD       	0         	ROOT      	travel.01 	_         	51.3.2-1;
-3         	to        	_         	TO        	2         	ADV       	_         	A1        	51.3.2-1:Location;
-4         	the       	_         	DT        	5         	NMOD      	_         	_         	_    
-5         	hallway   	hallway   	NN        	3         	PMOD      	_         	_         	_    
-6         	.         	_         	.         	2         	P         	_         	_         	_    
 
-1         	Mary      	_         	NNP       	2         	SBJ       	_         	A0        	51.3.2-1:Theme;
-2         	journeyed 	journey   	VBD       	0         	ROOT      	journey.01	_         	51.3.2-1;
-3         	to        	_         	TO        	2         	ADV       	_         	A2        	51.3.2-1:Location;
-4         	the       	_         	DT        	5         	NMOD      	_         	_         	_    
-5         	bathroom  	bathroom  	NN        	3         	PMOD      	_         	_         	_    
-6         	.         	_         	.         	2         	P         	_         	_         	_    
+property ('r1', 'John') property ('r2', 'hallway') property ('r3', 'Mary') 
+property ('r4', 'bathroom') property ('r5', 'Daniel') property ('r6', 'bedroom') 
+property ('r7', 'Sandra') property ('r8', 'kitchen') property ('r9', 'garden') 
 
-1         	Daniel    	_         	NNP       	2         	SBJ       	_         	A1        	51.1:Theme;
-2         	went      	go        	VBD       	0         	ROOT      	go.01     	_         	51.1;
-3         	back      	_         	RB        	2         	DIR       	_         	AM-DIR    	_    _    
-4         	to        	_         	TO        	2         	DIR       	_         	A4        	51.1:Destination;
-5         	the       	_         	DT        	6         	NMOD      	_         	_         	_    
-6         	bathroom  	bathroom  	NN        	4         	PMOD      	_         	_         	_    
-7         	.         	_         	.         	2         	P         	_         	_         	_    
 
-1         	John      	_         	NNP       	2         	SBJ       	_         	A1        	51.3.1:Theme;
-2         	moved     	move      	VBD       	0         	ROOT      	move.01   	_         	51.3.1;
-3         	to        	_         	TO        	2         	DIR       	_         	A2        	51.3.1:Location;
-4         	the       	_         	DT        	5         	NMOD      	_         	_         	_    
-5         	bedroom   	bedroom   	NN        	3         	PMOD      	_         	_         	_    
-6         	.         	_         	.         	2         	P         	_         	_         	_    
+event e1 event e2 event e3 
+event e4 event e5 event e6 
+event e7 event e8 event e9 
+event e10 
 
-1         	John      	_         	NNP       	2         	SBJ       	_         	A1        	51.1:Theme;
-2         	went      	go        	VBD       	0         	ROOT      	go.01     	_         	51.1;
-3         	to        	_         	TO        	2         	DIR       	_         	A4        	51.1:Destination;
-4         	the       	_         	DT        	5         	NMOD      	_         	_         	_    
-5         	hallway   	hallway   	NN        	3         	PMOD      	_         	_         	_    
-6         	.         	_         	.         	2         	P         	_         	_         	_    
+eventType ('e1', '51.3.2-1') eventType ('e2', '51.3.2-1') 
+eventType ('e3', '51.1') eventType ('e4', '51.3.1') eventType ('e5', '51.1') 
+eventType ('e6', '51.3.2-1') eventType ('e7', '51.3.2-1') eventType ('e8', '51.1') 
+eventType ('e9', '51.1') eventType ('e10', '51.3.1') 
 
-1         	Sandra    	_         	NNP       	2         	SBJ       	_         	A0        	51.3.2-1:Theme;
-2         	journeyed 	journey   	VBD       	0         	ROOT      	journey.01	_         	51.3.2-1;
-3         	to        	_         	TO        	2         	ADV       	_         	A2        	51.3.2-1:Location;
-4         	the       	_         	DT        	5         	NMOD      	_         	_         	_    
-5         	kitchen   	kitchen   	NN        	3         	PMOD      	_         	_         	_    
-6         	.         	_         	.         	2         	P         	_         	_         	_    
+eventTime ('e1', 0) 
+eventTime ('e2', 1) eventTime ('e3', 2) eventTime ('e4', 3) 
+eventTime ('e5', 4) eventTime ('e6', 5) eventTime ('e7', 6) 
+eventTime ('e8', 7) eventTime ('e9', 8) eventTime ('e10', 9) 
 
-1         	Sandra    	_         	NNP       	2         	SBJ       	_         	A0        	51.3.2-1:Theme;
-2         	travelled 	travel    	VBD       	0         	ROOT      	travel.01 	_         	51.3.2-1;
-3         	to        	_         	TO        	2         	ADV       	_         	A1        	51.3.2-1:Location;
-4         	the       	_         	DT        	5         	NMOD      	_         	_         	_    
-5         	hallway   	hallway   	NN        	3         	PMOD      	_         	_         	_    
-6         	.         	_         	.         	2         	P         	_         	_         	_    
 
-1         	John      	_         	NNP       	2         	SBJ       	_         	A1        	51.1:Theme;
-2         	went      	go        	VBD       	0         	ROOT      	go.01     	_         	51.1;
-3         	to        	_         	TO        	2         	DIR       	_         	A4        	51.1:Destination;
-4         	the       	_         	DT        	5         	NMOD      	_         	_         	_    
-5         	garden    	garden    	NN        	3         	PMOD      	_         	_         	_    
-6         	.         	_         	.         	2         	P         	_         	_         	_    
+eventArgument ('e1', 'Theme', 'r1') eventArgument ('e1', 'Location', 'r2') eventArgument ('e2', 'Theme', 'r3') 
+eventArgument ('e2', 'Location', 'r4') eventArgument ('e3', 'Theme', 'r5') eventArgument ('e3', 'Destination', 'r4') 
+eventArgument ('e4', 'Theme', 'r1') eventArgument ('e4', 'Location', 'r6') eventArgument ('e5', 'Theme', 'r1') 
+eventArgument ('e5', 'Destination', 'r2') eventArgument ('e6', 'Theme', 'r7') eventArgument ('e6', 'Location', 'r8') 
+eventArgument ('e7', 'Theme', 'r7') eventArgument ('e7', 'Location', 'r2') eventArgument ('e8', 'Theme', 'r1') 
+eventArgument ('e8', 'Destination', 'r9') eventArgument ('e9', 'Theme', 'r7') eventArgument ('e9', 'Destination', 'r4') 
+eventArgument ('e10', 'Theme', 'r7') eventArgument ('e10', 'Location', 'r8') 
 
-1         	Sandra    	_         	NNP       	2         	SBJ       	_         	A1        	51.1:Theme;
-2         	went      	go        	VBD       	0         	ROOT      	go.01     	_         	51.1;
-3         	back      	_         	RB        	2         	DIR       	_         	AM-DIR    	_    _    
-4         	to        	_         	TO        	2         	DIR       	_         	A4        	51.1:Destination;
-5         	the       	_         	DT        	6         	NMOD      	_         	_         	_    
-6         	bathroom  	bathroom  	NN        	4         	PMOD      	_         	_         	_    
-7         	.         	_         	.         	2         	P         	_         	_         	_    
-
-1         	Sandra    	_         	NNP       	2         	SBJ       	_         	A1        	51.3.1:Theme;
-2         	moved     	move      	VBD       	0         	ROOT      	move.01   	_         	51.3.1;
-3         	to        	_         	TO        	2         	DIR       	_         	A2        	51.3.1:Location;
-4         	the       	_         	DT        	5         	NMOD      	_         	_         	_    
-5         	kitchen   	kitchen   	NN        	3         	PMOD      	_         	_         	_    
-6         	.         	_         	.         	2         	P         	_         	_         	_    
