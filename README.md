@@ -17,7 +17,15 @@ These narratives will be used to evaluate the quality of my system.
 
 * Download or clone Text2DRS repository
 * Download LTH (http://nlp.cs.lth.se/software/semantic-parsing-propbank-nombank-frames/)
-* Download Standford core-NLP 3.8.0 (https://stanfordnlp.github.io/CoreNLP/cmdline.html)
+* Unzip LTH package and move the package dictionary into Text2DRS repository folder
+* Make sure the LTH folder name is "lth_srl"
+* Download Standford core-NLP package (https://stanfordnlp.github.io/CoreNLP/index.html#download)
+* Unzip core-NLP package and move the package dictionary into Text2DRS repository folder
+* Rename the core-NLP folder as "stanford-core-full" (just remove the version number)
+
+### Parameters ###
+
+* main.py (path to input file)
 
 ### Additional Links ###
 
