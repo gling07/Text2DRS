@@ -21,9 +21,8 @@ These narratives will be used to evaluate the quality of my system.
 * Download LTH (http://nlp.cs.lth.se/software/semantic-parsing-propbank-nombank-frames/)
 * Unzip LTH package and move the package dictionary into Text2DRS repository folder
 * Make sure the LTH folder name is "lth_srl"
-* Download Standford core-NLP **3.8** package (https://stanfordnlp.github.io/CoreNLP/history.html)
+* Download Standford core-NLP **3.7.0** package (https://stanfordnlp.github.io/CoreNLP/history.html)
 * Unzip core-NLP package and move the package dictionary into Text2DRS repository folder
-* Rename the core-NLP folder as "stanford-corenlp-full" (just remove the version number)
 
 ### Parameters ###
 

@@ -90,11 +90,11 @@ def process_lth(file):
 # output file format can be choose from text, xml, json
 def process_corenlp(file):
     text2_drs_path = os.getcwd()
-    corenlp_path = text2_drs_path + '/stanford-corenlp-full/'
+    corenlp_path = text2_drs_path + '/stanford-corenlp-full-2016-10-31/'
     os.chdir(corenlp_path)
     output_path = text2_drs_path + '/corenlp_Outputs/'
     output_format = 'xml'
-    cmd3 = 'java -Xmx5g -cp stanford-corenlp-3.8.0.jar:stanford-corenlp-models-3.8.0.jar:* '\
+    cmd3 = 'java -Xmx5g -cp stanford-corenlp-3.7.0.jar:stanford-corenlp-models-3.7.0.jar:* '\
            'edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators '\
            'tokenize,ssplit,pos,lemma,ner,parse,mention,coref -coref.algorithm neural '\
            '-file {0} -outputDirectory {1} -outputFormat {2}'.format(file, output_path, output_format)
