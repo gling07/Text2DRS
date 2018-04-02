@@ -4,16 +4,11 @@ From Narrative Text to Formal Action Language System Descriptions
 
 ### What is this repository for? ###
 
-Program the system Text2DRS in Java and python.
-To test my system, I will create a corpora consisting of short and interesting narratives from the bAbl Tasks Data (Facebook AI Research,. 2016) and annotate them with respective DRSes.
-These narratives will be used to evaluate the quality of my system.
+**Text2DRS** is written in Python3.
 
-* System Text2DRS that takes a narrative as an input and produces a Neo-Davidsonian style DRS as an output
-* Annotated corpora of bAbl narratives
-* Evaluation of Text2DRS
-* System Text2DRS description
+* System Text2DRS that takes a narrative text file as an input and produces a discourse representation structure (drs) as an output
 
-### System components ###
+### System setup guideline ###
 
 * **Python 3**
 * pip3 install dicttoxml
@@ -26,7 +21,7 @@ These narratives will be used to evaluate the quality of my system.
 
 ### Parameters ###
 
-* example system parameters
+* Example system parameters:
 * python3 main.py /*your system path to the project repository folder*/text2drs/testFiles/paperExample.txt
 
 
@@ -34,7 +29,7 @@ These narratives will be used to evaluate the quality of my system.
 
 * the output file is in the *text2drsOutputs* folder
 * input file name: paperExample.txt
-* DRS file name: paperExample.txt
+* output file name: paperExample.txt
 * file contents:
 ```
   DRS Table
