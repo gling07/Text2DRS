@@ -25,7 +25,7 @@ From Narrative Text to Formal Action Language System Descriptions
 * python3 main.py /*your system path to the project repository folder*/text2drs/testFiles/paperExample.txt
 
 
-## System output ###
+### System output ###
 
 * the output file is in the *text2drsOutputs* folder
 * input file name: paperExample.txt
