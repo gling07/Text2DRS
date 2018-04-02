@@ -13,7 +13,7 @@
 # limitations under the License.
 
 import xml.etree.ElementTree as ET
-from dicttoxml import dicttoxml
+# from dicttoxml import dicttoxml
 # from nltk.corpus import propbank
 
 # parse vb-pb mapping file into a element tree

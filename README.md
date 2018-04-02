@@ -15,17 +15,46 @@ These narratives will be used to evaluate the quality of my system.
 
 ### System components ###
 
+* **Python 3**
+* pip3 install dicttoxml
 * Download or clone Text2DRS repository
 * Download LTH (http://nlp.cs.lth.se/software/semantic-parsing-propbank-nombank-frames/)
 * Unzip LTH package and move the package dictionary into Text2DRS repository folder
 * Make sure the LTH folder name is "lth_srl"
-* Download Standford core-NLP package (https://stanfordnlp.github.io/CoreNLP/index.html#download)
+* Download Standford core-NLP **3.8** package (https://stanfordnlp.github.io/CoreNLP/history.html)
 * Unzip core-NLP package and move the package dictionary into Text2DRS repository folder
-* Rename the core-NLP folder as "stanford-core-full" (just remove the version number)
+* Rename the core-NLP folder as "stanford-corenlp-full" (just remove the version number)
 
 ### Parameters ###
 
-* main.py (path to input file)
+* example system parameters
+* python3 main.py /*your system path to the project repository folder*/text2drs/testFiles/paperExample.txt
+
+
+## System output ###
+
+* the output file is in the *text2drsOutputs* folder
+* input file name: paperExample.txt
+* DRS file name: paperExample.txt
+* file contents:
+```
+  DRS Table
+  r1, r2, r3, e1, e2
+  ============================================================
+  entity r1 entity r2 entity r3
+
+  property ('r1', 'Ann') property ('r2', 'room') property ('r3', 'Michael')
+
+  event e1 event e2
+
+  eventType ('e1', '51.1')
+  eventType ('e2', '13.3')
+
+  eventTime ('e1', 0) eventTime ('e2', 1)
+
+  eventArgument ('e1', 'Theme', 'r1') eventArgument ('e1', 'Destination', 'r2')
+  eventArgument ('e2', 'Agent', 'r3') eventArgument ('e2', 'Theme', 'r2')
+```
 
 ### Additional Links ###
 
@@ -40,5 +69,5 @@ These narratives will be used to evaluate the quality of my system.
 
 ### Who do I talk to? ###
 
-* Gang Ling
+* Gang Ling (gling@unomaha.edu)
 * Dr. Yuliya Lierler
