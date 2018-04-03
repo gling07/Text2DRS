@@ -152,7 +152,7 @@ def print_drs():
             print(k, end=' ')
             print(i, end=' ')
             count += 1
-            if count == 3:
+            if count == 2:
                 print('')
                 count = 0
 
