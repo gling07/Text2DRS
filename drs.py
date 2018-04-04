@@ -23,7 +23,6 @@ def main_process(data_dct_lst, coref_dictionary):
     event_time = retrieve_event_time(events_map)
     event_argument = retrieve_event_argument(data_dct_lst, property, event_type)
 
-    # drs_dict = dict()
     drs_dict['entity'] = [k for k in entities_map.keys()]
     drs_dict['property'] = property
     drs_dict['event'] = [k for k in events_map.keys()]
@@ -31,10 +30,7 @@ def main_process(data_dct_lst, coref_dictionary):
     drs_dict['eventTime'] = event_time
     drs_dict['eventArgument'] = event_argument
 
-    # print('drs dict:')
-    # for k, v in drs_dict.items():
-    #     print(k, v)
-
+    return drs_dict
 
 def retrieve_entity(data_dct_lst):
     entities = []
@@ -137,23 +133,3 @@ def retrieve_event_argument(data_dct_lst, property, eventType):
             count = 0
 
     return event_argument_list
-
-
-def print_drs():
-    print('DRS Table')
-    print(', '.join(drs_dict['entity']), end=', ')
-    print(', '.join(drs_dict['event']))
-    print('=='*30)
-    count = 0
-    keys = [k for k in drs_dict.keys()]
-    for k in keys:
-        l = drs_dict[k]
-        for i in l:
-            print(k, end=' ')
-            print(i, end=' ')
-            count += 1
-            if count == 2:
-                print('')
-                count = 0
-
-        print('\n')

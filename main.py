@@ -20,8 +20,7 @@ import verbnetsrl
 import drs
 import xml.etree.ElementTree as ET
 import corenlp
-from xml.dom import minidom
-from xml.dom.minidom import parseString
+import fileGenerator
 
 # lth output file
 output_file = None
@@ -60,7 +59,7 @@ def process_lth(file):
                                                                                                   output_tokens)
 
     # call and run lth's token processor
-    subprocess.call(cmd,shell=True)
+    # subprocess.call(cmd,shell=True)
 
     # below is setting up system variables of lth tool in fully function mode
     synmodel = 'models/train_at_pp_more2nd.model'
@@ -81,7 +80,7 @@ def process_lth(file):
            '{10} {11} {12}'.format(MEM,CP,LM,GM_CD,GM_CL,synmodel,NSYN,
                                    NSEM,SYNW,GMW,FORCE_VARGS,input_tokens,output_file)
 
-    subprocess.call(cmd2,shell=True)
+    # subprocess.call(cmd2,shell=True)
 
     # switch back to text2drs dictionary
     os.chdir(text2_drs_path)
@@ -99,7 +98,7 @@ def process_corenlp(file):
            'tokenize,ssplit,pos,lemma,ner,parse,mention,coref -coref.algorithm neural '\
            '-file {0} -outputDirectory {1} -outputFormat {2}'.format(file, output_path, output_format)
 
-    subprocess.call(cmd3, shell=True)
+    # subprocess.call(cmd3, shell=True)
     file_name = file.split("/")[-1]
     corenlp_output_path = output_path + file_name + ".xml"
     os.chdir(text2_drs_path)
@@ -128,17 +127,13 @@ def main():
     data_dct_lst = verbnetsrl.read_data(lth_output)
 
     # write verbNetSRL's outputs to a file
-    # orig_stdout = sys.stdout
-    # global target_file_name
-    # f = open('text2drsOutputs/' + target_file_name + '.txt','w')
-    # sys.stdout = f
-    # # verbnetsrl.print_table(data_dct_lst)
-    # sys.stdout = orig_stdout
-    # f.close()
-
-    # xml = verbnetsrl.to_xml()
-    # dom = parseString(xml)
-    # # print(dom.toprettyxml())
+    orig_stdout = sys.stdout
+    global target_file_name
+    f = open('text2drsOutputs/' + target_file_name + '_verbNetsrl.txt','w')
+    sys.stdout = f
+    fileGenerator.print_table(data_dct_lst)
+    sys.stdout = orig_stdout
+    f.close()
 
     corenlp_output_path = process_corenlp(input_file)
     corenlp_output = None
@@ -152,13 +147,13 @@ def main():
 
     coref_dictionary = corenlp.prcoess_xml(corenlp_output)
 
-    drs.main_process(data_dct_lst, coref_dictionary)
+    drs_dict = drs.main_process(data_dct_lst, coref_dictionary)
 
     orig_stdout = sys.stdout
-    global target_file_name
-    f = open('text2drsOutputs/' + target_file_name + '.txt','w')
+    # global target_file_name
+    f = open('text2drsOutputs/' + target_file_name + '_drs.txt','w')
     sys.stdout = f
-    drs.print_drs()
+    fileGenerator.drs_to_asp(drs_dict)
     sys.stdout = orig_stdout
     f.close()
 
