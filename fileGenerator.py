@@ -12,14 +12,14 @@ def drs_to_asp(drs_dict):
     for key in key_list:
         items = drs_dict[key]
         if key == 'entity' or key == 'event':
-            print()
+            print('\n')
             for i in items:
                 print(key, end='')
                 print('(', end='')
                 print(i, end='')
                 print(').', end=' ')
                 count += 1
-                if count == 3:
+                if count == 4:
                     print()
                     count = 0
         elif key == 'eventArgument':
@@ -37,7 +37,7 @@ def drs_to_asp(drs_dict):
                     print()
                     count = 0
         elif key == 'eventTime':
-            print('')
+            print('\n')
             count = 0
             for (e, t) in items:
                 print(key, end='')
@@ -46,11 +46,11 @@ def drs_to_asp(drs_dict):
                 print(t, end='')
                 print(').', end=' ')
                 count += 1
-                if count == 3:
+                if count == 5:
                     print()
                     count = 0
         else:
-            print('')
+            print('\n')
             count = 0
             for (e, v) in items:
                 print(key, end='')
@@ -59,7 +59,7 @@ def drs_to_asp(drs_dict):
                 print('\"' + v + '\"', end='')
                 print(').', end=' ')
                 count += 1
-                if count == 3:
+                if count == 4:
                     print()
                     count = 0
 
