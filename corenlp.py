@@ -40,9 +40,8 @@ def coreference(xml):
                 id_list = [sentence_id]
                 coref_dictionary[word] = id_list
 
-    # for item in coref_dictionary.items():
-    #     print(item)
     return coref_dictionary
+
 
 def prcoess_xml(xml_tree):
     corenlp_xml = xml_tree

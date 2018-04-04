@@ -20,6 +20,7 @@ import verbnetsrl
 import drs
 import xml.etree.ElementTree as ET
 import corenlp
+import drs2
 import fileGenerator
 
 # lth output file
@@ -147,7 +148,8 @@ def main():
 
     coref_dictionary = corenlp.prcoess_xml(corenlp_output)
 
-    drs_dict = drs.main_process(data_dct_lst, coref_dictionary)
+    # drs_dict = drs.main_process(data_dct_lst)
+    drs_dict = drs2.drs_generator(data_dct_lst, coref_dictionary)
 
     orig_stdout = sys.stdout
     # global target_file_name

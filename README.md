@@ -24,13 +24,15 @@ From Narrative Text to Formal Action Language System Descriptions
 * Example system parameters:
 * python3 main.py /*your system path to the project repository folder*/text2drs/testFiles/paperExample.txt
 
-
 ### System output ###
 
 * the output file is in the *text2drsOutputs* folder
 * input file name: paperExample.txt
-* output file name: paperExample.txt
-* file contents:
+
+* drs output file name: paperExample_drs.txt
+* verbnet srl output file name: paperExample_verbNetsrl.txt
+
+* drs file contents:
 ```
 % r1, r2, r3, e1, e2
 % ============================================================

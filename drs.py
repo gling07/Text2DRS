@@ -14,7 +14,7 @@
 
 drs_dict = dict()
 
-def main_process(data_dct_lst, coref_dictionary):
+def main_process(data_dct_lst):
     entities = retrieve_entity(data_dct_lst)
     entities_map = mapping_entity(entities)
     property = retrieve_property(entities_map)
