@@ -10,19 +10,31 @@ From Narrative Text to Formal Action Language System Descriptions
 
 ### System setup guideline ###
 
-* **Python 3**
-* pip3 install dicttoxml
+* **Python 3.6** Note that the version of python is *ESSENTIAL*
+* pip3 install dicttoxml  (tested with version 1.7.4)
 * Download or clone Text2DRS repository
 * Download LTH (http://nlp.cs.lth.se/software/semantic-parsing-propbank-nombank-frames/)
 * Unzip LTH package and move the package dictionary into Text2DRS repository folder
-* Make sure the LTH folder name is "lth_srl"
 * Download Standford core-NLP **3.7.0** package (https://stanfordnlp.github.io/CoreNLP/history.html)
 * Unzip core-NLP package and move the package dictionary into Text2DRS repository folder
 
+* create a file named CONFIG that includes two lines  specifying the place for LTH and core-NLP packages as follows
+
+lth_srl  <path-to-lth-directory>/lth_srl/
+corenlp  <path-to-corenlp-directory>/stanford-corenlp-full-2016-10-31/
+   
+
 ### Parameters ###
 
-* Example system parameters:
-* python3 main.py /*your system path to the project repository folder*/text2drs/testFiles/paperExample.txt
+* Command line to invoke the system:
+* python3 text2drs.py <path-to-config-file>/CONFIG <path-to-input-file-with-text>/something.txt
+
+For example, testFiles/paperExample.txt contains two sentences 
+  Ann went to the room.
+  Michael left the room.
+
+If this file is an input file of text2drs.py then the output will be placed into 
+*text2drsOutputs* folder under the name paperExample_drs.txt (See below)
 
 ### System output ###
 
@@ -58,12 +70,8 @@ eventArgument(e2, "Theme", r2).
 * Link to VerbNet (https://verbs.colorado.edu/verb-index/)
 * Link to SemLink (https://verbs.colorado.edu/semlink/)
 
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
 
 ### Who do I talk to? ###
 
 * Gang Ling (gling@unomaha.edu)
-* Dr. Yuliya Lierler
+* Dr. Yuliya Lierler (ylierler@unomaha.edu)
