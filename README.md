@@ -32,22 +32,22 @@ From Narrative Text to Formal Action Language System Descriptions
 * output file name: paperExample.txt
 * file contents:
 ```
-  DRS Table
-  r1, r2, r3, e1, e2
-  ============================================================
-  entity r1 entity r2 entity r3
+% r1, r2, r3, e1, e2
+% ============================================================
 
-  property ('r1', 'Ann') property ('r2', 'room') property ('r3', 'Michael')
+entity(r1). entity(r2). entity(r3).
 
-  event e1 event e2
+property(r1, "Ann"). property(r2, "room"). property(r3, "Michael").
 
-  eventType ('e1', '51.1')
-  eventType ('e2', '13.3')
+event(e1).
+event(e2).
 
-  eventTime ('e1', 0) eventTime ('e2', 1)
+eventType(e1, "51.1"). eventType(e2, "13.3").
 
-  eventArgument ('e1', 'Theme', 'r1') eventArgument ('e1', 'Destination', 'r2')
-  eventArgument ('e2', 'Agent', 'r3') eventArgument ('e2', 'Theme', 'r2')
+eventTime(e1, 0). eventTime(e2, 1).
+
+eventArgument(e1, "Theme", r1). eventArgument(e1, "Destination", r2). eventArgument(e2, "Agent", r3).
+eventArgument(e2, "Theme", r2).
 ```
 
 ### Additional Links ###
