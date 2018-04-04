@@ -1,0 +1,34 @@
+% r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11, e12
+% ============================================================
+
+
+entity(r1). entity(r2). entity(r3). entity(r4). 
+entity(r5). entity(r6). entity(r7). entity(r8). 
+entity(r9). entity(r10). 
+
+property(r1, "Mary"). property(r2, "milk"). property(r3, "John"). property(r4, "bedroom"). 
+property(r5, "Sandra"). property(r6, "kitchen"). property(r7, "hallway"). property(r8, "football"). 
+property(r9, "garden"). property(r10, "Daniel"). 
+
+event(e1). event(e2). 
+event(e3). event(e4). event(e5). event(e6). 
+event(e7). event(e8). event(e9). event(e10). 
+event(e11). event(e12). 
+
+eventType(e1, "13.5.1-1"). eventType(e2, "51.3.1"). eventType(e3, "51.1"). eventType(e4, "51.3.2-1"). 
+eventType(e5, "13.5.1-1"). eventType(e6, "51.1"). eventType(e7, "9.1-2"). eventType(e8, "51.1"). 
+eventType(e9, "51.1"). eventType(e10, "51.3.2-1"). eventType(e11, "51.1"). eventType(e12, "17.1"). 
+
+
+eventTime(e1, 0). eventTime(e2, 1). eventTime(e3, 2). eventTime(e4, 3). eventTime(e5, 4). 
+eventTime(e6, 5). eventTime(e7, 6). eventTime(e8, 7). eventTime(e9, 8). eventTime(e10, 9). 
+eventTime(e11, 10). eventTime(e12, 11). 
+
+eventArgument(e1, "Agent", r1). eventArgument(e1, "Theme", r2). eventArgument(e2, "Theme", r3). 
+eventArgument(e2, "Location", r4). eventArgument(e3, "Theme", r5). eventArgument(e3, "Destination", r6). 
+eventArgument(e4, "Theme", r1). eventArgument(e4, "Location", r7). eventArgument(e5, "Agent", r3). 
+eventArgument(e5, "Theme", r8). eventArgument(e6, "Theme", r3). eventArgument(e6, "Destination", r7). 
+eventArgument(e7, "Agent", r3). eventArgument(e7, "Destination", r8). eventArgument(e8, "Theme", r1). 
+eventArgument(e8, "Theme", r9). eventArgument(e9, "Destination", r3). eventArgument(e9, "Theme", r6). 
+eventArgument(e10, "Destination", r5). eventArgument(e10, "Theme", r7). eventArgument(e11, "Location", r10). 
+eventArgument(e11, "Theme", r7). eventArgument(e12, "Destination", r1). eventArgument(e12, "Agent", r2). 
