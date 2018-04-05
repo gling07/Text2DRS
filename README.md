@@ -11,8 +11,7 @@ From Narrative Text to Formal Action Language System Descriptions
 ### System setup guideline ###
 
 * **Python 3.6** Note that the version of python is *ESSENTIAL*
-* pip3 install dicttoxml  (tested with version 1.7.4)
-* Download or clone Text2DRS repository
+* Download or git clone (https://github.com/gling07/Text2DRS) Text2DRS repository
 * Download LTH (http://nlp.cs.lth.se/software/semantic-parsing-propbank-nombank-frames/)
 * Unzip LTH package and move the package dictionary into Text2DRS repository folder
 * Download Standford core-NLP **3.7.0** package (https://stanfordnlp.github.io/CoreNLP/history.html)
@@ -75,3 +74,8 @@ eventArgument(e2, "Theme", r2).
 
 * Gang Ling (gling@unomaha.edu)
 * Dr. Yuliya Lierler (ylierler@unomaha.edu)
+
+
+### License ###
+
+* MIT License
