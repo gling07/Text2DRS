@@ -24,8 +24,10 @@
 drs_dict = dict()
 
 
-def main_process(data_dct_lst):
-    entities = retrieve_entity(data_dct_lst)
+def drs_generator(data_dct_lst, coref_dictionary):
+
+    omit_list = get_omit_entities(coref_dictionary)
+    entities = get_all_entities(data_dct_lst, omit_list)
     entities_map = mapping_entity(entities)
     property = retrieve_property(entities_map)
     events_map = retrieve_event(data_dct_lst)
@@ -42,16 +44,29 @@ def main_process(data_dct_lst):
 
     return drs_dict
 
-def retrieve_entity(data_dct_lst):
-    entities = []
+def get_omit_entities(coref_dictionary):
+
+    omit_list = list()
+    for key, value in coref_dictionary.items():
+        if ' ' in key:
+            entity = key.split(' ')[-1]
+            for v in value[1:]:
+                omit_list.append((entity, v))
+        else:
+            for v in value[1:]:
+                omit_list.append((key, v))
+    return omit_list
+
+def get_all_entities(data_dct_lst, omit_list):
+    entities = list()
+    num = 0
     for sentences in data_dct_lst:
-        temp = []
+        num += 1
         for sen in sentences:
             if sen.get('PPOS') == 'NNP' or sen.get('PPOS') == 'NN':
-                temp.append(sen.get('Form'))
-        for entity in temp:
-            if entity not in entities:
-                entities.append(entity)
+                tmp = (sen.get('Form'), num)
+                if tmp not in omit_list:
+                    entities.append(sen.get('Form'))
 
     return entities
 

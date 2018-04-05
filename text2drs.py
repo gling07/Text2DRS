@@ -1,3 +1,26 @@
+# MIT License
+#
+# Copyright (c) [2018] [Gang Ling (gling@unomaha.edu),
+#                      Yuliya Lierler (ylierler@unomaha.edu)]
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 import os
 import sys
 import subprocess
@@ -6,8 +29,9 @@ import verbnetsrl
 import drs
 import xml.etree.ElementTree as ET
 import corenlp
-from xml.dom import minidom
-from xml.dom.minidom import parseString
+import drs2
+import fileGenerator
+import configparser
 
 # lth output file
 output_file = None
@@ -16,12 +40,10 @@ target_file_name = None
 
 
 # The method to call and run lth tool with a input file
-def process_lth(file):
+def process_lth(file, lth_path):
 
     # store text2drs tool's path
     text2_drs_path = os.getcwd()
-
-    lth_path = text2_drs_path + '/lth_srl/'
 
     # switch current dictionary to lth folder
     os.chdir(lth_path)
@@ -74,13 +96,12 @@ def process_lth(file):
 
 # process input file by running corenlp through command line
 # output file format can be choose from text, xml, json
-def process_corenlp(file):
+def process_corenlp(file, corenlp_path):
     text2_drs_path = os.getcwd()
-    corenlp_path = text2_drs_path + '/stanford-corenlp-full/'
     os.chdir(corenlp_path)
     output_path = text2_drs_path + '/corenlp_Outputs/'
     output_format = 'xml'
-    cmd3 = 'java -Xmx5g -cp stanford-corenlp-3.8.0.jar:stanford-corenlp-models-3.8.0.jar:* '\
+    cmd3 = 'java -Xmx5g -cp stanford-corenlp-3.7.0.jar:stanford-corenlp-models-3.7.0.jar:* '\
            'edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators '\
            'tokenize,ssplit,pos,lemma,ner,parse,mention,coref -coref.algorithm neural '\
            '-file {0} -outputDirectory {1} -outputFormat {2}'.format(file, output_path, output_format)
@@ -93,11 +114,20 @@ def process_corenlp(file):
 
 
 def main():
+    config = configparser.RawConfigParser()
+
     parser = argparse.ArgumentParser()
+    parser.add_argument("config", help='given full path of config file', type=str)
     parser.add_argument("input", help='given full path of input file', type=str)
     args = parser.parse_args()
+
+    config.read(args.config)
     input_file = args.input
-    process_lth(input_file)
+
+    lth_path = config.get('LTH', 'Path')
+    corenlp_path = config.get('CoreNLP', 'Path')
+
+    process_lth(input_file, lth_path)
 
     # read lth output file and store in lth_output
     lth_output = None
@@ -114,19 +144,15 @@ def main():
     data_dct_lst = verbnetsrl.read_data(lth_output)
 
     # write verbNetSRL's outputs to a file
-    # orig_stdout = sys.stdout
-    # global target_file_name
-    # f = open('text2drsOutputs/' + target_file_name + '.txt','w')
-    # sys.stdout = f
-    # # verbnetsrl.print_table(data_dct_lst)
-    # sys.stdout = orig_stdout
-    # f.close()
+    orig_stdout = sys.stdout
+    global target_file_name
+    f = open('text2drsOutputs/' + target_file_name + '_verbNetsrl.txt','w')
+    sys.stdout = f
+    fileGenerator.print_table(data_dct_lst)
+    sys.stdout = orig_stdout
+    f.close()
 
-    # xml = verbnetsrl.to_xml()
-    # dom = parseString(xml)
-    # # print(dom.toprettyxml())
-
-    corenlp_output_path = process_corenlp(input_file)
+    corenlp_output_path = process_corenlp(input_file, corenlp_path)
     corenlp_output = None
     try:
         corenlp_output = ET.parse(corenlp_output_path)
@@ -138,13 +164,14 @@ def main():
 
     coref_dictionary = corenlp.prcoess_xml(corenlp_output)
 
-    drs.main_process(data_dct_lst, coref_dictionary)
+    # drs_dict = drs.main_process(data_dct_lst)
+    drs_dict = drs2.drs_generator(data_dct_lst, coref_dictionary)
 
     orig_stdout = sys.stdout
-    global target_file_name
-    f = open('text2drsOutputs/' + target_file_name + '.txt','w')
+    # global target_file_name
+    f = open('text2drsOutputs/' + target_file_name + '_drs.txt','w')
     sys.stdout = f
-    drs.print_drs()
+    fileGenerator.drs_to_asp(drs_dict)
     sys.stdout = orig_stdout
     f.close()
 
