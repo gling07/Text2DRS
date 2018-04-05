@@ -31,6 +31,7 @@ import xml.etree.ElementTree as ET
 import corenlp
 import drs2
 import fileGenerator
+import configparser
 
 # lth output file
 output_file = None
@@ -39,12 +40,10 @@ target_file_name = None
 
 
 # The method to call and run lth tool with a input file
-def process_lth(file):
+def process_lth(file, lth_path):
 
     # store text2drs tool's path
     text2_drs_path = os.getcwd()
-
-    lth_path = text2_drs_path + '/lth_srl/'
 
     # switch current dictionary to lth folder
     os.chdir(lth_path)
@@ -97,9 +96,8 @@ def process_lth(file):
 
 # process input file by running corenlp through command line
 # output file format can be choose from text, xml, json
-def process_corenlp(file):
+def process_corenlp(file, corenlp_path):
     text2_drs_path = os.getcwd()
-    corenlp_path = text2_drs_path + '/stanford-corenlp-full-2016-10-31/'
     os.chdir(corenlp_path)
     output_path = text2_drs_path + '/corenlp_Outputs/'
     output_format = 'xml'
@@ -116,11 +114,20 @@ def process_corenlp(file):
 
 
 def main():
+    config = configparser.RawConfigParser()
+
     parser = argparse.ArgumentParser()
+    parser.add_argument("config", help='given full path of config file', type=str)
     parser.add_argument("input", help='given full path of input file', type=str)
     args = parser.parse_args()
+
+    config.read(args.config)
     input_file = args.input
-    process_lth(input_file)
+
+    lth_path = config.get('LTH', 'Path')
+    corenlp_path = config.get('CoreNLP', 'Path')
+
+    process_lth(input_file, lth_path)
 
     # read lth output file and store in lth_output
     lth_output = None
@@ -145,7 +152,7 @@ def main():
     sys.stdout = orig_stdout
     f.close()
 
-    corenlp_output_path = process_corenlp(input_file)
+    corenlp_output_path = process_corenlp(input_file, corenlp_path)
     corenlp_output = None
     try:
         corenlp_output = ET.parse(corenlp_output_path)

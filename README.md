@@ -12,21 +12,25 @@ From Narrative Text to Formal Action Language System Descriptions
 
 * **Python 3.6** Note that the version of python is *ESSENTIAL*
 * Download or git clone (https://github.com/gling07/Text2DRS) Text2DRS repository
+* If you already have LTH or Stanford core-NLP 3.7.0, you can omit related steps and edit CONFIG file directly
 * Download LTH (http://nlp.cs.lth.se/software/semantic-parsing-propbank-nombank-frames/)
 * Unzip LTH package and move the package dictionary into Text2DRS repository folder
 * Download Standford core-NLP **3.7.0** package (https://stanfordnlp.github.io/CoreNLP/history.html)
 * Unzip core-NLP package and move the package dictionary into Text2DRS repository folder
+* Edit CONFIG.cfg file to include system paths of LTH and core-NLP package as following:
+```
+[LTH]
+Path: <absolute-path-to-LTH>/lth_srl
 
-* create a file named CONFIG that includes two lines  specifying the place for LTH and core-NLP packages as follows
+[CoreNLP]
+Path: <absolute-path-to-CoreNLP>/stanford-corenlp-full-2016-10-31
 
-lth_srl  <path-to-lth-directory>/lth_srl/
-corenlp  <path-to-corenlp-directory>/stanford-corenlp-full-2016-10-31/
-   
+```
 
 ### Parameters ###
 
 * Command line to invoke the system:
-* python3 text2drs.py <path-to-config-file>/CONFIG <path-to-input-file-with-text>/something.txt
+* python3 text2drs.py <absolute-path-to-config-file>/CONFIG.cfg <absolute-path-to-input-file-with-text>/something.txt
 
 For example, testFiles/paperExample.txt contains two sentences 
   Ann went to the room.
