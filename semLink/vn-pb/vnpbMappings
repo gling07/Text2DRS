@@ -15273,6 +15273,7 @@
 	<predicate lemma="journey">
 		<argmap pb-roleset="journey.01" vn-class="51.3.2-1">
 			<role pb-arg="0" vn-theta="Theme" />
+			<role pb-arg="1" vn-theta="Location" />
 			<role pb-arg="2" vn-theta="Location" />
 		</argmap>
 	</predicate>

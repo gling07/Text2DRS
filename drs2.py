@@ -142,7 +142,8 @@ def retrieve_event_argument(data_dct_lst, property, event_type):
             if sent.get('Args') != '_' and sent.get('vn-pb')[0] != '_':
                 # use first verb class as vn class
                 vn_role = sent.get('vn-pb')[0][1]
-                if sent.get('PPOS') == 'NNP' or sent.get('PPOS') == 'NN' or sent.get('PPOS') == 'TO':
+                ppos = sent.get('PPOS')
+                if ppos in ['NNP', 'NN', 'TO']:
                     args_to_vn.append(vn_role)
 
         sub_index = 0

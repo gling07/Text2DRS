@@ -25,8 +25,6 @@ import os
 import sys
 import subprocess
 import argparse
-from typing import Any, Union
-
 import verbnetsrl
 import drs
 import xml.etree.ElementTree as ET
@@ -124,32 +122,40 @@ def main():
     parser.add_argument("input", help='given full path of input file', type=str)
     args = parser.parse_args()
 
-    try:
+    if os.path.isfile(args.config):
         config.read(args.config)
-    except IOError:
+    else:
         print('Could not find CONFIG file')
+        sys.exit()
 
-    try:
+    if os.path.isfile(args.input):
         input_file = args.input
-    except IOError:
-        print('Could not find the txt file')
+    else:
+        print("Could not find the txt file")
+        sys.exit()
 
-    input_file = args.input
-    lth_path = config.get('LTH', 'Path')
-
+    lth_path = config.get("LTH", "Path")
     if os.path.exists(lth_path):
-        process_lth(input_file, lth_path)
+        pass
     else:
         print('LTH path is invalid')
         sys.exit()
 
+    corenlp_path = config.get('CoreNLP', 'Path')
+    if os.path.exists(corenlp_path):
+        pass
+    else:
+        print('Core-NLP path invalid')
+        sys.exit()
+
+    process_lth(input_file, lth_path)
     # read lth output file and store in lth_output
     lth_output = None
     try:
         global output_file
         lth_output = open(output_file,'r')
     except IOError as e:
-        print('I/O error({0}): {1}'.format(e.errno, e.strerror))
+        print(f"I/O error({e.errno}): {e.strerror}")
     except:
         print('Unexpected error:', sys.exc_info()[0])
         raise
@@ -166,13 +172,7 @@ def main():
     sys.stdout = orig_stdout
     f.close()
 
-    corenlp_path = config.get('CoreNLP', 'Path')
-    if os.path.exists(corenlp_path):
-          corenlp_output_path = process_corenlp(input_file, corenlp_path)
-    else:
-        print('Core-NLP path invalid')
-        sys.exit()
-
+    corenlp_output_path = process_corenlp(input_file, corenlp_path)
     corenlp_output = None
     try:
         corenlp_output = ET.parse(corenlp_output_path)
