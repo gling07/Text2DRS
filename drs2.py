@@ -44,6 +44,7 @@ def drs_generator(data_dct_lst, coref_dictionary):
 
     return drs_dict
 
+
 def get_omit_entities(coref_dictionary):
 
     omit_list = list()
@@ -56,6 +57,7 @@ def get_omit_entities(coref_dictionary):
             for v in value[1:]:
                 omit_list.append((key, v))
     return omit_list
+
 
 def get_all_entities(data_dct_lst, omit_list):
     entities = list()
@@ -72,7 +74,7 @@ def get_all_entities(data_dct_lst, omit_list):
 
 
 def mapping_entity(entities):
-    entities_dictionary = {}
+    entities_dictionary = dict()
     count = 1;
     for entity in entities:
         entities_dictionary['r'+ str(count)] = entity
@@ -82,7 +84,7 @@ def mapping_entity(entities):
 
 
 def retrieve_property(entities_map):
-    properties = []
+    properties = list()
     for key, entity in entities_map.items():
         temp = (key, entity)
         properties.append(temp)
@@ -91,7 +93,7 @@ def retrieve_property(entities_map):
 
 
 def retrieve_event(data_dct_lst):
-    events_dictionary = {}
+    events_dictionary = dict()
     count = 1;
     for sentences in data_dct_lst:
         for sen in sentences:
@@ -109,7 +111,7 @@ def retrieve_event_type(data_dct_lst):
     for sentence in data_dct_lst:
         for item in sentence:
             if item.get('PPOS') == 'VBD':
-                event_type_dictionary['e' + str(count)] = item.get('vn-pb')[0]['vn']
+                event_type_dictionary['e' + str(count)] = item.get('vn-pb')[0][1]
                 count += 1
 
     event_type_list = [(k, v) for k, v in event_type_dictionary.items()]
@@ -127,34 +129,40 @@ def retrieve_event_time(events_map):
     return event_time_list
 
 
-def retrieve_event_argument(data_dct_lst, property, eventType):
+def retrieve_event_argument(data_dct_lst, property, event_type):
+
     event_argument_list = list()
-    sentence_property = list()
-    sentence_rolesets = list()
-    for et, sentence in zip(eventType, data_dct_lst):
-        vn = et[1]
+    event_argument_dict = dict()
+    index = 1
+    for event, sentence in zip(event_type, data_dct_lst):
+        arguments_list = list()
+        args_to_vn = list()
+        event_ref = event[0]
+        for sent in sentence:
+            if sent.get('Args') != '_' and sent.get('vn-pb')[0] != '_':
+                # use first verb class as vn class
+                vn_role = sent.get('vn-pb')[0][1]
+                if sent.get('PPOS') == 'NNP' or sent.get('PPOS') == 'NN' or sent.get('PPOS') == 'TO':
+                    args_to_vn.append(vn_role)
+
+        sub_index = 0
         for item in sentence:
             tmp = list()
             if item.get('PPOS') == 'NNP' or item.get('PPOS') == 'NN':
-                sentence_property.append(item.get('Form'))
-            tmp += item.get('vn-pb')
-            for i in tmp:
-                k_list = [k for k in i.keys()]
-                for k in k_list:
-                    if k == vn:
-                        sentence_rolesets.append(i[k])
+                tmp.append(event_ref)
+                tmp.append(args_to_vn[sub_index])
+                sub_index += 1
+                entity = item.get('Form')
+                for (ref, ent) in property:
+                    if entity == ent:
+                        tmp.append(ref)
+                        break
+                arguments_list.append(tmp)
+        event_argument_dict[index] = arguments_list
+        index += 1
 
-    index = 0
-    count = 0
-    for p, r in zip(sentence_property, sentence_rolesets):
-        entity = ''
-        for i in property:
-            if i[1] == p:
-                entity = i[0]
-        event_argument_list.append((eventType[index][0], r, entity))
-        count += 1
-        if count == 2:
-            index += 1
-            count = 0
+    for value in event_argument_dict.values():
+        for v in value:
+            event_argument_list.append(v)
 
     return event_argument_list

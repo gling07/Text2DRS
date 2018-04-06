@@ -23,7 +23,7 @@
 
 
 def coreference(xml):
-    coref_dictionary = {}
+    coref_dictionary = dict()
     root = xml.getroot()
     for elem in root.findall('./document/coreference/coreference/'):
         is_mention = elem.attrib.get('representative')

@@ -43,9 +43,9 @@ def main_process(data_dct_lst):
     return drs_dict
 
 def retrieve_entity(data_dct_lst):
-    entities = []
+    entities = list()
     for sentences in data_dct_lst:
-        temp = []
+        temp = list()
         for sen in sentences:
             if sen.get('PPOS') == 'NNP' or sen.get('PPOS') == 'NN':
                 temp.append(sen.get('Form'))
@@ -57,7 +57,7 @@ def retrieve_entity(data_dct_lst):
 
 
 def mapping_entity(entities):
-    entities_dictionary = {}
+    entities_dictionary = dict()
     count = 1;
     for entity in entities:
         entities_dictionary['r'+ str(count)] = entity
@@ -67,7 +67,7 @@ def mapping_entity(entities):
 
 
 def retrieve_property(entities_map):
-    properties = []
+    properties = list()
     for key, entity in entities_map.items():
         temp = (key, entity)
         properties.append(temp)
@@ -76,7 +76,7 @@ def retrieve_property(entities_map):
 
 
 def retrieve_event(data_dct_lst):
-    events_dictionary = {}
+    events_dictionary = dict()
     count = 1;
     for sentences in data_dct_lst:
         for sen in sentences:

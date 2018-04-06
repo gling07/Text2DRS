@@ -25,6 +25,8 @@ import os
 import sys
 import subprocess
 import argparse
+from typing import Any, Union
+
 import verbnetsrl
 import drs
 import xml.etree.ElementTree as ET
@@ -94,6 +96,7 @@ def process_lth(file, lth_path):
     # switch back to text2drs dictionary
     os.chdir(text2_drs_path)
 
+
 # process input file by running corenlp through command line
 # output file format can be choose from text, xml, json
 def process_corenlp(file, corenlp_path):
@@ -121,13 +124,24 @@ def main():
     parser.add_argument("input", help='given full path of input file', type=str)
     args = parser.parse_args()
 
-    config.read(args.config)
+    try:
+        config.read(args.config)
+    except IOError:
+        print('Could not find CONFIG file')
+
+    try:
+        input_file = args.input
+    except IOError:
+        print('Could not find the txt file')
+
     input_file = args.input
-
     lth_path = config.get('LTH', 'Path')
-    corenlp_path = config.get('CoreNLP', 'Path')
 
-    process_lth(input_file, lth_path)
+    if os.path.exists(lth_path):
+        process_lth(input_file, lth_path)
+    else:
+        print('LTH path is invalid')
+        sys.exit()
 
     # read lth output file and store in lth_output
     lth_output = None
@@ -152,7 +166,13 @@ def main():
     sys.stdout = orig_stdout
     f.close()
 
-    corenlp_output_path = process_corenlp(input_file, corenlp_path)
+    corenlp_path = config.get('CoreNLP', 'Path')
+    if os.path.exists(corenlp_path):
+          corenlp_output_path = process_corenlp(input_file, corenlp_path)
+    else:
+        print('Core-NLP path invalid')
+        sys.exit()
+
     corenlp_output = None
     try:
         corenlp_output = ET.parse(corenlp_output_path)

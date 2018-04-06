@@ -23,8 +23,6 @@
 
 
 # print drs in asp format
-
-
 def drs_to_asp(drs_dict):
     print('%', end=' ')
     print(', '.join(drs_dict['entity']), end=', ')
@@ -88,6 +86,7 @@ def drs_to_asp(drs_dict):
                     print()
                     count = 0
 
+
 # print verbnet srl table
 def print_table(m_lst):
     dct_keys = m_lst[0][0].keys()
@@ -100,13 +99,18 @@ def print_table(m_lst):
             for key in dct_keys:
                 if key == 'vn-pb':
                     for item in sub_dct3.get(key):
-                        if 'vn' in item.keys():
-                            print('{};'.format(item.get('vn')), end="")
-                        elif '_' not in item.keys():
-                            for k,v in item.items():
-                                print('{}:{};'.format(k,v), end="")
+                        if item[0] == 'vn':
+                            print('{};'.format(item[1]), end='')
+                        elif item[0] != '_':
+                            count = 0
+                            for k in item:
+                                if count == 0:
+                                    print('{}'.format(k), end=":")
+                                    count += 1
+                                else:
+                                    print('{}'.format(k), end="; ")
+                                    count = 0
                         else:
-                            print('{:5s}'.format(item.get('_')), end="")
+                            print('{:5s}'.format(item[0]), end="")
                 else:
                     print("{:10s}\t".format(sub_dct3.get(key)), end="")
-
