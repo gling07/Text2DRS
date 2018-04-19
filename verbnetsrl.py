@@ -21,6 +21,11 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+
+# no arg: none
+# have arg but no mapping: PropBank: arg
+
+
 import xml.etree.ElementTree as ET
 
 # parse vb-pb mapping file into a element tree
