@@ -31,7 +31,7 @@ import xml.etree.ElementTree as ET
 # parse vb-pb mapping file into a element tree
 pb_tree = ET.parse('semLink/vn-pb/vnpbMappings')
 m_dct_lst = list()
-# pb_verbs = propbank.verbs()
+
 
 def bias_pbTovb_mapping():
     bias_verbClass = {'go.01': '51.1',
@@ -95,7 +95,29 @@ def form_dct(lst):
             sub_dct_lst.append(tmp)
     m_dct_lst.append(sub_dct_lst)
 
+    pre_check_args(m_dct_lst)
     deep_process(m_dct_lst)
+    check_themeroles(m_dct_lst)
+
+
+def pre_check_args(dct_lst):
+    noun_lst = ['NNP', 'NN']
+    for sentence in dct_lst:
+        args_count = count_args(sentence)
+        for entry in sentence:
+            if entry.get('PPOS') in noun_lst:
+                if args_count > 0:
+                    args_count -= 1
+                else:
+                    entry['Args'] = 'NONE-ARGS'
+
+
+def count_args(sentence):
+    count = 0
+    for entry in sentence:
+        if entry.get('Args') != '_':
+            count += 1
+    return count
 
 
 # A method to process a list of dictionary and add vn-pb's values
@@ -105,7 +127,6 @@ def deep_process(dct_lst):
         parse_result = dict()
         pred = ''
         for sub_dct in lst:
-            # pred = sub_dct.get('Pred')
             plemma = sub_dct.get('PLemma')
             if sub_dct.get('Pred') != '_' and sub_dct.get('Pred') is not None \
                     and sub_dct.get('PDeprel') == 'ROOT':
@@ -115,7 +136,6 @@ def deep_process(dct_lst):
                 continue
 
         key_lst = list(parse_result.keys())
-        # print(parse_result)
 
         pb_arg_num = list()
         for k in key_lst:
@@ -144,13 +164,28 @@ def deep_process(dct_lst):
                                 tmp3.append([key, p.get(x)])
                             elif d.get('Args')[1:] in num:
                                 continue
-                            elif not pb_args_checker(x, lst):
+                            elif 'vn-pb' not in d and not pb_args_checker(x, lst):
                                 tmp3.append('_')
                 if len(tmp3) == 0:
                     tmp3.append('_')
                 d['vn-pb'] = tmp3
             else:
                 d['vn-pb'] = ['_']
+
+
+def check_themeroles(dct_lst):
+    for sentence in dct_lst:
+        predicates = list()
+        for entry in sentence:
+            if entry.get('Pred') != '_':
+                predicates = entry.get('vn-pb')
+
+        for entry in sentence:
+            if entry.get('Args') != '_' and entry.get('vn-pb')[0] == '_':
+                roles = list()
+                for pred in predicates:
+                    roles.append([pred[1], 'NONE-TMEMEROLE'])
+                entry['vn-pb'] = roles
 
 
 # A method to check and tagging Args data
