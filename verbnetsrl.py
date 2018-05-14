@@ -99,49 +99,8 @@ def form_dct(lst):
 
 
     pre_check_args(m_dct_lst)
-    # for i in m_dct_lst:
-    #     print(i)
     deep_process(m_dct_lst)
-    for i in m_dct_lst:
-        print(i)
     # check_themeroles(m_dct_lst)
-
-
-    # for item in lst:
-    #     # print(item)
-    #     # check whether the length of current list
-    #     # in case, sometime lth output list length is 11
-    #     # add missing data in index 10 (Pred)
-    #     if len(item) < 12:
-    #         item.insert(10,'_')
-    #     tmp = {}
-    #     tmp.fromkeys(['ID', 'Form', 'PLemma', 'PPOS', 'PHead', 'PDeprel', 'Pred', 'Args','vn-pb'], None)
-    #
-    #     tmp['ID'] = item[0]
-    #     tmp['Form'] = item[1]
-    #     tmp['PLemma'] = item[2]
-    #     tmp['PPOS'] = item[4]
-    #     tmp['PHead'] = item[8]
-    #     tmp['PDeprel'] = item[9]
-    #     tmp['Pred'] = item[10]
-    #     tmp['Args'] = item[11].split('\n')[0]
-    #
-    #     # process to separate each sentence's data
-    #     if int(item[0]) > count:
-    #         sub_dct_lst.append(tmp)
-    #         count += 1
-    #     else:
-    #         count = 0
-    #         m_dct_lst.append(sub_dct_lst)
-    #         sub_dct_lst = list()
-    #         sub_dct_lst.append(tmp)
-    #
-    # m_dct_lst.append(sub_dct_lst)
-    #
-    # pre_check_args(m_dct_lst)
-    # deep_process(m_dct_lst)
-    # check_themeroles(m_dct_lst)
-
 
 # a method to organize sentences items into a list
 def form_sentence(sentences):
@@ -184,7 +143,8 @@ def pre_check_args(dct_lst):
                     entry.update({'Args:' + pred : '_'})
 
             for entry in sentence:
-                if entry.get('PPOS') in noun_lst and entry.get('Args:' + pred) == '_':
+                if entry.get('PPOS') in noun_lst and entry.get('Args:' + pred) == '_' and len(temp) > 0:
+                    print(entry)
                     entry.update({'Args:' + pred : temp[0]})
                     del temp[0]
 
@@ -219,35 +179,17 @@ def deep_process(dct_lst):
                         entry[pred + ':vb-class'] = vn_class
                     elif entry.get('Args:' + pred) != '_':
                         roles = list()
-
-
-
-            # for entry in sentence:
-            #     vn_themeroles = dict()
-            #     vn_class = list()
-            #     if entry.get('Pred') == pred and entry.get('PPOS') in verb_pos:
-            #         plemma = entry.get('PLemma')
-            #         # parse_result.append(vn_pb_parser(pred, plemma))
-            #         vn_themeroles = vn_pb_parser(pred, plemma)
-            #         vn_class = list(vn_themeroles.keys())
-            #         entry[pred + ':vn'] = vn_class
-            #     if len(vn_class) > 0:
-            #         for entry in sentence:
-            #             if entry.get('Args:' + pred) != '_':
-            #                 roles = list()
-            #
-            #                 for vc in vn_class:
-            #                     sub_dct = vn_themeroles.get(vc)
-            #                     for rl in sub_dct:
-            #                         if entry.get('Args:' + pred)[1:] in rl:
-            #                             roles.append([vc, rl.get(entry.get('Args:' + pred)[1:])])
-            #                         else:
-            #
-            #                             roles.append([vc, 'NONE-TMEMEROLE'])
-            #
-            #                 entry[pred + ':vn'] = roles
-            #             else:
-            #                 entry[pred + ':vn'] = ['_']
+                        for vc in vn_class:
+                            for rd in vn_themeroles.get(vc):
+                                r_num = entry.get('Args:' + pred)[1:]
+                                if r_num in list(rd.keys()):
+                                    roles.append([vc, rd.get(r_num)])
+                                    break
+                            if len(roles) == 0:
+                                roles.append([vc, 'NONE-THEMEROLE'])
+                        entry[pred + ':vn-class'] = roles
+                    else:
+                        entry[pred + ':vn-class'] = ['_']
 
 
 def get_themeroles(sentence, pred, verb_pos):
@@ -260,67 +202,14 @@ def get_themeroles(sentence, pred, verb_pos):
     return vn_themeroles
 
 
-
-        # for sub_dct in sentence:
-        #     plemma = sub_dct.get('PLemma')
-        #     if sub_dct.get('Pred') != '_' and sub_dct.get('Pred') is not None \
-        #             and sub_dct.get('PDeprel') == 'ROOT':
-        #         pred = sub_dct.get('Pred')
-        #         parse_result = vn_pb_parser(pred, plemma)
-        #     else:
-        #         continue
-
-        # key_lst = list(parse_result.keys())
-        #
-        # pb_arg_num = list()
-        # for k in key_lst:
-        #     sub_lst = parse_result.get(k)
-        #     for s in sub_lst:
-        #         pb_arg_num.append(list(s.keys()))
-        #
-        # num = [n for sub_lst in pb_arg_num for n in sub_lst]
-        #
-        # # process to analysis vn-pb data and add to sentence's dictionary
-        # for d in sentence:
-        #     if d.get('Pred') == pred:
-        #         tmp2 = list()
-        #         for k in key_lst:
-        #             tmp2.append(['vn', k])
-        #         d['vn-pb'] = tmp2
-        #     elif d.get('Args') != '_':
-        #         tmp3 = list()
-        #         for key in key_lst:
-        #             pr_lst = parse_result.get(key)
-        #             for p in pr_lst:
-        #                 k_lst = p.keys()
-        #
-        #                 for x in k_lst:
-        #                     if x == d.get('Args')[1:] and d.get('Args')[1:] in num:
-        #                         tmp3.append([key, p.get(x)])
-        #                     elif d.get('Args')[1:] in num:
-        #                         continue
-        #                     elif 'vn-pb' not in d and not pb_args_checker(x, sentence):
-        #                         tmp3.append('_')
-        #         if len(tmp3) == 0:
-        #             tmp3.append('_')
-        #         d['vn-pb'] = tmp3
-        #     else:
-        #         d['vn-pb'] = ['_']
-
-
 def check_themeroles(dct_lst):
     for sentence in dct_lst:
-        predicates = list()
-        for entry in sentence:
-            if entry.get('Pred') != '_' and entry.get('PDeprel') == 'ROOT':
-                predicates = entry.get('vn-pb')
-
-        for entry in sentence:
-            if entry.get('Args') != '_' and entry.get('vn-pb')[0] == '_':
-                roles = list()
-                for pred in predicates:
-                    roles.append([pred[1], 'NONE-TMEMEROLE'])
-                entry['vn-pb'] = roles
+        predicates = get_predicates(sentence)
+        for pred in predicates:
+            for entry in sentence:
+                if entry.get('Args:' + pred) != '_' and len(entry.get(pred + ':vn-class')) == 0:
+                    print(entry)
+                    entry[pred + ':vn-class'] = ['NON-THEMEROLE']
 
 
 # A method to check and tagging Args data

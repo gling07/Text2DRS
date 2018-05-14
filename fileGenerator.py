@@ -21,6 +21,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import pprint
 
 # print drs in asp format
 def drs_to_asp(drs_dict):
@@ -86,6 +87,18 @@ def drs_to_asp(drs_dict):
                     print()
                     count = 0
 
+
+def output_vbsrl(m_lst):
+    pp = pprint.PrettyPrinter(indent=4)
+    count = 1
+    for sentence in m_lst:
+        for word_dct in sentence:
+            if word_dct['ID'] == '1':
+                print()
+                print("SENTENCE " + str(count) + ":", end='\n')
+                count += 1
+            pp.pprint(word_dct)
+            print()
 
 # print verbnet srl table
 def print_table(m_lst):

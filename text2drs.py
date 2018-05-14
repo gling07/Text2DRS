@@ -168,7 +168,8 @@ def main():
     global target_file_name
     f = open('text2drsOutputs/' + target_file_name + '_verbNetsrl.txt','w')
     sys.stdout = f
-    fileGenerator.print_table(data_dct_lst)
+    fileGenerator.output_vbsrl(data_dct_lst)
+    # fileGenerator.print_table(data_dct_lst)
     sys.stdout = orig_stdout
     f.close()
 
