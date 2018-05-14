@@ -75,7 +75,7 @@ def get_all_entities(data_dct_lst, omit_list):
 
 def mapping_entity(entities):
     entities_dictionary = dict()
-    count = 1;
+    count = 1
     for entity in entities:
         entities_dictionary['r'+ str(count)] = entity
         count += 1
@@ -94,7 +94,7 @@ def retrieve_property(entities_map):
 
 def retrieve_event(data_dct_lst):
     events_dictionary = dict()
-    count = 1;
+    count = 1
     for sentences in data_dct_lst:
         for sen in sentences:
             if sen.get('PPOS') == 'VBD':
@@ -106,11 +106,13 @@ def retrieve_event(data_dct_lst):
 
 # include picking first vn-class if multiple returns
 def retrieve_event_type(data_dct_lst):
+    ppos = ['VBD', 'VB']
+    pdeprel = ['ROOT']
     event_type_dictionary = dict()
-    count = 1;
+    count = 1
     for sentence in data_dct_lst:
         for item in sentence:
-            if item.get('PPOS') == 'VBD':
+            if item.get('PPOS') in ppos and item.get('PDeprel') in pdeprel:
                 event_type_dictionary['e' + str(count)] = item.get('vn-pb')[0][1]
                 count += 1
 
@@ -149,6 +151,7 @@ def retrieve_event_argument(data_dct_lst, property, event_type):
             tmp = list()
             if item.get('PPOS') == 'NNP' or item.get('PPOS') == 'NN':
                 tmp.append(event_ref)
+                print(args_to_vn[sub_index])
                 tmp.append(args_to_vn[sub_index])
                 sub_index += 1
                 entity = item.get('Form')
