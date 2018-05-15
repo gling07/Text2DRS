@@ -63,7 +63,6 @@ def form_dct(lst):
         del m_dct_lst[:]
 
     sub_dct_lst = list()
-    count = 0
     # lst is a list of lists
 
     sentences_lst = form_sentence(lst)
@@ -124,7 +123,7 @@ def form_sentence(sentences):
 
 
 def pre_check_args(dct_lst):
-    noun_lst = ['NNP', 'NN', 'PRP']
+    noun_lst = ['NNP', 'NN', 'PRP', 'NNS']
     preposition = ['IN', 'TO']
     for sentence in dct_lst:
         pred_lst = get_predicates(sentence)
@@ -226,7 +225,6 @@ def remove_not_vbclass(dct_lst):
         for p in remove_lst:
             for entry in sentence:
                 del entry['Args:' + p]
-
 
 
 # A method to check and tagging Args data

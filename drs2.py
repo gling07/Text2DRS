@@ -24,6 +24,8 @@
 import verbnetsrl
 import pprint
 drs_dict = dict()
+verb_pos = ['VBD', 'VB', 'VBN', 'VBG']
+noun_lst = ['NNP', 'NN', 'PRP', 'NNS']
 
 
 def drs_generator(data_dct_lst, coref_dictionary):
@@ -38,7 +40,6 @@ def drs_generator(data_dct_lst, coref_dictionary):
     event_argument = retrieve_event_argument(data_dct_lst, property, event_type)
 
     drs_dict['entity'] = [k for k in entities_map.keys()]
-    # pprint.pprint(drs_dict['entity'])
     drs_dict['property'] = property
     drs_dict['event'] = [k for k in events_map.keys()]
     drs_dict['eventType'] = event_type
@@ -49,10 +50,10 @@ def drs_generator(data_dct_lst, coref_dictionary):
 
 
 def get_omit_entities(coref_dictionary):
-
+    special = "'"+'s'
     omit_list = list()
     for key, value in coref_dictionary.items():
-        if ' ' in key:
+        if ' ' in key and special not in key:
             entity = key.split(' ')[-1]
             for v in value[1:]:
                 omit_list.append((entity, v))
@@ -65,11 +66,10 @@ def get_omit_entities(coref_dictionary):
 def get_all_entities(data_dct_lst, omit_list):
     entities = list()
     num = 0
-    noun = ['PPOS', 'NN', 'PRP']
     for sentences in data_dct_lst:
         num += 1
         for sen in sentences:
-            if sen.get('PPOS') in noun:
+            if sen.get('PPOS') in noun_lst:
                 tmp = (sen.get('Form'), num)
                 if tmp not in omit_list:
                     entities.append(sen.get('Form'))
@@ -101,25 +101,23 @@ def retrieve_event(data_dct_lst):
     count = 1
     for sentences in data_dct_lst:
         for sen in sentences:
-            if sen.get('PPOS') == 'VBD' or sen.get('PPOS') == 'VB':
+            if sen.get('Pred') != '_' and sen.get('PPOS') in verb_pos:
                 events_dictionary['e' + str(count)] = sen.get('PLemma')
                 count += 1
-
     return events_dictionary
 
 
 # include picking first vn-class if multiple returns
 def retrieve_event_type(data_dct_lst):
-    ppos = ['VBD', 'VB', 'VBN', 'VBG']
-    pdeprel = ['ROOT', 'CONJ']
     event_type_dictionary = dict()
     count = 1
     for sentence in data_dct_lst:
         for item in sentence:
-            if item.get('PPOS') in ppos and item.get('PDeprel') in pdeprel:
+            if item.get('PPOS') in verb_pos:
                 pred = item.get('Pred')
-                event_type_dictionary['e' + str(count)] = item.get(pred + ':vb-class')[0]
-                count += 1
+                if item.get(pred + ':vb-class') is not None:
+                    event_type_dictionary['e' + str(count)] = item.get(pred + ':vb-class')[0]
+                    count += 1
 
     event_type_list = [(k, v) for k, v in event_type_dictionary.items()]
     return event_type_list
@@ -137,39 +135,20 @@ def retrieve_event_time(events_map):
 
 
 def retrieve_event_argument(data_dct_lst, property, event_type):
-
     event_argument_list = list()
-    event_argument_dict = dict()
-    index = 1
-    for event, sentence in zip(event_type, data_dct_lst):
-        arguments_list = list()
-        args_to_vn = list()
-        event_ref = event[0]
-        for sent in sentence:
-            if sent.get('Args') != '_' and sent.get('vn-pb')[0] != '_':
-                # use first verb class as vn class
-                vn_role = sent.get('vn-pb')[0][1]
-                args_to_vn.append(vn_role)
-
-        sub_index = 0
-        for item in sentence:
-            tmp = list()
-            if item.get('PPOS') == 'NNP' or item.get('PPOS') == 'NN':
-                tmp.append(event_ref)
-                print(args_to_vn[sub_index])
-                tmp.append(args_to_vn[sub_index])
-                sub_index += 1
-                entity = item.get('Form')
-                for (ref, ent) in property:
-                    if entity == ent:
-                        tmp.append(ref)
-                        break
-                arguments_list.append(tmp)
-        event_argument_dict[index] = arguments_list
-        index += 1
-
-    for value in event_argument_dict.values():
-        for v in value:
-            event_argument_list.append(v)
+    for sentence in data_dct_lst:
+        predicates = verbnetsrl.get_predicates(sentence)
+        events = event_type[0:len(predicates)]
+        event_type = event_type[len(predicates):]
+        for (pred, event) in zip(predicates, events):
+            event_ref = event[0]
+            for sent in sentence:
+                if sent.get('Args:' + pred) != '_':
+                    # use first verb class as vn class
+                    vn_role = sent.get(pred + ':vn-class')[0][1]
+                    for (ref, ent) in property:
+                        if ent == sent.get('Form'):
+                            event_argument_list.append((event_ref, vn_role, ref))
+                            break
 
     return event_argument_list
