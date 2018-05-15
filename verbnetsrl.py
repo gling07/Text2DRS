@@ -101,6 +101,7 @@ def form_dct(lst):
     pre_check_args(m_dct_lst)
     deep_process(m_dct_lst)
     # check_themeroles(m_dct_lst)
+    remove_not_vbclass(m_dct_lst)
 
 
 # a method to organize sentences items into a list
@@ -144,7 +145,6 @@ def pre_check_args(dct_lst):
 
             for entry in sentence:
                 if entry.get('PPOS') in noun_lst and entry.get('Args:' + pred) == '_' and len(temp) > 0:
-                    print(entry)
                     entry.update({'Args:' + pred : temp[0]})
                     del temp[0]
 
@@ -168,9 +168,8 @@ def get_predicates(sentence):
 
 # A method to process a list of dictionary and add vn-pb's values
 def deep_process(dct_lst):
-    verb_pos = ['VBD', 'VB']
+    verb_pos = ['VBD', 'VB', 'VBN', 'VBG']
     for sentence in dct_lst:
-        # parse_result = list()
         pred_lst = get_predicates(sentence)
         for pred in pred_lst:
             vn_themeroles = get_themeroles(sentence, pred, verb_pos)
@@ -210,14 +209,29 @@ def check_themeroles(dct_lst):
         for pred in predicates:
             for entry in sentence:
                 if entry.get('Args:' + pred) != '_' and len(entry.get(pred + ':vn-class')) == 0:
-                    print(entry)
                     entry[pred + ':vn-class'] = ['NON-THEMEROLE']
+
+
+def remove_not_vbclass(dct_lst):
+    verb_pos = ['VBD', 'VB', 'VBN', 'VBG']
+    for sentence in dct_lst:
+        predicates = get_predicates(sentence)
+        remove_lst = list()
+        for entry in sentence:
+            pred = entry.get('Pred')
+            if pred in predicates and entry.get('PPOS') not in verb_pos:
+                remove_lst.append(pred)
+                entry.update({'Pred':'_'})
+
+        for p in remove_lst:
+            for entry in sentence:
+                del entry['Args:' + p]
+
 
 
 # A method to check and tagging Args data
 # If the Args's number is in the pb-roleset number list, return True, else return False
 def pb_args_checker(num, sentence_lst):
-
     num_lst = list()
     for sub_dct in sentence_lst:
         if sub_dct.get('Args') != '_':

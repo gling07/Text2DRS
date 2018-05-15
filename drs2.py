@@ -22,6 +22,7 @@
 # SOFTWARE.
 
 import verbnetsrl
+import pprint
 drs_dict = dict()
 
 
@@ -37,6 +38,7 @@ def drs_generator(data_dct_lst, coref_dictionary):
     event_argument = retrieve_event_argument(data_dct_lst, property, event_type)
 
     drs_dict['entity'] = [k for k in entities_map.keys()]
+    # pprint.pprint(drs_dict['entity'])
     drs_dict['property'] = property
     drs_dict['event'] = [k for k in events_map.keys()]
     drs_dict['eventType'] = event_type
@@ -108,7 +110,7 @@ def retrieve_event(data_dct_lst):
 
 # include picking first vn-class if multiple returns
 def retrieve_event_type(data_dct_lst):
-    ppos = ['VBD', 'VB']
+    ppos = ['VBD', 'VB', 'VBN', 'VBG']
     pdeprel = ['ROOT', 'CONJ']
     event_type_dictionary = dict()
     count = 1
