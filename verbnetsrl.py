@@ -102,6 +102,7 @@ def form_dct(lst):
     deep_process(m_dct_lst)
     # check_themeroles(m_dct_lst)
 
+
 # a method to organize sentences items into a list
 def form_sentence(sentences):
     sentences_lst = list()
@@ -122,8 +123,7 @@ def form_sentence(sentences):
 
 
 def pre_check_args(dct_lst):
-
-    noun_lst = ['NNP', 'NN']
+    noun_lst = ['NNP', 'NN', 'PRP']
     preposition = ['IN', 'TO']
     for sentence in dct_lst:
         pred_lst = get_predicates(sentence)
@@ -148,6 +148,7 @@ def pre_check_args(dct_lst):
                     entry.update({'Args:' + pred : temp[0]})
                     del temp[0]
 
+
 def count_args(sentence, pred):
     count = 0
     for entry in sentence:
@@ -163,6 +164,7 @@ def get_predicates(sentence):
             predicates.append(entry.get('Pred'))
 
     return predicates
+
 
 # A method to process a list of dictionary and add vn-pb's values
 def deep_process(dct_lst):

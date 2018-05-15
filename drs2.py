@@ -21,6 +21,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import verbnetsrl
 drs_dict = dict()
 
 
@@ -62,10 +63,11 @@ def get_omit_entities(coref_dictionary):
 def get_all_entities(data_dct_lst, omit_list):
     entities = list()
     num = 0
+    noun = ['PPOS', 'NN', 'PRP']
     for sentences in data_dct_lst:
         num += 1
         for sen in sentences:
-            if sen.get('PPOS') == 'NNP' or sen.get('PPOS') == 'NN':
+            if sen.get('PPOS') in noun:
                 tmp = (sen.get('Form'), num)
                 if tmp not in omit_list:
                     entities.append(sen.get('Form'))
@@ -97,7 +99,7 @@ def retrieve_event(data_dct_lst):
     count = 1
     for sentences in data_dct_lst:
         for sen in sentences:
-            if sen.get('PPOS') == 'VBD':
+            if sen.get('PPOS') == 'VBD' or sen.get('PPOS') == 'VB':
                 events_dictionary['e' + str(count)] = sen.get('PLemma')
                 count += 1
 
@@ -107,13 +109,14 @@ def retrieve_event(data_dct_lst):
 # include picking first vn-class if multiple returns
 def retrieve_event_type(data_dct_lst):
     ppos = ['VBD', 'VB']
-    pdeprel = ['ROOT']
+    pdeprel = ['ROOT', 'CONJ']
     event_type_dictionary = dict()
     count = 1
     for sentence in data_dct_lst:
         for item in sentence:
             if item.get('PPOS') in ppos and item.get('PDeprel') in pdeprel:
-                event_type_dictionary['e' + str(count)] = item.get('vn-pb')[0][1]
+                pred = item.get('Pred')
+                event_type_dictionary['e' + str(count)] = item.get(pred + ':vb-class')[0]
                 count += 1
 
     event_type_list = [(k, v) for k, v in event_type_dictionary.items()]
