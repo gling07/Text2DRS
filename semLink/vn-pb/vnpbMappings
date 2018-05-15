@@ -1885,6 +1885,11 @@
 			<role pb-arg="1" vn-theta="Patient" />
 		</argmap>
 	</predicate>
+		<predicate lemma="become">
+		<argmap pb-roleset="become.01" vn-class="109.1-1">
+			<role pb-arg="0" vn-theta="Patient" />
+		</argmap>
+	</predicate>
 	<predicate lemma="bed">
 		<argmap pb-roleset="bed.02" vn-class="9.10">
 			<role pb-arg="0" vn-theta="Agent" />
