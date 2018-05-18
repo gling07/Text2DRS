@@ -167,7 +167,7 @@ def get_predicates(sentence):
 
 # A method to process a list of dictionary and add vn-pb's values
 def deep_process(dct_lst):
-    verb_pos = ['VBD', 'VB', 'VBN', 'VBG']
+    verb_pos = ['VBD', 'VB', 'VBN', 'VBG', 'VBP']
     for sentence in dct_lst:
         pred_lst = get_predicates(sentence)
         for pred in pred_lst:
@@ -212,7 +212,7 @@ def check_themeroles(dct_lst):
 
 
 def remove_not_vbclass(dct_lst):
-    verb_pos = ['VBD', 'VB', 'VBN', 'VBG']
+    verb_pos = ['VBD', 'VB', 'VBN', 'VBG', 'VBP']
     for sentence in dct_lst:
         predicates = get_predicates(sentence)
         remove_lst = list()

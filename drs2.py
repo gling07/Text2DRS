@@ -24,7 +24,7 @@
 import verbnetsrl
 import pprint
 drs_dict = dict()
-verb_pos = ['VBD', 'VB', 'VBN', 'VBG']
+verb_pos = ['VBD', 'VB', 'VBN', 'VBG', 'VBP']
 noun_lst = ['NNP', 'NN', 'PRP', 'NNS']
 
 
