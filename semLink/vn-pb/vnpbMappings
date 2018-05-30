@@ -1887,7 +1887,8 @@
 	</predicate>
 		<predicate lemma="become">
 		<argmap pb-roleset="become.01" vn-class="109.1-1">
-			<role pb-arg="0" vn-theta="Patient" />
+		    <role pb-arg="1" vn-theta="Patient" />
+			<role pb-arg="2" vn-theta="Result" />
 		</argmap>
 	</predicate>
 	<predicate lemma="bed">

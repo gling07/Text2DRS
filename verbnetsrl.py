@@ -97,7 +97,8 @@ def form_dct(lst):
         sub_dct_lst = list()
 
 
-    pre_check_args(m_dct_lst)
+    # pre_check_args(m_dct_lst)
+    pre_check_args2(m_dct_lst)
     deep_process(m_dct_lst)
     # check_themeroles(m_dct_lst)
     remove_not_vbclass(m_dct_lst)
@@ -122,30 +123,51 @@ def form_sentence(sentences):
     return sentences_lst
 
 
-def pre_check_args(dct_lst):
+def pre_check_args2(dct_lst):
     noun_lst = ['NNP', 'NN', 'PRP', 'NNS']
     preposition = ['IN', 'TO']
+    # verb_pos = ['VBD', 'VB', 'VBN', 'VBG', 'VBP']
     for sentence in dct_lst:
         pred_lst = get_predicates(sentence)
         for pred in pred_lst:
-            args_count = count_args(sentence, pred)
-            for entry in sentence:
-                if entry.get('PPOS') in noun_lst:
-                    if args_count > 0:
-                        args_count -= 1
-                    else:
-                        entry['Args:' + pred] = 'NONE-ARGS'
-
-            temp = list()
+            reassign_lst = list()
             for entry in sentence:
                 if entry.get('PPOS') in preposition and entry.get('Args:' + pred) != '_':
-                    temp.append(entry.get('Args:' + pred))
-                    entry.update({'Args:' + pred : '_'})
+                    t = (entry.get('ID'), entry.get('PHead'), entry.get('Args:' + pred))
+                    reassign_lst.append(t)
+                    entry.update({'Args:' + pred: '_'})
 
-            for entry in sentence:
-                if entry.get('PPOS') in noun_lst and entry.get('Args:' + pred) == '_' and len(temp) > 0:
-                    entry.update({'Args:' + pred : temp[0]})
-                    del temp[0]
+            for role in reassign_lst:
+                for entry in sentence:
+                    if entry.get('PPOS') in noun_lst and entry.get('Args' + pred) == '_':
+                        if int(entry.get('ID')) > int(role[0]) and int(entry.get('PHead')) > int(role[1]):
+                            entry.update({'Args:' + pred: role[2]})
+
+# deprecated
+# def pre_check_args(dct_lst):
+#     noun_lst = ['NNP', 'NN', 'PRP', 'NNS']
+#     preposition = ['IN', 'TO']
+#     for sentence in dct_lst:
+#         pred_lst = get_predicates(sentence)
+#         for pred in pred_lst:
+#             args_count = count_args(sentence, pred)
+#             for entry in sentence:
+#                 if entry.get('PPOS') in noun_lst:
+#                     if args_count > 0:
+#                         args_count -= 1
+#                     else:
+#                         entry['Args:' + pred] = 'NONE-ARGS'
+#
+#             temp = list()
+#             for entry in sentence:
+#                 if entry.get('PPOS') in preposition and entry.get('Args:' + pred) != '_':
+#                     temp.append(entry.get('Args:' + pred))
+#                     entry.update({'Args:' + pred : '_'})
+#
+#             for entry in sentence:
+#                 if entry.get('PPOS') in noun_lst and entry.get('Args:' + pred) == '_' and len(temp) > 0:
+#                     entry.update({'Args:' + pred : temp[0]})
+#                     del temp[0]
 
 
 def count_args(sentence, pred):
