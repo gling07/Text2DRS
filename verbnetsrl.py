@@ -139,7 +139,7 @@ def pre_check_args2(dct_lst):
 
             for role in reassign_lst:
                 for entry in sentence:
-                    if entry.get('PPOS') in noun_lst and entry.get('Args' + pred) == '_':
+                    if entry.get('PPOS') in noun_lst and entry.get('Args:' + pred) == '_':
                         if int(entry.get('ID')) > int(role[0]) and int(entry.get('PHead')) > int(role[1]):
                             entry.update({'Args:' + pred: role[2]})
 
