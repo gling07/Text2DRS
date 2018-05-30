@@ -34,10 +34,10 @@ def drs_generator(data_dct_lst, coref_dictionary):
     entities = get_all_entities(data_dct_lst, omit_list)
     entities_map = mapping_entity(entities)
     property = retrieve_property(entities_map)
-    events_map = retrieve_event(data_dct_lst)
+    (events_map, event_property) = retrieve_event(data_dct_lst)
     event_type = retrieve_event_type(data_dct_lst)
     event_time = retrieve_event_time(events_map)
-    event_argument = retrieve_event_argument(data_dct_lst, property, event_type)
+    event_argument = retrieve_event_argument(data_dct_lst, property, event_type, event_property)
 
     drs_dict['entity'] = [k for k in entities_map.keys()]
     drs_dict['property'] = property
@@ -98,13 +98,19 @@ def retrieve_property(entities_map):
 
 def retrieve_event(data_dct_lst):
     events_dictionary = dict()
+    events_property = dict()
     count = 1
+    sentence_id = 1
     for sentences in data_dct_lst:
+        verb = list()
         for sen in sentences:
             if sen.get('Pred') != '_' and sen.get('PPOS') in verb_pos:
                 events_dictionary['e' + str(count)] = sen.get('PLemma')
+                verb.append((sen.get('PLemma'), 'e' + str(count)))
                 count += 1
-    return events_dictionary
+        events_property[sentence_id] = verb
+        sentence_id += 1
+    return (events_dictionary, events_property)
 
 
 # include picking first vn-class if multiple returns
@@ -134,8 +140,9 @@ def retrieve_event_time(events_map):
     return event_time_list
 
 
-def retrieve_event_argument(data_dct_lst, property, event_type):
+def retrieve_event_argument(data_dct_lst, property, event_type, event_property):
     event_argument_list = list()
+    sentence_id = 1
     for sentence in data_dct_lst:
         predicates = verbnetsrl.get_predicates(sentence)
         events = event_type[0:len(predicates)]
@@ -146,9 +153,17 @@ def retrieve_event_argument(data_dct_lst, property, event_type):
                 if sent.get('Args:' + pred) != '_':
                     # use first verb class as vn class
                     vn_role = sent.get(pred + ':vn-class')[0][1]
-                    for (ref, ent) in property:
-                        if ent == sent.get('Form'):
-                            event_argument_list.append((event_ref, vn_role, ref))
-                            break
+                    if sent.get('PPOS') in noun_lst:
+                        for (ref, ent) in property:
+                            if ent == sent.get('Form'):
+                                event_argument_list.append((event_ref, vn_role, ref))
+                                break
+                    elif sent.get('PPOS') in verb_pos:
+                        verb_property = event_property.get(sentence_id)
+                        for (plemma, eref) in verb_property:
+                            if sent.get('PLemma') == plemma:
+                                event_argument_list.append((event_ref, vn_role, eref))
+
+        sentence_id += 1
 
     return event_argument_list
